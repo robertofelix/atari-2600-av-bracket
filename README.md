@@ -12,6 +12,16 @@ A small hollow bracket that clips under the back of an Atari 2600. The jacks pre
 
 The design is based on a commercial part that holds 1 S-Video and 3 RCA jacks. This version replaces the S-Video cutout with a fourth RCA hole.
 
+## Compatibility
+
+Made for these Atari 2600 models:
+
+- Heavy Sixer
+- Light Sixer
+- Darth Vader
+
+Other models may have a different rear shape, so check the measurements before printing.
+
 **Status:** work in progress. The geometry uses caliper measurements for the main dimensions. Tab and hole positions are estimated from photos, and the latest reprint has not been fit-tested yet.
 
 ## Repository layout
@@ -102,6 +112,16 @@ Suporte paramétrico e imprimível em 3D para o **AV mod do Atari 2600**. Ele se
 Um pequeno suporte oco que encaixa embaixo da traseira de um Atari 2600. Os conectores entram por pressão na parede frontal, o cabo flat do mod passa para dentro da caixa, e uma aba em "L" na parte de cima funciona como clipe/gancho.
 
 O projeto é baseado numa peça comercial que segura 1 S-Video e 3 RCA. Esta versão troca o recorte do S-Video por um quarto furo RCA.
+
+## Compatibilidade
+
+Feito para estes modelos de Atari 2600:
+
+- Heavy Sixer
+- Light Sixer
+- Darth Vader
+
+Outros modelos podem ter a traseira com formato diferente, então confira as medidas antes de imprimir.
 
 **Status:** em andamento. A geometria usa medidas reais com paquímetro nas dimensões principais. As posições da aba e dos furos são estimadas por foto, e a última reimpressão ainda não foi testada no encaixe.
 
