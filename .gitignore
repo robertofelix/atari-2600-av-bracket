@@ -1,0 +1,41 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Editors / IDEs
+.vscode/
+.idea/
+*.swp
+*~
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Local environment / secrets
+.env
+.env.*
+
+# Fusion backups and temp files
+*.f3d.bak
+*.fusion360.bak
+*.tmp
+
+# Slicer output (keep STL/STEP in exports/)
+*.gcode
+*.3mf
+*.ctb
+
+# Logs
+*.log
