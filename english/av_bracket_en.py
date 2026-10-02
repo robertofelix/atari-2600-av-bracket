@@ -39,6 +39,7 @@ CUTOUT_HEIGHT      = 26.0
 CUTOUT_THROUGH     = True   # True = opening through the wall; False = shallow pocket
 CUTOUT_DEPTH       = 1.0    # only used if CUTOUT_THROUGH = False (less than WALL)
 
+USE_TAB            = False  # TEMPORARY (prototype branch): False = skip the L tab to test the angle
 TAB_X              = 13.0   # tab start, from the left end of the top
 TAB_POST_LENGTH    = 2.5
 TAB_POST_HEIGHT    = 4.5
@@ -183,18 +184,19 @@ def run(context):
         extrude(comp, all_profiles(sk), WALL + 2.0, CUT)
 
         # 5) "L" tab, set back from the edge toward the center
-        zt = DEPTH / 2 - TAB_INSET - TAB_DEPTH
-        sk = comp.sketches.add(z_plane(comp, zt))
-        sk.name = "L tab"
-        post_top = HEIGHT + TAB_POST_HEIGHT
-        plate_top = post_top + TAB_PLATE_THICK
-        polygon(sk, [(TAB_X, HEIGHT),
-                     (TAB_X + TAB_POST_LENGTH, HEIGHT),
-                     (TAB_X + TAB_POST_LENGTH, post_top),
-                     (TAB_X + TAB_PLATE_LENGTH, post_top),
-                     (TAB_X + TAB_PLATE_LENGTH, plate_top),
-                     (TAB_X, plate_top)], zt)
-        extrude(comp, sk.profiles.item(0), TAB_DEPTH, JOIN)
+        if USE_TAB:
+            zt = DEPTH / 2 - TAB_INSET - TAB_DEPTH
+            sk = comp.sketches.add(z_plane(comp, zt))
+            sk.name = "L tab"
+            post_top = HEIGHT + TAB_POST_HEIGHT
+            plate_top = post_top + TAB_PLATE_THICK
+            polygon(sk, [(TAB_X, HEIGHT),
+                         (TAB_X + TAB_POST_LENGTH, HEIGHT),
+                         (TAB_X + TAB_POST_LENGTH, post_top),
+                         (TAB_X + TAB_PLATE_LENGTH, post_top),
+                         (TAB_X + TAB_PLATE_LENGTH, plate_top),
+                         (TAB_X, plate_top)], zt)
+            extrude(comp, sk.profiles.item(0), TAB_DEPTH, JOIN)
 
         app.activeViewport.fit()
         ui.messageBox("Bracket created! Check the dimensions and export it via "
