@@ -1,8 +1,8 @@
 # av_bracket_en - 3D-printable RCA jack bracket for the Atari 2600 AV mod
 # Builds the part in Autodesk Fusion.
 #
-# Measured with calipers: top 81.0 | bottom 71.0 | height 20.65 (0.813 in) |
-# depth 24.94 at the bottom and 22.00 at the top (slanted back, ~8 deg) | RCA ring 8.38 mm.
+# Measured with calipers: top 81.0 | bottom 71.0 | height 20.21 (0.796 in) |
+# depth 24.89 at the bottom and 20.41 at the top (slanted back, ~12.5 deg) | RCA ring 8.38 mm.
 # Hole and tab positions were estimated from photos. Adjust the values below
 # and run the script again to generate a new version.
 # All dimensions in millimeters.
@@ -14,9 +14,9 @@ import adsk.core, adsk.fusion, traceback
 
 # ================= PARAMETERS (mm) =================
 TOP_LENGTH         = 81.0   # length of the top face
-HEIGHT             = 20.65
-DEPTH              = 24.94  # depth at the bottom (hole face to back)
-TOP_DEPTH          = 22.0   # depth at the top, against the Atari (slanted back)
+HEIGHT             = 20.21
+DEPTH              = 24.89  # depth at the bottom (hole face to back)
+TOP_DEPTH          = 20.41  # depth at the top, against the Atari (slanted back)
 LEFT_SLANT         = 5.0    # how far the bottom is inset at the left end
 RIGHT_SLANT        = 5.0    # how far the bottom is inset at the right end (0 = straight)
 
@@ -25,7 +25,7 @@ HOLE_CLEARANCE     = 0.3    # printers shrink holes slightly; added to the diame
 HOLE_COUNT         = 4
 FIRST_HOLE_X       = 18.0   # center of the 1st hole, from the left end of the top
 HOLE_SPACING       = 15.0   # center to center
-HOLE_CENTER_Y      = 10.3   # measured from the bottom
+HOLE_CENTER_Y      = 10.1   # measured from the bottom
 D_SERIES_SCREWS    = False  # True = 2 M3 holes per jack (D-series, e.g. Neutrik NF2D)
 SCREW_DIAMETER     = 3.2
 SCREW_DX           = 19.0   # horizontal distance between the 2 holes (check datasheet)

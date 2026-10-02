@@ -59,8 +59,8 @@ All dimensions are in millimeters and sit at the top of the script. Edit them an
 |---|---|---|
 | Top length | 81.0 | measured |
 | Bottom length | 71.0 (5 mm slant each end) | measured |
-| Height | 20.65 | measured |
-| Depth, bottom / top | 24.94 / 22.00 (slanted back, ~8°) | measured |
+| Height | 20.21 | measured |
+| Depth, bottom / top | 24.89 / 20.41 (slanted back, ~12.5°) | measured |
 | Wall thickness | 2.0 | chosen |
 | RCA hole diameter | 8.4 + 0.3 clearance | measured ring 8.38 mm |
 | Holes | 4, 15.0 apart, centers at x = 18 / 33 / 48 / 63 | estimated |
@@ -160,8 +160,8 @@ Todas as medidas estão em milímetros e ficam no topo do script. Edite os valor
 |---|---|---|
 | Comprimento do topo | 81,0 | medido |
 | Comprimento da base | 71,0 (inclinação de 5 mm em cada ponta) | medido |
-| Altura | 20,65 | medido |
-| Profundidade, base / topo | 24,94 / 22,00 (traseira inclinada, ~8°) | medido |
+| Altura | 20,21 | medido |
+| Profundidade, base / topo | 24,89 / 20,41 (traseira inclinada, ~12,5°) | medido |
 | Espessura da parede | 2,0 | escolhido |
 | Diâmetro do furo RCA | 8,4 + 0,3 de folga | anel medido 8,38 mm |
 | Furos | 4, espaçados 15,0, centros em x = 18 / 33 / 48 / 63 | estimado |

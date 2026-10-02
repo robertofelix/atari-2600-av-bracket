@@ -1,6 +1,6 @@
 # av_bracket_pt - suporte de conectores RCA no Autodesk Fusion
-# Medido com paquímetro: topo 81,0 | base 71,0 | altura 20,65 (0,813 in) |
-# profundidade 24,94 embaixo e 22,00 em cima (traseira inclinada ~8°) | anel RCA 8,38 mm.
+# Medido com paquímetro: topo 81,0 | base 71,0 | altura 20,21 (0,796 in) |
+# profundidade 24,89 embaixo e 20,41 em cima (traseira inclinada ~12,5°) | anel RCA 8,38 mm.
 # Posições dos furos e da aba estimadas por foto. Ajuste os valores abaixo
 # e rode o script de novo para gerar uma nova versão.
 # Todas as medidas em milímetros.
@@ -11,9 +11,9 @@ import adsk.core, adsk.fusion, traceback
 
 # ================= PARÂMETROS (mm) =================
 COMPRIMENTO_TOPO   = 81.0  # comprimento da face superior
-ALTURA             = 20.65
-LARGURA            = 24.94  # profundidade embaixo (face dos furos até a traseira)
-PROFUNDIDADE_TOPO  = 22.0   # profundidade em cima, junto ao Atari (traseira inclinada)
+ALTURA             = 20.21
+LARGURA            = 24.89  # profundidade embaixo (face dos furos até a traseira)
+PROFUNDIDADE_TOPO  = 20.41  # profundidade em cima, junto ao Atari (traseira inclinada)
 INCLINACAO_ESQ     = 5.0    # quanto a base recua na ponta esquerda
 INCLINACAO_DIR     = 5.0    # quanto a base recua na ponta direita (0 = reta)
 
@@ -22,7 +22,7 @@ FURO_FOLGA         = 0.3    # a impressora fecha um pouco os furos; somado ao di
 FURO_QTD           = 4
 FURO_PRIMEIRO_X    = 18.0   # centro do 1o furo, medido da ponta esquerda do topo
 FURO_ESPACAMENTO   = 15.0   # entre centros
-FURO_ALTURA_CENTRO = 10.3   # medido a partir da base
+FURO_ALTURA_CENTRO = 10.1   # medido a partir da base
 PARAFUSOS_D        = False  # True = 2 furos M3 por conector (padrão D-series, ex. Neutrik NF2D)
 PARAFUSO_DIAMETRO  = 3.2
 PARAFUSO_DX        = 19.0   # distância horizontal entre os 2 furos (confira no datasheet)

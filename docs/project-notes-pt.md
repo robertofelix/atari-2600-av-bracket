@@ -16,7 +16,7 @@ A peça é gerada por um **script Python do Fusion** (não é modelada à mão).
 
 1. **Corpo:** um trapézio desenhado no plano XY (comprimento × altura) e extrudado em Z (profundidade). A face frontal tem 81 mm em cima e 71 mm embaixo, porque as duas pontas são inclinadas 5 mm.
 2. **Casca:** paredes de 2 mm. A face removida é a **traseira** (oposta aos furos), então a caixa fica aberta atrás.
-3. **Traseira inclinada:** um corte em cunha no plano YZ, de modo que a profundidade vai de 24,94 mm embaixo até 22,00 mm em cima (~8,1°). Isso acompanha a traseira inclinada da carcaça do Atari. O lado mais estreito fica em cima, junto ao Atari.
+3. **Traseira inclinada:** um corte em cunha no plano YZ, de modo que a profundidade vai de 24,89 mm embaixo até 20,41 mm em cima (~12,5°). Isso acompanha a traseira inclinada da carcaça do Atari. O lado mais estreito fica em cima, junto ao Atari.
 4. **Recorte quadrado opcional:** a antiga abertura do S-Video, agora desligada (`USAR_ABERTURA = False`).
 5. **4 furos RCA:** cortados só na parede frontal.
 6. **Aba em "L":** na face superior, recuada em relação à face dos furos. O poste vertical fica à esquerda e a placa avança para a direita.
@@ -28,23 +28,23 @@ A peça é gerada por um **script Python do Fusion** (não é modelada à mão).
 | COMPRIMENTO_TOPO | 81,0 | medido |
 | comprimento da base (COMPRIMENTO_TOPO − inclinações) | 71,0 | medido |
 | INCLINACAO_ESQ / INCLINACAO_DIR | 5,0 / 5,0 | derivado de 81 vs 71 (assumido simétrico) |
-| ALTURA | 20,65 | medido (0,8130 in) |
-| LARGURA (profundidade embaixo) | 24,94 | medido |
-| PROFUNDIDADE_TOPO | 22,00 | medido |
+| ALTURA | 20,21 | medido (0,796 in) |
+| LARGURA (profundidade embaixo) | 24,89 | medido |
+| PROFUNDIDADE_TOPO | 20,41 | medido |
 | PAREDE | 2,0 | escolhido |
 | FURO_DIAMETRO | 8,4 | medido; anel frontal do RCA = 8,38 |
 | FURO_FOLGA | 0,3 | escolhido (furos impressos encolhem) |
 | FURO_QTD | 4 | escolha minha |
 | FURO_ESPACAMENTO | 15,0 | estimado a partir da original |
 | FURO_PRIMEIRO_X | 18,0 | centros em 18 / 33 / 48 / 63, grupo centralizado |
-| FURO_ALTURA_CENTRO | 10,3 | centralizado na vertical |
+| FURO_ALTURA_CENTRO | 10,1 | centralizado na vertical |
 | ABA_X | 13,0 | estimado por fotos |
 | ABA_POSTE_COMP / ABA_POSTE_ALTURA | 2,5 / 4,5 | estimado |
 | ABA_PLACA_COMP / ABA_PLACA_ESP | 16,0 / 2,5 | estimado |
 | ABA_PROFUNDIDADE / ABA_RECUO | 12,0 / 5,0 | estimado, recuo de 5 mm da face dos furos |
 | PARAFUSOS_D | False | os conectores entram por pressão, sem parafusos |
 
-As folgas foram verificadas. Os furos ocupam x = 13,7–67,4 dentro das paredes internas em cerca de 4,4–76,6. A faixa z da aba (−4,5 a 7,5) fica na frente da traseira inclinada (−9,5 em cima).
+As folgas foram verificadas. Os furos ocupam x = 13,7–67,4 dentro das paredes internas em cerca de 4,4–76,6. A faixa z da aba (−4,5 a 7,5) fica na frente da traseira inclinada (−8,0 em cima).
 
 ## Contexto importante e lições aprendidas
 
