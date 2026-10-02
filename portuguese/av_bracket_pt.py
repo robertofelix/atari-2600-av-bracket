@@ -36,6 +36,7 @@ REBAIXO_ALTURA     = 26.0
 REBAIXO_VAZADO     = True   # True = abertura atravessando a parede; False = só rebaixo
 REBAIXO_PROF       = 1.0    # usado só se REBAIXO_VAZADO = False (menor que PAREDE)
 
+USAR_ABA           = False  # TEMPORÁRIO (branch de protótipo): False = sem a aba em L, para testar o ângulo
 ABA_X              = 13.0   # início da aba, medido da ponta esquerda do topo
 ABA_POSTE_COMP     = 2.5
 ABA_POSTE_ALTURA   = 4.5
@@ -180,18 +181,19 @@ def run(context):
         extrudar(comp, todos_perfis(sk), PAREDE + 2.0, CORTE)
 
         # 5) Aba em "L", recuada da borda em direção ao centro
-        za = LARGURA / 2 - ABA_RECUO - ABA_PROFUNDIDADE
-        sk = comp.sketches.add(plano_z(comp, za))
-        sk.name = "Aba em L"
-        topo_poste = ALTURA + ABA_POSTE_ALTURA
-        topo_placa = topo_poste + ABA_PLACA_ESP
-        poligono(sk, [(ABA_X, ALTURA),
-                      (ABA_X + ABA_POSTE_COMP, ALTURA),
-                      (ABA_X + ABA_POSTE_COMP, topo_poste),
-                      (ABA_X + ABA_PLACA_COMP, topo_poste),
-                      (ABA_X + ABA_PLACA_COMP, topo_placa),
-                      (ABA_X, topo_placa)], za)
-        extrudar(comp, sk.profiles.item(0), ABA_PROFUNDIDADE, UNIR)
+        if USAR_ABA:
+            za = LARGURA / 2 - ABA_RECUO - ABA_PROFUNDIDADE
+            sk = comp.sketches.add(plano_z(comp, za))
+            sk.name = "Aba em L"
+            topo_poste = ALTURA + ABA_POSTE_ALTURA
+            topo_placa = topo_poste + ABA_PLACA_ESP
+            poligono(sk, [(ABA_X, ALTURA),
+                          (ABA_X + ABA_POSTE_COMP, ALTURA),
+                          (ABA_X + ABA_POSTE_COMP, topo_poste),
+                          (ABA_X + ABA_PLACA_COMP, topo_poste),
+                          (ABA_X + ABA_PLACA_COMP, topo_placa),
+                          (ABA_X, topo_placa)], za)
+            extrudar(comp, sk.profiles.item(0), ABA_PROFUNDIDADE, UNIR)
 
         app.activeViewport.fit()
         ui.messageBox("Peça criada! Confira as medidas e exporte com "
