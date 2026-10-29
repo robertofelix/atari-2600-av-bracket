@@ -57,14 +57,15 @@ All dimensions are in millimeters and sit at the top of the script. Edit them an
 
 | Parameter | Value | Source |
 |---|---|---|
-| Top length | 81.0 | measured |
-| Bottom length | 71.0 (5 mm slant each end) | measured |
+| Top length | 75.2 (81.0 minus 5.8 trimmed at the opening end) | measured |
+| Bottom length | 65.2 (5 mm slant each end) | measured |
 | Height | 20.21 | measured |
 | Depth, bottom / top | 24.89 / 20.41 (slanted back, ~12.5°) | measured |
 | Wall thickness | 2.0 | chosen |
 | RCA hole diameter | 8.4 + 0.3 clearance | measured ring 8.38 mm |
-| Holes | 4, 15.0 apart, centers at x = 18 / 33 / 48 / 63 | estimated |
-| L tab | 16.0 × 12.0 plate, 2.5 thick, set back 5.0 | estimated |
+| Holes | 4, spread evenly: 7.08 mm gaps, 15.78 apart, centers at x = 19.73 / 35.51 / 51.29 / 67.07 | calculated |
+| L tab | 9.15 long × 10.0 wide plate, 2.5 thick, 3.10 post height, centered on the 12.10 mm opening edge | measured |
+| Top opening (cable path) | 12.10 × 12.10 square, 4.99 from the front and 9.30 from the right end, plus a 5.66 mm arm that ends 3.45 from the right end | measured |
 
 Optional switches in the script: a square cutout (for example, S-Video) and M3 screw holes for D-series jacks. Both are off by default.
 
@@ -158,14 +159,15 @@ Todas as medidas estão em milímetros e ficam no topo do script. Edite os valor
 
 | Parâmetro | Valor | Origem |
 |---|---|---|
-| Comprimento do topo | 81,0 | medido |
-| Comprimento da base | 71,0 (inclinação de 5 mm em cada ponta) | medido |
+| Comprimento do topo | 75,2 (81,0 menos 5,8 cortados na ponta da abertura) | medido |
+| Comprimento da base | 65,2 (inclinação de 5 mm em cada ponta) | medido |
 | Altura | 20,21 | medido |
 | Profundidade, base / topo | 24,89 / 20,41 (traseira inclinada, ~12,5°) | medido |
 | Espessura da parede | 2,0 | escolhido |
 | Diâmetro do furo RCA | 8,4 + 0,3 de folga | anel medido 8,38 mm |
-| Furos | 4, espaçados 15,0, centros em x = 18 / 33 / 48 / 63 | estimado |
-| Aba em L | placa 16,0 × 12,0, espessura 2,5, recuo de 5,0 | estimado |
+| Furos | 4, distribuídos por igual: folgas de 7,08 mm, 15,78 entre centros, centros em x = 19,73 / 35,51 / 51,29 / 67,07 | calculado |
+| Aba em L | placa de 9,15 de comprimento × 10,0 de largura, espessura 2,5, pino de 3,10 de altura, centralizada na aresta de 12,10 mm da abertura | medido |
+| Abertura de cima (caminho do cabo) | quadrado de 12,10 × 12,10, a 4,99 da frente e 9,30 da ponta direita, mais um braço de 5,66 mm que termina a 3,45 da ponta direita | medido |
 
 Opções no script: um recorte quadrado (por exemplo, S-Video) e furos M3 para conectores série D. As duas vêm desligadas.
 
