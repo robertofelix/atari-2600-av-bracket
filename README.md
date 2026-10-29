@@ -8,7 +8,7 @@ Parametric, 3D-printable bracket for the **Atari 2600 AV mod**. It holds **4 RCA
 
 ## What it is
 
-A small hollow bracket that clips under the back of an Atari 2600. The jacks press-fit into the front wall, the flat ribbon cable from the mod runs into the box, and an "L" tab on top acts as a clip/hook.
+A small hollow bracket that clips under the back of an Atari 2600. The jacks press-fit into the front wall, the flat ribbon cable from the mod runs into the box through an opening in the top face, and an "L" hook next to that opening locks the bracket to the console.
 
 The design is based on a commercial part that holds 1 S-Video and 3 RCA jacks. This version replaces the S-Video cutout with a fourth RCA hole.
 
@@ -22,7 +22,7 @@ Made for these Atari 2600 models:
 
 Other models may have a different rear shape, so check the measurements before printing.
 
-**Status:** work in progress. The geometry uses caliper measurements for the main dimensions. Tab and hole positions are estimated from photos, and the latest reprint has not been fit-tested yet.
+**Status:** working prototype, refined through test prints. The dimensions come from caliper measurements of the console and of the printed parts. Ready-to-print files are in [`exports/`](exports/).
 
 ## Repository layout
 
@@ -31,7 +31,7 @@ atari-2600-av-bracket/
 ├── english/       Fusion script (English): av_bracket_en
 ├── portuguese/    Fusion script (Portuguese): av_bracket_pt
 ├── docs/          Project notes (EN / PT)
-├── exports/       STL / STEP files
+├── exports/       Ready-to-print STL and STEP files
 └── LICENSE
 ```
 
@@ -57,42 +57,48 @@ All dimensions are in millimeters and sit at the top of the script. Edit them an
 
 | Parameter | Value | Source |
 |---|---|---|
-| Top length | 75.2 (81.0 minus 5.8 trimmed at the opening end) | measured |
-| Bottom length | 65.2 (5 mm slant each end) | measured |
+| Top length | 76.2 (81.0 minus 4.8 trimmed at the opening end) | measured |
+| Bottom length | 66.2 (5 mm slant each end) | measured |
 | Height | 20.21 | measured |
-| Depth, bottom / top | 24.89 / 20.41 (slanted back, ~12.5°) | measured |
+| Depth, bottom / top | 24.89 / 19.30 (slanted back, ~15.5°) | measured |
 | Wall thickness | 2.0 | chosen |
 | RCA hole diameter | 8.4 + 0.3 clearance | measured ring 8.38 mm |
-| Holes | 4, spread evenly: 7.08 mm gaps, 15.78 apart, centers at x = 19.73 / 35.51 / 51.29 / 67.07 | calculated |
-| L tab | 9.15 long × 10.0 wide plate, 2.5 thick, 3.10 post height, centered on the 12.10 mm opening edge | measured |
-| Top opening (cable path) | 12.10 × 12.10 square, 4.99 from the front and 9.30 from the right end, plus a 5.66 mm arm that ends 3.45 from the right end | measured |
+| Holes | 4, spread evenly: 7.28 mm gaps, 15.98 apart, centers at x = 18.93 / 34.91 / 50.89 / 66.87 | calculated |
+| L tab | 9.15 long × 6.0 wide plate, 2.5 thick, 3.10 post height, centered on the 12.10 mm opening edge, so its front is 5.75 from the front edge | measured |
+| Top opening (cable path) | 12.10 × 12.10 square, 2.70 from the front and 4.50 from the right end (the 5.66 mm arm is off by default) | measured |
 
-Optional switches in the script: a square cutout (for example, S-Video) and M3 screw holes for D-series jacks. Both are off by default.
+Optional switches in the script (all off or on as listed): `DISTRIBUTE_HOLES` (on) spaces the RCA holes evenly, `USE_OPEN_ARM` (off) adds an arm to the opening toward the end, `USE_TAB` (on) builds the L hook, plus a square front cutout (for example, S-Video) and M3 screw holes for D-series jacks, both off. "Right end" means the end seen on the right when you look from above with the RCA face at the top; that is the end with the opening.
 
 ## Print settings
 
 - **Orientation:** RCA-hole face down on the bed, open back facing up. The holes print round with no support.
-- **Supports:** only under the L tab.
-- **PLA starting point:** 0.2 mm layers, 200–210 °C nozzle, 60 °C bed, 3 walls, 15–20% infill. A brim helps the small tab area.
+- **Supports:** none needed. The L hook has the same cross-section along the print direction. Check the layer preview for the 12.10 mm bridge over the opening.
+- **PLA starting point:** 0.2 mm layers, 200–210 °C nozzle, 60 °C bed, 3 walls, 15–20% infill. A brim helps the first layers.
 
-## Export an STL
+## Ready-to-print files
 
-Right-click the body in the Browser, choose **Save As Mesh**, then STL (Binary), Millimeter, Refinement High. Save it in `exports/`.
+- [`exports/av_bracket_print.stl`](exports/av_bracket_print.stl): oriented for printing, with the RCA face down.
+- [`exports/av_bracket.stl`](exports/av_bracket.stl): same part in the Fusion orientation.
+- [`exports/av_bracket.step`](exports/av_bracket.step): exact geometry for other CAD tools.
+
+These files were generated from the same parameters as the scripts. To export your own from Fusion: right-click the body in the Browser, choose **Save As Mesh**, then STL (Binary), Millimeter, Refinement High.
 
 ## Tuning the fit
 
 - The jacks only press-fit, so hole size matters most. Print a small test plate with 8.2 / 8.4 / 8.6 mm holes before reprinting the whole part.
-- If the bracket doesn't sit flush against the Atari, change the top depth in 0.5 mm steps.
+- If the bracket doesn't sit flush against the Atari, change the top depth (`TOP_DEPTH`) in 0.5 mm steps. The back slant follows from it.
+- The L hook position follows the opening, so move the opening (`OPEN_FROM_FRONT`, `OPEN_FROM_RIGHT`) and the hook comes with it.
 - Check that your caliper shows **mm**, not inches, and zero it with the jaws closed.
 
 ## Roadmap
 
-- [ ] Reprint with the slanted back and check the fit
-- [ ] Fine-tune hole fit and top depth
-- [ ] Confirm tab position with calipers
-- [ ] Auto-export STL/STEP to `exports/`
-- [ ] Embossed labels under each jack (Y, C, Audio)
+- [x] Slanted back matched to the Atari
+- [x] Opening in the top face and L hook, from measurements
+- [x] Evenly spaced RCA holes
 - [x] Portuguese README
+- [ ] Fine-tune the hole fit with a test plate (8.2 / 8.4 / 8.6 mm)
+- [ ] Auto-export STL/STEP from the script
+- [ ] Embossed labels under each jack (Y, C, Audio)
 
 ## More details
 
@@ -110,7 +116,7 @@ Suporte paramétrico e imprimível em 3D para o **AV mod do Atari 2600**. Ele se
 
 ## O que é
 
-Um pequeno suporte oco que encaixa embaixo da traseira de um Atari 2600. Os conectores entram por pressão na parede frontal, o cabo flat do mod passa para dentro da caixa, e uma aba em "L" na parte de cima funciona como clipe/gancho.
+Um pequeno suporte oco que encaixa embaixo da traseira de um Atari 2600. Os conectores entram por pressão na parede frontal, o cabo flat do mod passa para dentro da caixa por uma abertura na face de cima, e um gancho em "L" ao lado dessa abertura prende o suporte ao console.
 
 O projeto é baseado numa peça comercial que segura 1 S-Video e 3 RCA. Esta versão troca o recorte do S-Video por um quarto furo RCA.
 
@@ -124,7 +130,7 @@ Feito para estes modelos de Atari 2600:
 
 Outros modelos podem ter a traseira com formato diferente, então confira as medidas antes de imprimir.
 
-**Status:** em andamento. A geometria usa medidas reais com paquímetro nas dimensões principais. As posições da aba e dos furos são estimadas por foto, e a última reimpressão ainda não foi testada no encaixe.
+**Status:** protótipo funcional, refinado com impressões de teste. As dimensões vêm de medidas com paquímetro do console e das peças impressas. Os arquivos prontos para imprimir estão em [`exports/`](exports/).
 
 ## Estrutura do repositório
 
@@ -133,7 +139,7 @@ atari-2600-av-bracket/
 ├── english/       Script do Fusion (inglês): av_bracket_en
 ├── portuguese/    Script do Fusion (português): av_bracket_pt
 ├── docs/          Notas do projeto (EN / PT)
-├── exports/       Arquivos STL / STEP
+├── exports/       Arquivos STL e STEP prontos para imprimir
 └── LICENSE
 ```
 
@@ -159,42 +165,48 @@ Todas as medidas estão em milímetros e ficam no topo do script. Edite os valor
 
 | Parâmetro | Valor | Origem |
 |---|---|---|
-| Comprimento do topo | 75,2 (81,0 menos 5,8 cortados na ponta da abertura) | medido |
-| Comprimento da base | 65,2 (inclinação de 5 mm em cada ponta) | medido |
+| Comprimento do topo | 76,2 (81,0 menos 4,8 cortados na ponta da abertura) | medido |
+| Comprimento da base | 66,2 (inclinação de 5 mm em cada ponta) | medido |
 | Altura | 20,21 | medido |
-| Profundidade, base / topo | 24,89 / 20,41 (traseira inclinada, ~12,5°) | medido |
+| Profundidade, base / topo | 24,89 / 19,30 (traseira inclinada, ~15,5°) | medido |
 | Espessura da parede | 2,0 | escolhido |
 | Diâmetro do furo RCA | 8,4 + 0,3 de folga | anel medido 8,38 mm |
-| Furos | 4, distribuídos por igual: folgas de 7,08 mm, 15,78 entre centros, centros em x = 19,73 / 35,51 / 51,29 / 67,07 | calculado |
-| Aba em L | placa de 9,15 de comprimento × 10,0 de largura, espessura 2,5, pino de 3,10 de altura, centralizada na aresta de 12,10 mm da abertura | medido |
-| Abertura de cima (caminho do cabo) | quadrado de 12,10 × 12,10, a 4,99 da frente e 9,30 da ponta direita, mais um braço de 5,66 mm que termina a 3,45 da ponta direita | medido |
+| Furos | 4, distribuídos por igual: folgas de 7,28 mm, 15,98 entre centros, centros em x = 18,93 / 34,91 / 50,89 / 66,87 | calculado |
+| Aba em L | placa de 9,15 de comprimento × 6,0 de largura, espessura 2,5, pino de 3,10 de altura, centralizada na aresta de 12,10 mm da abertura, com a frente a 5,75 da borda da frente | medido |
+| Abertura de cima (caminho do cabo) | quadrado de 12,10 × 12,10, a 2,70 da frente e 4,50 da ponta direita (o braço de 5,66 mm vem desligado) | medido |
 
-Opções no script: um recorte quadrado (por exemplo, S-Video) e furos M3 para conectores série D. As duas vêm desligadas.
+Chaves no script: `DISTRIBUIR_FUROS` (ligada) espaça os furos RCA por igual, `USAR_BRACO` (desligada) acrescenta um braço na abertura até a ponta, `USAR_ABA` (ligada) cria o gancho em L, e há também um recorte quadrado na frente (por exemplo, S-Video) e furos M3 para conectores série D, ambos desligados. "Ponta direita" é a ponta que aparece à direita vista de cima com a face RCA no topo; é a ponta da abertura.
 
 ## Configuração de impressão
 
 - **Orientação:** face dos furos RCA para baixo na mesa, traseira aberta para cima. Os furos saem redondos sem suporte.
-- **Suportes:** só embaixo da aba em L.
-- **Ponto de partida para PLA:** camadas de 0,2 mm, bico 200–210 °C, mesa 60 °C, 3 paredes, preenchimento 15–20%. Brim ajuda na área pequena da aba.
+- **Suportes:** nenhum. O gancho em L tem a mesma seção ao longo do sentido da impressão. Veja no preview das camadas a ponte de 12,10 mm sobre a abertura.
+- **Ponto de partida para PLA:** camadas de 0,2 mm, bico 200–210 °C, mesa 60 °C, 3 paredes, preenchimento 15–20%. Brim ajuda nas primeiras camadas.
 
-## Exportar um STL
+## Arquivos prontos para imprimir
 
-Clique com o botão direito no corpo no Browser, escolha **Save As Mesh**, depois STL (Binary), Millimeter, Refinement High. Salve em `exports/`.
+- [`exports/av_bracket_print.stl`](exports/av_bracket_print.stl): orientado para imprimir, com a face RCA para baixo.
+- [`exports/av_bracket.stl`](exports/av_bracket.stl): a mesma peça na orientação do Fusion.
+- [`exports/av_bracket.step`](exports/av_bracket.step): geometria exata para outros programas de CAD.
+
+Esses arquivos foram gerados a partir dos mesmos parâmetros dos scripts. Para exportar o seu no Fusion: botão direito no corpo no Browser, **Save As Mesh**, depois STL (Binary), Millimeter, Refinement High.
 
 ## Ajustar o encaixe
 
 - Os conectores entram só por pressão, então o tamanho do furo é o mais importante. Imprima uma plaquinha de teste com furos de 8,2 / 8,4 / 8,6 mm antes de reimprimir a peça inteira.
-- Se o suporte não encostar direito no Atari, mude a profundidade do topo em passos de 0,5 mm.
+- Se o suporte não encostar direito no Atari, mude a profundidade do topo (`PROFUNDIDADE_TOPO`) em passos de 0,5 mm. A inclinação da traseira vem dela.
+- A posição do gancho em L acompanha a abertura. Mexa na abertura (`ABERTURA_DA_FRENTE`, `ABERTURA_DA_DIREITA`) e o gancho vai junto.
 - Confira se o paquímetro mostra **mm** (não polegadas) e zere-o com as garras fechadas.
 
 ## Próximos passos
 
-- [ ] Reimprimir com a traseira inclinada e conferir o encaixe
-- [ ] Ajustar o encaixe dos furos e a profundidade do topo
-- [ ] Confirmar a posição da aba com o paquímetro
-- [ ] Exportar STL/STEP automaticamente para `exports/`
-- [ ] Textos em relevo embaixo de cada conector (Y, C, Audio)
+- [x] Traseira inclinada ajustada ao Atari
+- [x] Abertura na face de cima e gancho em L, a partir de medidas
+- [x] Furos RCA distribuídos por igual
 - [x] README em português
+- [ ] Ajustar o encaixe dos furos com uma plaquinha de teste (8,2 / 8,4 / 8,6 mm)
+- [ ] Exportar STL/STEP automaticamente pelo script
+- [ ] Textos em relevo embaixo de cada conector (Y, C, Audio)
 
 ## Mais detalhes
 

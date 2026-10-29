@@ -1,6 +1,6 @@
 # av_bracket_pt - suporte de conectores RCA no Autodesk Fusion
 # Medido com paquímetro: topo 81,0 | base 71,0 | altura 20,21 (0,796 in) |
-# profundidade 24,89 embaixo e 20,41 em cima (traseira inclinada ~12,5°) | anel RCA 8,38 mm.
+# profundidade 24,89 embaixo e 19,30 em cima (traseira inclinada ~15,5°) | anel RCA 8,38 mm.
 # Posições dos furos e da aba estimadas por foto. Ajuste os valores abaixo
 # e rode o script de novo para gerar uma nova versão.
 # Todas as medidas em milímetros.
@@ -11,10 +11,10 @@ import adsk.core, adsk.fusion, traceback
 
 # ================= PARÂMETROS (mm) =================
 COMPRIMENTO_TOPO   = 81.0  # comprimento da face superior, antes de ENCURTAR_PONTA
-ENCURTAR_PONTA     = 5.8   # encurta a peça na ponta da abertura (x = 0). A inclinação de 5 mm da ponta anda para dentro sem mudar
+ENCURTAR_PONTA     = 4.8   # encurta a peça na ponta da abertura (x = 0). A inclinação de 5 mm da ponta anda para dentro sem mudar
 ALTURA             = 20.21
 LARGURA            = 24.89  # profundidade embaixo (face dos furos até a traseira)
-PROFUNDIDADE_TOPO  = 20.41  # profundidade em cima, junto ao Atari (traseira inclinada)
+PROFUNDIDADE_TOPO  = 19.30  # profundidade em cima, junto ao Atari (traseira inclinada)
 INCLINACAO_ESQ     = 5.0    # quanto a base recua na ponta esquerda
 INCLINACAO_DIR     = 5.0    # quanto a base recua na ponta direita (0 = reta)
 
@@ -39,7 +39,7 @@ REBAIXO_VAZADO     = True   # True = abertura atravessando a parede; False = só
 REBAIXO_PROF       = 1.0    # usado só se REBAIXO_VAZADO = False (menor que PAREDE)
 
 USAR_ABERTURA_TOPO = True   # abertura na face de cima (caminho do cabo), veja o desenho no README
-ABERTURA_DA_FRENTE = 4.99   # da borda da frente (face RCA) até o lado perto do quadrado
+ABERTURA_DA_FRENTE = 2.70   # da borda da frente (face RCA) até o lado perto do quadrado
 ABERTURA_LARGURA   = 12.10  # quadrado, no comprimento (esquerda para direita)
 ABERTURA_PROF      = 12.10  # quadrado, na profundidade (frente para trás)
 ABERTURA_DA_DIREITA = 9.30  # da ponta da peça até o lado do quadrado mais perto dela (a ponta x = 0: a DIREITA vista de cima com a face RCA no topo, a ESQUERDA de frente para a face RCA)
@@ -52,7 +52,7 @@ ABA_POSTE_COMP     = 2.5
 ABA_POSTE_ALTURA   = 3.10
 ABA_PLACA_COMP     = 9.15   # parte de cima do "L" (fica em balanço)
 ABA_PLACA_ESP      = 2.5
-ABA_PROFUNDIDADE   = 10.0   # medida no sentido da largura da caixa; centralizada na aresta de 12,10 mm da abertura
+ABA_PROFUNDIDADE   = 6.0    # medida no sentido da largura da caixa; centralizada na aresta de 12,10 mm da abertura
 # A aba acompanha a abertura: começa na aresta esquerda de 12,10 mm da abertura e
 # segue para o centro, sobre a face de cima. A frente dela fica alinhada com a da abertura.
 

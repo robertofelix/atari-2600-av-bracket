@@ -2,7 +2,7 @@
 # Builds the part in Autodesk Fusion.
 #
 # Measured with calipers: top 81.0 | bottom 71.0 | height 20.21 (0.796 in) |
-# depth 24.89 at the bottom and 20.41 at the top (slanted back, ~12.5 deg) | RCA ring 8.38 mm.
+# depth 24.89 at the bottom and 19.30 at the top (slanted back, ~15.5 deg) | RCA ring 8.38 mm.
 # Hole positions were estimated from photos. Positions along the length are measured from the
 # original x = 0 end; TRIM_END shortens that end without moving them. Adjust the values below
 # and run the script again to generate a new version.
@@ -15,10 +15,10 @@ import adsk.core, adsk.fusion, traceback
 
 # ================= PARAMETERS (mm) =================
 TOP_LENGTH         = 81.0   # length of the top face, before TRIM_END
-TRIM_END           = 5.8    # shortens the part at the opening end (x = 0). The 5 mm end slant moves inward unchanged
+TRIM_END           = 4.8    # shortens the part at the opening end (x = 0). The 5 mm end slant moves inward unchanged
 HEIGHT             = 20.21
 DEPTH              = 24.89  # depth at the bottom (hole face to back)
-TOP_DEPTH          = 20.41  # depth at the top, against the Atari (slanted back)
+TOP_DEPTH          = 19.30  # depth at the top, against the Atari (slanted back)
 LEFT_SLANT         = 5.0    # how far the bottom is inset at the left end
 RIGHT_SLANT        = 5.0    # how far the bottom is inset at the right end (0 = straight)
 
@@ -43,7 +43,7 @@ CUTOUT_THROUGH     = True   # True = opening through the wall; False = shallow p
 CUTOUT_DEPTH       = 1.0    # only used if CUTOUT_THROUGH = False (less than WALL)
 
 USE_TOP_OPENING    = True   # opening in the top face (cable path), see the diagram in the README
-OPEN_FROM_FRONT    = 4.99   # front edge (RCA face) to the near side of the square
+OPEN_FROM_FRONT    = 2.70   # front edge (RCA face) to the near side of the square
 OPEN_WIDTH         = 12.10  # square, along the length (left to right)
 OPEN_DEPTH         = 12.10  # square, along the depth (front to back)
 OPEN_FROM_RIGHT    = 9.30   # end of the part to the near side of the square (the x = 0 end: the RIGHT end seen from above with the RCA face at the top, the LEFT end when facing the RCA face)
@@ -56,7 +56,7 @@ TAB_POST_LENGTH    = 2.5
 TAB_POST_HEIGHT    = 3.10
 TAB_PLATE_LENGTH   = 9.15   # upper part of the "L" (overhang), from the opening edge; includes the post
 TAB_PLATE_THICK    = 2.5
-TAB_DEPTH          = 10.0   # measured along the depth of the box; centered on the 12.10 mm opening edge
+TAB_DEPTH          = 6.0    # measured along the depth of the box; centered on the 12.10 mm opening edge
 # The L follows the opening: it starts at the opening's 12.10 mm left edge and runs
 # toward the center, over the top face. Its front edge lines up with the opening's.
 
