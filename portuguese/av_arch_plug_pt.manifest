@@ -1,0 +1,11 @@
+{
+	"autodeskProduct": "Fusion360",
+	"type": "script",
+	"author": "Roberto Felix",
+	"description": {
+		"": "Fecho do arco para o suporte AV do Atari 2600"
+	},
+	"supportedOS": "windows|mac",
+	"editEnabled": true,
+	"iconFilename": "ScriptIcon.svg"
+}

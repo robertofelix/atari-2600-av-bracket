@@ -3,13 +3,12 @@
 #
 # Measured with calipers: top 81.0 | bottom 71.0 | height 20.21 (0.796 in) |
 # depth 24.89 at the bottom and 19.30 at the top (slanted back, ~15.5 deg) | RCA ring 8.38 mm.
-# Hole positions were estimated from photos. Positions along the length are measured from the
+# Positions along the length are measured from the
 # original x = 0 end; TRIM_END shortens that end without moving them. Adjust the values below
 # and run the script again to generate a new version.
 # All dimensions in millimeters.
 #
-# PRINTING: place the face with the RCA holes on the bed (open side up).
-# Enable supports only under the L tab plate.
+# PRINTING: place the face with the RCA holes on the bed (open side up). No supports needed.
 
 import adsk.core, adsk.fusion, traceback
 

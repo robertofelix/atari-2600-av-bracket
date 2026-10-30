@@ -28,14 +28,14 @@ Other models may have a different rear shape, so check the measurements before p
 
 ```
 atari-2600-av-bracket/
-├── english/       Fusion script (English): av_bracket_en
-├── portuguese/    Fusion script (Portuguese): av_bracket_pt
+├── english/       Fusion scripts (English): av_bracket_en, av_arch_plug_en
+├── portuguese/    Fusion scripts (Portuguese): av_bracket_pt, av_arch_plug_pt
 ├── docs/          Project notes (EN / PT)
 ├── exports/       Ready-to-print STL and STEP files
 └── LICENSE
 ```
 
-Both scripts build the same part. Only the language of the comments and parameter names differs.
+The English and Portuguese scripts build the same parts. Only the language of the comments and parameter names differs. `av_bracket_*` builds the bracket and `av_arch_plug_*` builds the arch closure.
 
 ## Requirements
 
@@ -44,7 +44,7 @@ Both scripts build the same part. Only the language of the comments and paramete
 
 ## Run the script
 
-1. Copy the three files from `english/` (or `portuguese/`) into a folder named `av_bracket_en` (or `av_bracket_pt`). The folder, `.py` and `.manifest` names must match.
+1. Copy the script's `.py` and `.manifest` files and `ScriptIcon.svg` from `english/` (or `portuguese/`) into a folder named like the script, for example `av_bracket_en` or `av_arch_plug_pt`. The folder, `.py` and `.manifest` names must match.
 2. Put that folder in Fusion's Scripts directory:
    `~/Library/Application Support/Autodesk/Autodesk Fusion 360/API/Scripts/` on Mac (Finder: Cmd+Shift+G).
 3. In Fusion, press **Shift+S** (Utilities > Add-Ins > Scripts and Add-Ins), select the script and click **Run**.
@@ -80,8 +80,22 @@ Optional switches in the script (all off or on as listed): `DISTRIBUTE_HOLES` (o
 - [`exports/av_bracket_print.stl`](exports/av_bracket_print.stl): oriented for printing, with the RCA face down.
 - [`exports/av_bracket.stl`](exports/av_bracket.stl): same part in the Fusion orientation.
 - [`exports/av_bracket.step`](exports/av_bracket.step): exact geometry for other CAD tools.
+- [`exports/av_bracket_arch_plug.stl`](exports/av_bracket_arch_plug.stl) and [`.step`](exports/av_bracket_arch_plug.step): the arch closure, see below.
 
 These files were generated from the same parameters as the scripts. To export your own from Fusion: right-click the body in the Browser, choose **Save As Mesh**, then STL (Binary), Millimeter, Refinement High.
+
+## Arch closure
+
+The console's rear edge has an arched notch, and the closure fills it. It is a separate part that goes in from inside the console. Its arm runs along the inner face of the wall and rests against the base of the L hook, which locks the bracket in place (a sliding mechanism). Print it flat, with the protrusion and the arm on the bed, no supports.
+
+| Part | Size (mm) |
+|---|---|
+| Body (goes through the wall) | 5.70 base, 4.60 top, 7.75 high, 3.28 long (the wall thickness) |
+| Protrusion (inside, against the wall) | 6.33 × 8.00, 3.22 thick |
+| Arm | 10.70 from the notch edge (13.545 from the arch center), 2.5 high, 3.22 thick |
+| Whole part | 16.71 × 8.00 × 6.50 |
+
+The notch measures 5.69 × 8.02, so the body has only about 0.01 mm of clearance in width. Sand it lightly if it will not go in. It is built by its own script, `av_arch_plug_en` (or `av_arch_plug_pt`), and exported as STL and STEP.
 
 ## Tuning the fit
 
@@ -95,6 +109,7 @@ These files were generated from the same parameters as the scripts. To export yo
 - [x] Slanted back matched to the Atari
 - [x] Opening in the top face and L hook, from measurements
 - [x] Evenly spaced RCA holes
+- [x] Arch closure with sliding arm
 - [x] Portuguese README
 - [ ] Fine-tune the hole fit with a test plate (8.2 / 8.4 / 8.6 mm)
 - [ ] Auto-export STL/STEP from the script
@@ -136,14 +151,14 @@ Outros modelos podem ter a traseira com formato diferente, então confira as med
 
 ```
 atari-2600-av-bracket/
-├── english/       Script do Fusion (inglês): av_bracket_en
-├── portuguese/    Script do Fusion (português): av_bracket_pt
+├── english/       Scripts do Fusion (inglês): av_bracket_en, av_arch_plug_en
+├── portuguese/    Scripts do Fusion (português): av_bracket_pt, av_arch_plug_pt
 ├── docs/          Notas do projeto (EN / PT)
 ├── exports/       Arquivos STL e STEP prontos para imprimir
 └── LICENSE
 ```
 
-Os dois scripts geram a mesma peça. Só muda o idioma dos comentários e dos nomes dos parâmetros.
+Os scripts em inglês e em português geram as mesmas peças. Só muda o idioma dos comentários e dos nomes dos parâmetros. O `av_bracket_*` cria o suporte e o `av_arch_plug_*` cria o fecho do arco.
 
 ## Requisitos
 
@@ -152,7 +167,7 @@ Os dois scripts geram a mesma peça. Só muda o idioma dos comentários e dos no
 
 ## Rodar o script
 
-1. Copie os três arquivos de `portuguese/` (ou `english/`) para uma pasta chamada `av_bracket_pt` (ou `av_bracket_en`). O nome da pasta, do `.py` e do `.manifest` precisa ser o mesmo.
+1. Copie o `.py`, o `.manifest` do script e o `ScriptIcon.svg` de `portuguese/` (ou `english/`) para uma pasta com o nome do script, por exemplo `av_bracket_pt` ou `av_arch_plug_en`. O nome da pasta, do `.py` e do `.manifest` precisa ser o mesmo.
 2. Coloque essa pasta no diretório de Scripts do Fusion:
    `~/Library/Application Support/Autodesk/Autodesk Fusion 360/API/Scripts/` no Mac (Finder: Cmd+Shift+G).
 3. No Fusion, pressione **Shift+S** (Utilities > Add-Ins > Scripts and Add-Ins), selecione o script e clique em **Run**.
@@ -188,8 +203,22 @@ Chaves no script: `DISTRIBUIR_FUROS` (ligada) espaça os furos RCA por igual, `U
 - [`exports/av_bracket_print.stl`](exports/av_bracket_print.stl): orientado para imprimir, com a face RCA para baixo.
 - [`exports/av_bracket.stl`](exports/av_bracket.stl): a mesma peça na orientação do Fusion.
 - [`exports/av_bracket.step`](exports/av_bracket.step): geometria exata para outros programas de CAD.
+- [`exports/av_bracket_arch_plug.stl`](exports/av_bracket_arch_plug.stl) e [`.step`](exports/av_bracket_arch_plug.step): o fecho do arco, veja abaixo.
 
 Esses arquivos foram gerados a partir dos mesmos parâmetros dos scripts. Para exportar o seu no Fusion: botão direito no corpo no Browser, **Save As Mesh**, depois STL (Binary), Millimeter, Refinement High.
+
+## Fecho do arco
+
+A borda traseira do console tem um recorte em arco, e o fecho preenche esse recorte. É uma peça separada, que entra por dentro do console. O braço corre rente à face interna da parede e encosta na base do gancho em L, o que trava o suporte (um mecanismo deslizante). Imprima deitada, com a protrusão e o braço na mesa, sem suportes.
+
+| Parte | Medida (mm) |
+|---|---|
+| Corpo (atravessa a parede) | base 5,70, topo 4,60, altura 7,75, comprimento 3,28 (a espessura da parede) |
+| Protrusão (por dentro, contra a parede) | 6,33 × 8,00, com 3,22 de espessura |
+| Braço | 10,70 da borda do recorte (13,545 do centro do arco), 2,5 de altura e 3,22 de espessura |
+| Peça toda | 16,71 × 8,00 × 6,50 |
+
+O recorte mede 5,69 × 8,02, então o corpo tem só uns 0,01 mm de folga na largura. Lixe de leve se não entrar. Ela é criada por um script próprio, o `av_arch_plug_pt` (ou `av_arch_plug_en`), e exportada em STL e STEP.
 
 ## Ajustar o encaixe
 
@@ -203,6 +232,7 @@ Esses arquivos foram gerados a partir dos mesmos parâmetros dos scripts. Para e
 - [x] Traseira inclinada ajustada ao Atari
 - [x] Abertura na face de cima e gancho em L, a partir de medidas
 - [x] Furos RCA distribuídos por igual
+- [x] Fecho do arco com braço deslizante
 - [x] README em português
 - [ ] Ajustar o encaixe dos furos com uma plaquinha de teste (8,2 / 8,4 / 8,6 mm)
 - [ ] Exportar STL/STEP automaticamente pelo script

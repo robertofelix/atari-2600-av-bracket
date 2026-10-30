@@ -1,11 +1,10 @@
 # av_bracket_pt - suporte de conectores RCA no Autodesk Fusion
 # Medido com paquímetro: topo 81,0 | base 71,0 | altura 20,21 (0,796 in) |
 # profundidade 24,89 embaixo e 19,30 em cima (traseira inclinada ~15,5°) | anel RCA 8,38 mm.
-# Posições dos furos e da aba estimadas por foto. Ajuste os valores abaixo
+# Ajuste os valores abaixo
 # e rode o script de novo para gerar uma nova versão.
 # Todas as medidas em milímetros.
-# IMPRESSÃO: apoie na mesa a face com os furos RCA (abertura para cima).
-# Ative suporte só embaixo da placa da aba em L.
+# IMPRESSÃO: apoie na mesa a face com os furos RCA (abertura para cima). Não precisa de suporte.
 
 import adsk.core, adsk.fusion, traceback
 

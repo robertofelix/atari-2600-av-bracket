@@ -4,7 +4,7 @@ Notas de trabalho de um pequeno suporte impresso em 3D que segura os conectores 
 
 **Setup:** Mac, Creality Ender 5 S1 (bico 0,4 mm, volume de impressão 220×220×280 mm, mesa PEI texturizada), PLA, fatiado no Creality Print.
 
-O script Python em `portuguese/av_bracket_pt.py` (com `av_bracket_pt.manifest`) é a fonte da verdade para a geometria.
+Os scripts Python em `portuguese/` (`av_bracket_pt` para o suporte, `av_arch_plug_pt` para o fecho do arco, cada um com o seu `.manifest`) são a fonte da verdade para a geometria.
 
 ## Objetivo
 
@@ -78,12 +78,21 @@ As folgas foram conferidas no modelo gerado: o gancho em L (z a partir da borda 
 
 ```
 atari-2600-av-bracket/
-├── english/          av_bracket_en.py, .manifest, ScriptIcon.svg
-├── portuguese/       av_bracket_pt.py, .manifest, ScriptIcon.svg
+├── english/          av_bracket_en, av_arch_plug_en (.py, .manifest), ScriptIcon.svg
+├── portuguese/       av_bracket_pt, av_arch_plug_pt (.py, .manifest), ScriptIcon.svg
 ├── docs/
-├── exports/          av_bracket_print.stl (orientado para imprimir), av_bracket.stl, av_bracket.step
+├── exports/          av_bracket_print.stl (orientado para imprimir), av_bracket.stl/.step, av_bracket_arch_plug.stl/.step
 └── README.md
 ```
+
+## Fecho do arco
+
+Peça separada que preenche o recorte em arco na borda traseira do console. Entra por dentro, e o braço encosta na base do gancho em L, o que trava o suporte. Arquivos: `exports/av_bracket_arch_plug.stl` e o script do Fusion `av_arch_plug_pt`.
+
+- Corpo: base 5,70, topo 4,60, altura 7,75 e comprimento 3,28. O recorte mede 5,69 × 8,02, então a folga na largura é de uns 0,01 mm. Lixe se for preciso.
+- Protrusão: 6,33 × 8,00, com 3,22 de espessura, contra a face interna da parede.
+- Braço: 10,70 da borda do recorte, 2,5 de altura e 3,22 de espessura.
+- Peça toda: 16,71 × 8,00 × 6,50, impressa deitada e sem suportes.
 
 ## Próximos passos
 

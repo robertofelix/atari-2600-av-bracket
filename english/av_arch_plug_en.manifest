@@ -1,0 +1,11 @@
+{
+	"autodeskProduct": "Fusion360",
+	"type": "script",
+	"author": "Roberto Felix",
+	"description": {
+		"": "Arch closure for the Atari 2600 AV bracket"
+	},
+	"supportedOS": "windows|mac",
+	"editEnabled": true,
+	"iconFilename": "ScriptIcon.svg"
+}
