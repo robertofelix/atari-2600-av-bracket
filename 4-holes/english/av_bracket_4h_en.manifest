@@ -3,7 +3,7 @@
 	"type": "script",
 	"author": "Roberto Felix",
 	"description": {
-		"": "3D-printable RCA jack bracket for the Atari 2600 AV mod"
+		"": "3D-printable bracket with 4 RCA jacks for the Atari 2600 AV mod"
 	},
 	"supportedOS": "windows|mac",
 	"editEnabled": true,

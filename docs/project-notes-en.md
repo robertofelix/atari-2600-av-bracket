@@ -4,7 +4,7 @@ Working notes for a small 3D-printed bracket that holds the jacks of an Atari 26
 
 **Setup:** Mac, Creality Ender 5 S1 (0.4 mm nozzle, 220×220×280 mm build volume, textured PEI bed), PLA, sliced in Creality Print.
 
-The STL files in `exports/` are the main deliverable. The Fusion scripts in `english/` (`av_bracket_en`, `av_arch_plug_en`) are kept only for convenience and as a reference for the geometry. The STL files were later generated directly, without Fusion, and the scripts have only been syntax-checked.
+The STL files in the `exports/` folders are the main deliverable. The Fusion scripts (`av_bracket_4h_en`, `av_bracket_3h_en` and `av_arch_plug_en`, in `4-holes/`, `3-holes/` and `arch-plug/`) are kept only for convenience and as a reference for the geometry. The STL files were later generated directly, without Fusion, and the scripts have only been syntax-checked.
 
 ## Goal
 
@@ -18,7 +18,7 @@ The geometry is described by a **Fusion Python script** (not modeled by hand), w
 2. **Shell:** 2 mm walls. The removed face is the **back** (opposite the holes), so the box is open at the back.
 3. **Slanted back:** a wedge cut on the YZ plane so the depth goes from 24.89 mm at the bottom to 19.30 mm at the top (~15.5°). This matches the slanted rear of the Atari case. The narrow side is at the top, against the Atari.
 4. **Optional square cutout:** the old S-Video opening, now off (`USE_CUTOUT = False`).
-5. **4 RCA holes:** cut through the front wall only. `DISTRIBUTE_HOLES` spaces them evenly at hole height, with equal gaps (7.28 mm) between holes and between the holes and the slanted ends.
+5. **4 RCA holes** (or 3 in the `3-holes` version, with 11.27 mm gaps): cut through the front wall only. `DISTRIBUTE_HOLES` spaces them evenly at hole height, with equal gaps (7.28 mm) between holes and between the holes and the slanted ends.
 6. **Top opening:** a 12.10 × 12.10 mm square cut through the top wall, for the cable. `USE_OPEN_ARM` can add an arm toward the end, which is off.
 7. **L hook:** it starts at the opening's 12.10 mm edge on the center side and runs toward the center. The post is 2.5 mm long and 3.10 mm tall, the plate 9.15 mm long and 2.5 mm thick, and the hook is 6 mm wide, centered on that edge.
 
@@ -34,8 +34,8 @@ The geometry is described by a **Fusion Python script** (not modeled by hand), w
 | TOP_DEPTH | 19.30 | measured |
 | WALL | 2.0 | chosen |
 | HOLE_DIAMETER / HOLE_CLEARANCE | 8.4 / 0.3 | measured RCA ring 8.38; printed holes shrink |
-| HOLE_COUNT | 4 | my choice |
-| holes (DISTRIBUTE_HOLES) | centers at x = 18.93 / 34.91 / 50.89 / 66.87 | calculated |
+| HOLE_COUNT | 4 (3 in the `3-holes` version) | my choice |
+| holes (DISTRIBUTE_HOLES) | 4 holes: centers at x = 18.93 / 34.91 / 50.89 / 66.87. 3 holes: 22.93 / 42.90 / 62.87 | calculated |
 | HOLE_CENTER_Y | 10.1 | vertically centered |
 | OPEN_FROM_FRONT / OPEN_FROM_RIGHT | 2.70 / 9.30 (4.50 from the trimmed end) | measured |
 | OPEN_WIDTH / OPEN_DEPTH | 12.10 / 12.10 | measured |
@@ -72,22 +72,22 @@ Clearances were checked on the generated model: the L hook (z from the front edg
 
 **Name:** `atari-2600-av-bracket`
 
-> 3D-printable bracket for the Atari 2600 AV mod. Mounts 4 RCA jacks at the rear of the console. Ready-to-print STL files, with optional Autodesk Fusion scripts.
+> 3D-printable bracket for the Atari 2600 AV mod. Mounts 3 or 4 RCA jacks at the rear of the console. Ready-to-print STL files, with optional Autodesk Fusion scripts.
 
 **Topics:** `atari-2600`, `av-mod`, `3d-printing`, `fusion360`, `retro-gaming`, `rca`
 
 ```
 atari-2600-av-bracket/
-├── english/          av_bracket_en, av_arch_plug_en (.py, .manifest), ScriptIcon.svg
-├── portuguese/       av_bracket_pt, av_arch_plug_pt (.py, .manifest), ScriptIcon.svg
+├── 4-holes/          english/, portuguese/ (av_bracket_4h scripts), exports/ (av_bracket_4h_print.stl, .stl, .step)
+├── 3-holes/          english/, portuguese/ (av_bracket_3h scripts), exports/ (av_bracket_3h_print.stl, .stl, .step)
+├── arch-plug/        english/, portuguese/ (av_arch_plug scripts), exports/ (av_arch_plug.stl, .step)
 ├── docs/
-├── exports/          av_bracket_print.stl (oriented for printing), av_bracket.stl/.step, av_bracket_arch_plug.stl/.step
 └── README.md
 ```
 
 ## Arch closure
 
-A separate part that fills the arched notch in the console's rear edge. It goes in from inside, and its arm rests against the base of the L hook, which locks the bracket in place. Files: `exports/av_bracket_arch_plug.stl` and the Fusion script `av_arch_plug_en`.
+A separate part that fills the arched notch in the console's rear edge. It goes in from inside, and its arm rests against the base of the L hook, which locks the bracket in place. Files: `arch-plug/exports/av_arch_plug.stl` and the Fusion script `av_arch_plug_en`. It is shared by the 4-hole and 3-hole versions.
 
 - Body: 5.70 base, 4.60 top, 7.75 high, 3.28 long. The notch is 5.69 × 8.02, so the clearance in width is about 0.01 mm. Sand if needed.
 - Protrusion: 6.33 × 8.00, 3.22 thick, against the inner face of the wall.

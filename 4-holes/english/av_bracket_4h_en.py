@@ -1,4 +1,4 @@
-# av_bracket_en - 3D-printable RCA jack bracket for the Atari 2600 AV mod
+# av_bracket_4h_en - 3D-printable bracket with 4 RCA jacks for the Atari 2600 AV mod
 # Builds the part in Autodesk Fusion.
 #
 # Measured with calipers: top 81.0 | bottom 71.0 | height 20.21 (0.796 in) |

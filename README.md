@@ -1,8 +1,8 @@
 # Atari 2600 AV Bracket
 
-3D-printable bracket for the **Atari 2600 AV mod**. It holds **4 RCA jacks** at the rear of the console. The ready-to-print **STL files** are the main deliverable. Optional **Autodesk Fusion** Python scripts are included for convenience.
+3D-printable bracket for the **Atari 2600 AV mod**. It holds **4 or 3 RCA jacks** at the rear of the console, in two versions of the same case. The ready-to-print **STL files** are the main deliverable. Optional **Autodesk Fusion** Python scripts are included for convenience.
 
-> 🇧🇷 **Nota:** este README também está em português, mais abaixo (a partir de [Português (Brasil)](#-português-brasil)). Os scripts e as notas em português estão em [`portuguese/`](portuguese/) e [`docs/project-notes-pt.md`](docs/project-notes-pt.md).
+> 🇧🇷 **Nota:** este README também está em português, mais abaixo (a partir de [Português (Brasil)](#-português-brasil)). Os scripts em português ficam nas pastas `portuguese/` de cada versão, e as notas estão em [`docs/project-notes-pt.md`](docs/project-notes-pt.md).
 
 > **Fusion scripts are optional.** The parts were first modeled for [Autodesk Fusion](https://www.autodesk.com/products/fusion-360/overview), and the STL files were later generated directly, so you do not need Fusion to print them. The scripts are kept for convenience and as a reference for the geometry. They use the Fusion API (`adsk.core`, `adsk.fusion`), will not run in other CAD software, and have only been syntax-checked, not run in Fusion. This is an independent hobby project and is not affiliated with or endorsed by Autodesk or Atari.
 
@@ -11,6 +11,17 @@
 A small hollow bracket that clips under the back of an Atari 2600. The jacks press-fit into the front wall, the flat ribbon cable from the mod runs into the box through an opening in the top face, and an "L" hook next to that opening locks the bracket to the console.
 
 The design is based on a commercial part that holds 1 S-Video and 3 RCA jacks. This version replaces the S-Video cutout with a fourth RCA hole.
+
+## Versions
+
+The same case comes in two versions, with the holes spread evenly over the width of the case (equal gaps between the holes and between the holes and the ends).
+
+| Version | Folder | RCA holes | Gaps | Hole centers (from the opening end) |
+|---|---|---|---|---|
+| 4 holes | [`4-holes/`](4-holes/) | 4 | 5 of 7.28 mm | 18.93 / 34.91 / 50.89 / 66.87 |
+| 3 holes | [`3-holes/`](3-holes/) | 3 | 4 of 11.27 mm | 22.93 / 42.90 / 62.87 |
+
+Everything else is identical: size, jack hole diameter (8.4 + 0.3), opening, L hook and slanted back. The [`arch-plug/`](arch-plug/) closure is the same part for both versions.
 
 ## Compatibility
 
@@ -22,20 +33,29 @@ Made for these Atari 2600 models:
 
 Other models may have a different rear shape, so check the measurements before printing.
 
-**Status:** working prototype, refined through test prints. The dimensions come from caliper measurements of the console and of the printed parts. Ready-to-print files are in [`exports/`](exports/).
+**Status:** working prototype, refined through test prints. The dimensions come from caliper measurements of the console and of the printed parts. Ready-to-print files are in the `exports/` folder of each version.
 
 ## Repository layout
 
 ```
 atari-2600-av-bracket/
-├── english/       Fusion scripts (English): av_bracket_en, av_arch_plug_en
-├── portuguese/    Fusion scripts (Portuguese): av_bracket_pt, av_arch_plug_pt
+├── 4-holes/       Bracket with 4 RCA holes
+│   ├── english/       Fusion script: av_bracket_4h_en
+│   ├── portuguese/    Fusion script: av_bracket_4h_pt
+│   └── exports/       av_bracket_4h_print.stl, av_bracket_4h.stl, av_bracket_4h.step
+├── 3-holes/       Bracket with 3 RCA holes
+│   ├── english/       Fusion script: av_bracket_3h_en
+│   ├── portuguese/    Fusion script: av_bracket_3h_pt
+│   └── exports/       av_bracket_3h_print.stl, av_bracket_3h.stl, av_bracket_3h.step
+├── arch-plug/     Arch closure, shared by both versions
+│   ├── english/       Fusion script: av_arch_plug_en
+│   ├── portuguese/    Fusion script: av_arch_plug_pt
+│   └── exports/       av_arch_plug.stl, av_arch_plug.step
 ├── docs/          Project notes (EN / PT)
-├── exports/       Ready-to-print STL and STEP files
 └── LICENSE
 ```
 
-The English and Portuguese scripts build the same parts. Only the language of the comments and parameter names differs. `av_bracket_*` builds the bracket and `av_arch_plug_*` builds the arch closure.
+The English and Portuguese scripts build the same parts. Only the language of the comments and parameter names differs. `av_bracket_4h_*` and `av_bracket_3h_*` build the bracket with 4 or 3 holes, and `av_arch_plug_*` builds the arch closure.
 
 ## Requirements
 
@@ -44,9 +64,9 @@ The English and Portuguese scripts build the same parts. Only the language of th
 
 ## Run the script (optional)
 
-Skip this if you only want to print: use the files in [`exports/`](exports/).
+Skip this if you only want to print: use the files in the `exports/` folders.
 
-1. Copy the script's `.py` and `.manifest` files and `ScriptIcon.svg` from `english/` (or `portuguese/`) into a folder named like the script, for example `av_bracket_en` or `av_arch_plug_pt`. The folder, `.py` and `.manifest` names must match.
+1. Copy the script's `.py` and `.manifest` files and `ScriptIcon.svg` from the `english/` (or `portuguese/`) folder of the version you want into a folder named like the script, for example `av_bracket_4h_en`, `av_bracket_3h_pt` or `av_arch_plug_en`. The folder, `.py` and `.manifest` names must match.
 2. Put that folder in Fusion's Scripts directory:
    `~/Library/Application Support/Autodesk/Autodesk Fusion 360/API/Scripts/` on Mac (Finder: Cmd+Shift+G).
 3. In Fusion, press **Shift+S** (Utilities > Add-Ins > Scripts and Add-Ins), select the script and click **Run**.
@@ -65,7 +85,7 @@ All dimensions are in millimeters and sit at the top of the script. Edit them an
 | Depth, bottom / top | 24.89 / 19.30 (slanted back, ~15.5°) | measured |
 | Wall thickness | 2.0 | chosen |
 | RCA hole diameter | 8.4 + 0.3 clearance | measured ring 8.38 mm |
-| Holes | 4, spread evenly: 7.28 mm gaps, 15.98 apart, centers at x = 18.93 / 34.91 / 50.89 / 66.87 | calculated |
+| Holes | 4 or 3, spread evenly. 4 holes: 7.28 mm gaps, centers at x = 18.93 / 34.91 / 50.89 / 66.87. 3 holes: 11.27 mm gaps, centers at x = 22.93 / 42.90 / 62.87 | calculated |
 | L tab | 9.15 long × 6.0 wide plate, 2.5 thick, 3.10 post height, centered on the 12.10 mm opening edge, so its front is 5.75 from the front edge | measured |
 | Top opening (cable path) | 12.10 × 12.10 square, 2.70 from the front and 4.50 from the right end (the 5.66 mm arm is off by default) | measured |
 
@@ -79,10 +99,13 @@ Optional switches in the script (all off or on as listed): `DISTRIBUTE_HOLES` (o
 
 ## Ready-to-print files
 
-- [`exports/av_bracket_print.stl`](exports/av_bracket_print.stl): oriented for printing, with the RCA face down.
-- [`exports/av_bracket.stl`](exports/av_bracket.stl): same part in the Fusion orientation.
-- [`exports/av_bracket.step`](exports/av_bracket.step): exact geometry for other CAD tools.
-- [`exports/av_bracket_arch_plug.stl`](exports/av_bracket_arch_plug.stl) and [`.step`](exports/av_bracket_arch_plug.step): the arch closure, see below.
+For each version (`4-holes/exports/` with `4h` in the names, `3-holes/exports/` with `3h`):
+
+- `av_bracket_4h_print.stl` / `av_bracket_3h_print.stl`: oriented for printing, with the RCA face down.
+- `av_bracket_4h.stl` / `av_bracket_3h.stl`: same part in the Fusion orientation.
+- `av_bracket_4h.step` / `av_bracket_3h.step`: exact geometry for other CAD tools.
+
+Shared by both versions: [`arch-plug/exports/av_arch_plug.stl`](arch-plug/exports/av_arch_plug.stl) and [`.step`](arch-plug/exports/av_arch_plug.step), the arch closure, see below.
 
 These files were generated from the same parameters as the scripts. To export your own from Fusion: right-click the body in the Browser, choose **Save As Mesh**, then STL (Binary), Millimeter, Refinement High.
 
@@ -97,7 +120,7 @@ The console's rear edge has an arched notch, and the closure fills it. It is a s
 | Arm | 10.70 from the notch edge (13.545 from the arch center), 2.5 high, 3.22 thick |
 | Whole part | 16.71 × 8.00 × 6.50 |
 
-The notch measures 5.69 × 8.02, so the body has only about 0.01 mm of clearance in width. Sand it lightly if it will not go in. It is built by its own script, `av_arch_plug_en` (or `av_arch_plug_pt`), and exported as STL and STEP.
+The notch measures 5.69 × 8.02, so the body has only about 0.01 mm of clearance in width. Sand it lightly if it will not go in. It is built by its own script in `arch-plug/`, `av_arch_plug_en` (or `av_arch_plug_pt`), and exported as STL and STEP. The same closure fits both the 4-hole and the 3-hole bracket.
 
 ## Tuning the fit
 
@@ -111,6 +134,7 @@ The notch measures 5.69 × 8.02, so the body has only about 0.01 mm of clearance
 - [x] Slanted back matched to the Atari
 - [x] Opening in the top face and L hook, from measurements
 - [x] Evenly spaced RCA holes
+- [x] Second version with 3 holes
 - [x] Arch closure with sliding arm
 - [x] Portuguese README
 - [ ] Fine-tune the hole fit with a test plate (8.2 / 8.4 / 8.6 mm)
@@ -126,7 +150,7 @@ Full project notes, with measurements and lessons learned, are in [`docs/project
 
 ## Suporte AV para Atari 2600
 
-Suporte imprimível em 3D para o **AV mod do Atari 2600**. Ele segura **4 conectores RCA** na traseira do console. Os **arquivos STL** prontos para imprimir são a entrega principal. Scripts Python opcionais do **Autodesk Fusion** estão incluídos por comodidade.
+Suporte imprimível em 3D para o **AV mod do Atari 2600**. Ele segura **4 ou 3 conectores RCA** na traseira do console, em duas versões da mesma case. Os **arquivos STL** prontos para imprimir são a entrega principal. Scripts Python opcionais do **Autodesk Fusion** estão incluídos por comodidade.
 
 > **Os scripts do Fusion são opcionais.** As peças foram modeladas primeiro para o [Autodesk Fusion](https://www.autodesk.com/products/fusion-360/overview), e os arquivos STL foram gerados depois diretamente, então você não precisa do Fusion para imprimir. Os scripts ficam por comodidade e como referência da geometria. Eles usam a API do Fusion (`adsk.core`, `adsk.fusion`), não rodam em outros softwares de CAD e só passaram por checagem de sintaxe, sem rodar no Fusion. É um projeto pessoal independente, sem vínculo nem aprovação da Autodesk ou da Atari.
 
@@ -135,6 +159,17 @@ Suporte imprimível em 3D para o **AV mod do Atari 2600**. Ele segura **4 conect
 Um pequeno suporte oco que encaixa embaixo da traseira de um Atari 2600. Os conectores entram por pressão na parede frontal, o cabo flat do mod passa para dentro da caixa por uma abertura na face de cima, e um gancho em "L" ao lado dessa abertura prende o suporte ao console.
 
 O projeto é baseado numa peça comercial que segura 1 S-Video e 3 RCA. Esta versão troca o recorte do S-Video por um quarto furo RCA.
+
+## Versões
+
+A mesma case vem em duas versões, com os furos distribuídos por igual na largura da case (vãos iguais entre os furos e entre os furos e as pontas).
+
+| Versão | Pasta | Furos RCA | Vãos | Centros dos furos (a partir da ponta da abertura) |
+|---|---|---|---|---|
+| 4 furos | [`4-holes/`](4-holes/) | 4 | 5 de 7,28 mm | 18,93 / 34,91 / 50,89 / 66,87 |
+| 3 furos | [`3-holes/`](3-holes/) | 3 | 4 de 11,27 mm | 22,93 / 42,90 / 62,87 |
+
+Todo o resto é idêntico: tamanho, diâmetro dos furos (8,4 + 0,3), abertura, gancho em L e traseira inclinada. O fecho de [`arch-plug/`](arch-plug/) é a mesma peça para as duas versões.
 
 ## Compatibilidade
 
@@ -146,20 +181,29 @@ Feito para estes modelos de Atari 2600:
 
 Outros modelos podem ter a traseira com formato diferente, então confira as medidas antes de imprimir.
 
-**Status:** protótipo funcional, refinado com impressões de teste. As dimensões vêm de medidas com paquímetro do console e das peças impressas. Os arquivos prontos para imprimir estão em [`exports/`](exports/).
+**Status:** protótipo funcional, refinado com impressões de teste. As dimensões vêm de medidas com paquímetro do console e das peças impressas. Os arquivos prontos para imprimir estão na pasta `exports/` de cada versão.
 
 ## Estrutura do repositório
 
 ```
 atari-2600-av-bracket/
-├── english/       Scripts do Fusion (inglês): av_bracket_en, av_arch_plug_en
-├── portuguese/    Scripts do Fusion (português): av_bracket_pt, av_arch_plug_pt
+├── 4-holes/       Suporte com 4 furos RCA
+│   ├── english/       Script do Fusion: av_bracket_4h_en
+│   ├── portuguese/    Script do Fusion: av_bracket_4h_pt
+│   └── exports/       av_bracket_4h_print.stl, av_bracket_4h.stl, av_bracket_4h.step
+├── 3-holes/       Suporte com 3 furos RCA
+│   ├── english/       Script do Fusion: av_bracket_3h_en
+│   ├── portuguese/    Script do Fusion: av_bracket_3h_pt
+│   └── exports/       av_bracket_3h_print.stl, av_bracket_3h.stl, av_bracket_3h.step
+├── arch-plug/     Fecho do arco, comum às duas versões
+│   ├── english/       Script do Fusion: av_arch_plug_en
+│   ├── portuguese/    Script do Fusion: av_arch_plug_pt
+│   └── exports/       av_arch_plug.stl, av_arch_plug.step
 ├── docs/          Notas do projeto (EN / PT)
-├── exports/       Arquivos STL e STEP prontos para imprimir
 └── LICENSE
 ```
 
-Os scripts em inglês e em português geram as mesmas peças. Só muda o idioma dos comentários e dos nomes dos parâmetros. O `av_bracket_*` cria o suporte e o `av_arch_plug_*` cria o fecho do arco.
+Os scripts em inglês e em português geram as mesmas peças. Só muda o idioma dos comentários e dos nomes dos parâmetros. O `av_bracket_4h_*` e o `av_bracket_3h_*` criam o suporte com 4 ou 3 furos, e o `av_arch_plug_*` cria o fecho do arco.
 
 ## Requisitos
 
@@ -168,9 +212,9 @@ Os scripts em inglês e em português geram as mesmas peças. Só muda o idioma 
 
 ## Rodar o script (opcional)
 
-Pule esta parte se você só quer imprimir: use os arquivos de [`exports/`](exports/).
+Pule esta parte se você só quer imprimir: use os arquivos das pastas `exports/`.
 
-1. Copie o `.py`, o `.manifest` do script e o `ScriptIcon.svg` de `portuguese/` (ou `english/`) para uma pasta com o nome do script, por exemplo `av_bracket_pt` ou `av_arch_plug_en`. O nome da pasta, do `.py` e do `.manifest` precisa ser o mesmo.
+1. Copie o `.py`, o `.manifest` do script e o `ScriptIcon.svg` da pasta `portuguese/` (ou `english/`) da versão que você quer para uma pasta com o nome do script, por exemplo `av_bracket_4h_pt`, `av_bracket_3h_en` ou `av_arch_plug_pt`. O nome da pasta, do `.py` e do `.manifest` precisa ser o mesmo.
 2. Coloque essa pasta no diretório de Scripts do Fusion:
    `~/Library/Application Support/Autodesk/Autodesk Fusion 360/API/Scripts/` no Mac (Finder: Cmd+Shift+G).
 3. No Fusion, pressione **Shift+S** (Utilities > Add-Ins > Scripts and Add-Ins), selecione o script e clique em **Run**.
@@ -189,7 +233,7 @@ Todas as medidas estão em milímetros e ficam no topo do script. Edite os valor
 | Profundidade, base / topo | 24,89 / 19,30 (traseira inclinada, ~15,5°) | medido |
 | Espessura da parede | 2,0 | escolhido |
 | Diâmetro do furo RCA | 8,4 + 0,3 de folga | anel medido 8,38 mm |
-| Furos | 4, distribuídos por igual: folgas de 7,28 mm, 15,98 entre centros, centros em x = 18,93 / 34,91 / 50,89 / 66,87 | calculado |
+| Furos | 4 ou 3, distribuídos por igual. 4 furos: folgas de 7,28 mm, centros em x = 18,93 / 34,91 / 50,89 / 66,87. 3 furos: folgas de 11,27 mm, centros em x = 22,93 / 42,90 / 62,87 | calculado |
 | Aba em L | placa de 9,15 de comprimento × 6,0 de largura, espessura 2,5, pino de 3,10 de altura, centralizada na aresta de 12,10 mm da abertura, com a frente a 5,75 da borda da frente | medido |
 | Abertura de cima (caminho do cabo) | quadrado de 12,10 × 12,10, a 2,70 da frente e 4,50 da ponta direita (o braço de 5,66 mm vem desligado) | medido |
 
@@ -203,10 +247,13 @@ Chaves no script: `DISTRIBUIR_FUROS` (ligada) espaça os furos RCA por igual, `U
 
 ## Arquivos prontos para imprimir
 
-- [`exports/av_bracket_print.stl`](exports/av_bracket_print.stl): orientado para imprimir, com a face RCA para baixo.
-- [`exports/av_bracket.stl`](exports/av_bracket.stl): a mesma peça na orientação do Fusion.
-- [`exports/av_bracket.step`](exports/av_bracket.step): geometria exata para outros programas de CAD.
-- [`exports/av_bracket_arch_plug.stl`](exports/av_bracket_arch_plug.stl) e [`.step`](exports/av_bracket_arch_plug.step): o fecho do arco, veja abaixo.
+Para cada versão (`4-holes/exports/` com `4h` nos nomes, `3-holes/exports/` com `3h`):
+
+- `av_bracket_4h_print.stl` / `av_bracket_3h_print.stl`: orientado para imprimir, com a face RCA para baixo.
+- `av_bracket_4h.stl` / `av_bracket_3h.stl`: a mesma peça na orientação do Fusion.
+- `av_bracket_4h.step` / `av_bracket_3h.step`: geometria exata para outros programas de CAD.
+
+Comum às duas versões: [`arch-plug/exports/av_arch_plug.stl`](arch-plug/exports/av_arch_plug.stl) e [`.step`](arch-plug/exports/av_arch_plug.step), o fecho do arco, veja abaixo.
 
 Esses arquivos foram gerados a partir dos mesmos parâmetros dos scripts. Para exportar o seu no Fusion: botão direito no corpo no Browser, **Save As Mesh**, depois STL (Binary), Millimeter, Refinement High.
 
@@ -221,7 +268,7 @@ A borda traseira do console tem um recorte em arco, e o fecho preenche esse reco
 | Braço | 10,70 da borda do recorte (13,545 do centro do arco), 2,5 de altura e 3,22 de espessura |
 | Peça toda | 16,71 × 8,00 × 6,50 |
 
-O recorte mede 5,69 × 8,02, então o corpo tem só uns 0,01 mm de folga na largura. Lixe de leve se não entrar. Ela é criada por um script próprio, o `av_arch_plug_pt` (ou `av_arch_plug_en`), e exportada em STL e STEP.
+O recorte mede 5,69 × 8,02, então o corpo tem só uns 0,01 mm de folga na largura. Lixe de leve se não entrar. Ela é criada por um script próprio em `arch-plug/`, o `av_arch_plug_pt` (ou `av_arch_plug_en`), e exportada em STL e STEP. O mesmo fecho serve para o suporte de 4 furos e para o de 3.
 
 ## Ajustar o encaixe
 
@@ -235,6 +282,7 @@ O recorte mede 5,69 × 8,02, então o corpo tem só uns 0,01 mm de folga na larg
 - [x] Traseira inclinada ajustada ao Atari
 - [x] Abertura na face de cima e gancho em L, a partir de medidas
 - [x] Furos RCA distribuídos por igual
+- [x] Segunda versão com 3 furos
 - [x] Fecho do arco com braço deslizante
 - [x] README em português
 - [ ] Ajustar o encaixe dos furos com uma plaquinha de teste (8,2 / 8,4 / 8,6 mm)

@@ -4,7 +4,7 @@ Notas de trabalho de um pequeno suporte impresso em 3D que segura os conectores 
 
 **Setup:** Mac, Creality Ender 5 S1 (bico 0,4 mm, volume de impressão 220×220×280 mm, mesa PEI texturizada), PLA, fatiado no Creality Print.
 
-Os arquivos STL em `exports/` são a entrega principal. Os scripts do Fusion em `portuguese/` (`av_bracket_pt`, `av_arch_plug_pt`) ficam só por comodidade e como referência da geometria. Os STL foram gerados depois diretamente, sem o Fusion, e os scripts só passaram por checagem de sintaxe.
+Os arquivos STL das pastas `exports/` são a entrega principal. Os scripts do Fusion (`av_bracket_4h_pt`, `av_bracket_3h_pt` e `av_arch_plug_pt`, em `4-holes/`, `3-holes/` e `arch-plug/`) ficam só por comodidade e como referência da geometria. Os STL foram gerados depois diretamente, sem o Fusion, e os scripts só passaram por checagem de sintaxe.
 
 ## Objetivo
 
@@ -18,7 +18,7 @@ A geometria é descrita por um **script Python do Fusion** (não é modelada à 
 2. **Casca:** paredes de 2 mm. A face removida é a **traseira** (oposta aos furos), então a caixa fica aberta atrás.
 3. **Traseira inclinada:** um corte em cunha no plano YZ, de modo que a profundidade vai de 24,89 mm embaixo até 19,30 mm em cima (~15,5°). Isso acompanha a traseira inclinada da carcaça do Atari. O lado mais estreito fica em cima, junto ao Atari.
 4. **Recorte quadrado opcional:** a antiga abertura do S-Video, agora desligada (`USAR_ABERTURA = False`).
-5. **4 furos RCA:** cortados só na parede frontal. `DISTRIBUIR_FUROS` espaça os furos por igual na altura deles, com folgas iguais (7,28 mm) entre os furos e entre os furos e as pontas inclinadas.
+5. **4 furos RCA** (ou 3 na versão `3-holes`, com folgas de 11,27 mm): cortados só na parede frontal. `DISTRIBUIR_FUROS` espaça os furos por igual na altura deles, com folgas iguais (7,28 mm) entre os furos e entre os furos e as pontas inclinadas.
 6. **Abertura de cima:** um quadrado de 12,10 × 12,10 mm cortado na parede de cima, para o cabo. `USAR_BRACO` pode acrescentar um braço até a ponta, e vem desligado.
 7. **Gancho em L:** começa na aresta de 12,10 mm da abertura, do lado do centro, e segue para o centro. O pino tem 2,5 mm de comprimento e 3,10 mm de altura, a placa 9,15 mm de comprimento e 2,5 mm de espessura, e o gancho tem 6 mm de largura, centralizado nessa aresta.
 
@@ -34,8 +34,8 @@ A geometria é descrita por um **script Python do Fusion** (não é modelada à 
 | PROFUNDIDADE_TOPO | 19,30 | medido |
 | PAREDE | 2,0 | escolhido |
 | FURO_DIAMETRO / FURO_FOLGA | 8,4 / 0,3 | anel RCA medido 8,38; furos impressos encolhem |
-| FURO_QTD | 4 | escolha minha |
-| furos (DISTRIBUIR_FUROS) | centros em x = 18,93 / 34,91 / 50,89 / 66,87 | calculado |
+| FURO_QTD | 4 (3 na versão `3-holes`) | escolha minha |
+| furos (DISTRIBUIR_FUROS) | 4 furos: centros em x = 18,93 / 34,91 / 50,89 / 66,87. 3 furos: 22,93 / 42,90 / 62,87 | calculado |
 | FURO_ALTURA_CENTRO | 10,1 | centralizado na vertical |
 | ABERTURA_DA_FRENTE / ABERTURA_DA_DIREITA | 2,70 / 9,30 (4,50 da ponta encurtada) | medido |
 | ABERTURA_LARGURA / ABERTURA_PROF | 12,10 / 12,10 | medido |
@@ -72,22 +72,22 @@ As folgas foram conferidas no modelo gerado: o gancho em L (z a partir da borda 
 
 **Nome:** `atari-2600-av-bracket`
 
-> 3D-printable bracket for the Atari 2600 AV mod. Mounts 4 RCA jacks at the rear of the console. Ready-to-print STL files, with optional Autodesk Fusion scripts.
+> 3D-printable bracket for the Atari 2600 AV mod. Mounts 3 or 4 RCA jacks at the rear of the console. Ready-to-print STL files, with optional Autodesk Fusion scripts.
 
 **Tópicos:** `atari-2600`, `av-mod`, `3d-printing`, `fusion360`, `retro-gaming`, `rca`
 
 ```
 atari-2600-av-bracket/
-├── english/          av_bracket_en, av_arch_plug_en (.py, .manifest), ScriptIcon.svg
-├── portuguese/       av_bracket_pt, av_arch_plug_pt (.py, .manifest), ScriptIcon.svg
+├── 4-holes/          english/, portuguese/ (scripts av_bracket_4h), exports/ (av_bracket_4h_print.stl, .stl, .step)
+├── 3-holes/          english/, portuguese/ (scripts av_bracket_3h), exports/ (av_bracket_3h_print.stl, .stl, .step)
+├── arch-plug/        english/, portuguese/ (scripts av_arch_plug), exports/ (av_arch_plug.stl, .step)
 ├── docs/
-├── exports/          av_bracket_print.stl (orientado para imprimir), av_bracket.stl/.step, av_bracket_arch_plug.stl/.step
 └── README.md
 ```
 
 ## Fecho do arco
 
-Peça separada que preenche o recorte em arco na borda traseira do console. Entra por dentro, e o braço encosta na base do gancho em L, o que trava o suporte. Arquivos: `exports/av_bracket_arch_plug.stl` e o script do Fusion `av_arch_plug_pt`.
+Peça separada que preenche o recorte em arco na borda traseira do console. Entra por dentro, e o braço encosta na base do gancho em L, o que trava o suporte. Arquivos: `arch-plug/exports/av_arch_plug.stl` e o script do Fusion `av_arch_plug_pt`. Ela é comum às versões de 4 e de 3 furos.
 
 - Corpo: base 5,70, topo 4,60, altura 7,75 e comprimento 3,28. O recorte mede 5,69 × 8,02, então a folga na largura é de uns 0,01 mm. Lixe se for preciso.
 - Protrusão: 6,33 × 8,00, com 3,22 de espessura, contra a face interna da parede.

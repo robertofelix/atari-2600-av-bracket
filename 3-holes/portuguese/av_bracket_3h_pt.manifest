@@ -1,0 +1,12 @@
+{
+	"autodeskProduct":	"Fusion",
+	"type":	"script",
+	"author":	"Roberto Felix",
+	"description":	{
+		"":	"Suporte imprimível em 3D com 3 conectores RCA para o AV mod do Atari 2600"
+	},
+	"version":	"",
+	"supportedOS":	"windows|mac",
+	"editEnabled":	true,
+	"iconFilename":	"ScriptIcon.svg"
+}

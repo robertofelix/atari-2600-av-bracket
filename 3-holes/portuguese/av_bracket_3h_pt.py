@@ -1,4 +1,4 @@
-# av_bracket_pt - suporte de conectores RCA no Autodesk Fusion
+# av_bracket_3h_pt - suporte com 3 conectores RCA no Autodesk Fusion
 # Medido com paquímetro: topo 81,0 | base 71,0 | altura 20,21 (0,796 in) |
 # profundidade 24,89 embaixo e 19,30 em cima (traseira inclinada ~15,5°) | anel RCA 8,38 mm.
 # Ajuste os valores abaixo
@@ -19,7 +19,7 @@ INCLINACAO_DIR     = 5.0    # quanto a base recua na ponta direita (0 = reta)
 
 FURO_DIAMETRO      = 8.4   # furo dos conectores RCA
 FURO_FOLGA         = 0.3    # a impressora fecha um pouco os furos; somado ao diâmetro
-FURO_QTD           = 4
+FURO_QTD           = 3
 DISTRIBUIR_FUROS   = True   # True = folgas iguais entre os furos e as pontas inclinadas, na altura dos furos
 FURO_PRIMEIRO_X    = 18.0   # só se DISTRIBUIR_FUROS = False: centro do 1o furo, medido da ponta x = 0
 FURO_ESPACAMENTO   = 15.0   # só se DISTRIBUIR_FUROS = False: entre centros
