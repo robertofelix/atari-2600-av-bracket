@@ -4,7 +4,7 @@ Notas de trabalho de um pequeno suporte impresso em 3D que segura os conectores 
 
 **Setup:** Mac, Creality Ender 5 S1 (bico 0,4 mm, volume de impressão 220×220×280 mm, mesa PEI texturizada), PLA, fatiado no Creality Print.
 
-Os arquivos STL das pastas `exports/` são a entrega principal. Os scripts do Fusion (`av_bracket_4h_pt`, `av_bracket_3h_pt` e `av_arch_plug_pt`, em `4-holes/`, `3-holes/` e `arch-plug/`) ficam só por comodidade e como referência da geometria. Os STL foram gerados depois diretamente, sem o Fusion, e os scripts só passaram por checagem de sintaxe.
+Os arquivos STL das pastas `exports/` são a entrega principal. Os scripts do Fusion (`av_bracket_4h_pt`, `av_bracket_3h_pt`, `av_bracket_svideo_pt` e `av_arch_plug_pt`, em `4-holes/`, `3-holes/`, `3rca-1svideo/` e `arch-plug/`) ficam só por comodidade e como referência da geometria. Os STL foram gerados depois diretamente, sem o Fusion, e os scripts só passaram por checagem de sintaxe.
 
 ## Objetivo
 
@@ -35,7 +35,8 @@ A geometria é descrita por um **script Python do Fusion** (não é modelada à 
 | PAREDE | 2,0 | escolhido |
 | FURO_DIAMETRO / FURO_FOLGA | 8,4 / 0,3 | anel RCA medido 8,38; furos impressos encolhem |
 | FURO_QTD | 4 (3 na versão `3-holes`) | escolha minha |
-| furos (DISTRIBUIR_FUROS) | 4 furos: centros em x = 18,93 / 34,91 / 50,89 / 66,87. 3 furos: 22,93 / 42,90 / 62,87 | calculado |
+| furos (DISTRIBUIR_FUROS) | 4 furos: centros em x = 18,93 / 34,91 / 50,89 / 66,87. 3 furos: 22,93 / 42,90 / 62,87. 3 RCA + 1 S-Video: 19,41 (S-Video) / 35,87 / 51,53 / 67,19, folgas de 6,96 | calculado |
+| SVIDEO_DIAMETRO | 10,0 + 0,3 de folga, na ponta x = 0 (versão `3rca-1svideo`) | de listagens de lojas, não medido no meu conector |
 | FURO_ALTURA_CENTRO | 10,1 | centralizado na vertical |
 | ABERTURA_DA_FRENTE / ABERTURA_DA_DIREITA | 2,70 / 9,30 (4,50 da ponta encurtada) | medido |
 | ABERTURA_LARGURA / ABERTURA_PROF | 12,10 / 12,10 | medido |
@@ -80,6 +81,7 @@ As folgas foram conferidas no modelo gerado: o gancho em L (z a partir da borda 
 atari-2600-av-bracket/
 ├── 4-holes/          english/, portuguese/ (scripts av_bracket_4h), exports/ (av_bracket_4h_print.stl, .stl, .step)
 ├── 3-holes/          english/, portuguese/ (scripts av_bracket_3h), exports/ (av_bracket_3h_print.stl, .stl, .step)
+├── 3rca-1svideo/     english/, portuguese/ (scripts av_bracket_svideo), exports/ (av_bracket_svideo_print.stl, .stl, .step)
 ├── arch-plug/        english/, portuguese/ (scripts av_arch_plug), exports/ (av_arch_plug.stl, .step)
 ├── docs/
 └── README.md
@@ -87,7 +89,7 @@ atari-2600-av-bracket/
 
 ## Fecho do arco
 
-Peça separada que preenche o recorte em arco na borda traseira do console. Entra por dentro, e o braço encosta na base do gancho em L, o que trava o suporte. Arquivos: `arch-plug/exports/av_arch_plug.stl` e o script do Fusion `av_arch_plug_pt`. Ela é comum às versões de 4 e de 3 furos.
+Peça separada que preenche o recorte em arco na borda traseira do console. Entra por dentro, e o braço encosta na base do gancho em L, o que trava o suporte. Arquivos: `arch-plug/exports/av_arch_plug.stl` e o script do Fusion `av_arch_plug_pt`. Ela é comum a todas as versões do suporte.
 
 - Corpo: base 5,70, topo 4,60, altura 7,75 e comprimento 3,28. O recorte mede 5,69 × 8,02, então a folga na largura é de uns 0,01 mm. Lixe se for preciso.
 - Protrusão: 6,33 × 8,00, com 3,22 de espessura, contra a face interna da parede.

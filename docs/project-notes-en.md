@@ -4,7 +4,7 @@ Working notes for a small 3D-printed bracket that holds the jacks of an Atari 26
 
 **Setup:** Mac, Creality Ender 5 S1 (0.4 mm nozzle, 220×220×280 mm build volume, textured PEI bed), PLA, sliced in Creality Print.
 
-The STL files in the `exports/` folders are the main deliverable. The Fusion scripts (`av_bracket_4h_en`, `av_bracket_3h_en` and `av_arch_plug_en`, in `4-holes/`, `3-holes/` and `arch-plug/`) are kept only for convenience and as a reference for the geometry. The STL files were later generated directly, without Fusion, and the scripts have only been syntax-checked.
+The STL files in the `exports/` folders are the main deliverable. The Fusion scripts (`av_bracket_4h_en`, `av_bracket_3h_en`, `av_bracket_svideo_en` and `av_arch_plug_en`, in `4-holes/`, `3-holes/`, `3rca-1svideo/` and `arch-plug/`) are kept only for convenience and as a reference for the geometry. The STL files were later generated directly, without Fusion, and the scripts have only been syntax-checked.
 
 ## Goal
 
@@ -35,7 +35,8 @@ The geometry is described by a **Fusion Python script** (not modeled by hand), w
 | WALL | 2.0 | chosen |
 | HOLE_DIAMETER / HOLE_CLEARANCE | 8.4 / 0.3 | measured RCA ring 8.38; printed holes shrink |
 | HOLE_COUNT | 4 (3 in the `3-holes` version) | my choice |
-| holes (DISTRIBUTE_HOLES) | 4 holes: centers at x = 18.93 / 34.91 / 50.89 / 66.87. 3 holes: 22.93 / 42.90 / 62.87 | calculated |
+| holes (DISTRIBUTE_HOLES) | 4 holes: centers at x = 18.93 / 34.91 / 50.89 / 66.87. 3 holes: 22.93 / 42.90 / 62.87. 3 RCA + 1 S-Video: 19.41 (S-Video) / 35.87 / 51.53 / 67.19, gaps 6.96 | calculated |
+| SVIDEO_DIAMETER | 10.0 + 0.3 clearance, at the x = 0 end (`3rca-1svideo` version) | from retailer listings, not measured on my jack |
 | HOLE_CENTER_Y | 10.1 | vertically centered |
 | OPEN_FROM_FRONT / OPEN_FROM_RIGHT | 2.70 / 9.30 (4.50 from the trimmed end) | measured |
 | OPEN_WIDTH / OPEN_DEPTH | 12.10 / 12.10 | measured |
@@ -80,6 +81,7 @@ Clearances were checked on the generated model: the L hook (z from the front edg
 atari-2600-av-bracket/
 ├── 4-holes/          english/, portuguese/ (av_bracket_4h scripts), exports/ (av_bracket_4h_print.stl, .stl, .step)
 ├── 3-holes/          english/, portuguese/ (av_bracket_3h scripts), exports/ (av_bracket_3h_print.stl, .stl, .step)
+├── 3rca-1svideo/     english/, portuguese/ (av_bracket_svideo scripts), exports/ (av_bracket_svideo_print.stl, .stl, .step)
 ├── arch-plug/        english/, portuguese/ (av_arch_plug scripts), exports/ (av_arch_plug.stl, .step)
 ├── docs/
 └── README.md
@@ -87,7 +89,7 @@ atari-2600-av-bracket/
 
 ## Arch closure
 
-A separate part that fills the arched notch in the console's rear edge. It goes in from inside, and its arm rests against the base of the L hook, which locks the bracket in place. Files: `arch-plug/exports/av_arch_plug.stl` and the Fusion script `av_arch_plug_en`. It is shared by the 4-hole and 3-hole versions.
+A separate part that fills the arched notch in the console's rear edge. It goes in from inside, and its arm rests against the base of the L hook, which locks the bracket in place. Files: `arch-plug/exports/av_arch_plug.stl` and the Fusion script `av_arch_plug_en`. It is shared by all the bracket versions.
 
 - Body: 5.70 base, 4.60 top, 7.75 high, 3.28 long. The notch is 5.69 × 8.02, so the clearance in width is about 0.01 mm. Sand if needed.
 - Protrusion: 6.33 × 8.00, 3.22 thick, against the inner face of the wall.
