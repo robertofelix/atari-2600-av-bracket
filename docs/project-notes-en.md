@@ -4,7 +4,7 @@ Working notes for a small 3D-printed bracket that holds the jacks of an Atari 26
 
 **Setup:** Mac, Creality Ender 5 S1 (0.4 mm nozzle, 220×220×280 mm build volume, textured PEI bed), PLA, sliced in Creality Print.
 
-The STL files in the `exports/` folders are the main deliverable. The Fusion scripts (`av_bracket_4h_en`, `av_bracket_3h_en`, `av_bracket_svideo_en` and `av_arch_plug_en`, in `4-holes/`, `3-holes/`, `3rca-1svideo/` and `arch-plug/`) are kept only for convenience and as a reference for the geometry. The STL files were later generated directly, without Fusion, and the scripts have only been syntax-checked.
+The STL files in the `exports/` folders are the main deliverable. The Fusion scripts (`av_bracket_4h_en`, `av_bracket_3h_en`, `av_bracket_svideo_en`, `av_bracket_recessed_en` and `av_arch_plug_en`, in `4-holes/`, `3-holes/`, `3rca-1svideo/`, `3-holes-recessed/` and `arch-plug/`) are kept only for convenience and as a reference for the geometry. The STL files were later generated directly, without Fusion, and the scripts have only been syntax-checked.
 
 ## Goal
 
@@ -36,6 +36,7 @@ The geometry is described by a **Fusion Python script** (not modeled by hand), w
 | HOLE_DIAMETER / HOLE_CLEARANCE | 8.4 / 0.3 | measured RCA ring 8.38; printed holes shrink |
 | HOLE_COUNT | 4 (3 in the `3-holes` version) | my choice |
 | holes (DISTRIBUTE_HOLES) | 4 holes: centers at x = 18.93 / 34.91 / 50.89 / 66.87. 3 holes: 22.93 / 42.90 / 62.87. 3 RCA + 1 S-Video: 19.41 (S-Video) / 35.87 / 51.53 / 67.19, gaps 6.96 | calculated |
+| recessed version | Front holes 12.0 at x = 22.9 / 42.9 / 62.9 (20.0 pitch), HOLE_CENTER_Y 9.905. Inner panel: PANEL_FROM_FRONT 9.0, PANEL_THICK 3.0, PANEL_X 16.35, PANEL_WIDTH 53.0, PANEL_HOLE_DIAMETER 6.57, PANEL_BEVEL 7.58 | taken from the STL I designed for the `3-holes-recessed` version |
 | SVIDEO_DIAMETER | 10.0 + 0.3 clearance, at the x = 0 end (`3rca-1svideo` version) | from retailer listings, not measured on my jack |
 | HOLE_CENTER_Y | 10.1 | vertically centered |
 | OPEN_FROM_FRONT / OPEN_FROM_RIGHT | 2.70 / 9.30 (4.50 from the trimmed end) | measured |
@@ -82,10 +83,17 @@ atari-2600-av-bracket/
 ├── 4-holes/          english/, portuguese/ (av_bracket_4h scripts), exports/ (av_bracket_4h_print.stl, .stl, .step)
 ├── 3-holes/          english/, portuguese/ (av_bracket_3h scripts), exports/ (av_bracket_3h_print.stl, .stl, .step)
 ├── 3rca-1svideo/     english/, portuguese/ (av_bracket_svideo scripts), exports/ (av_bracket_svideo_print.stl, .stl, .step)
+├── 3-holes-recessed/ english/, portuguese/ (av_bracket_recessed scripts), exports/ (av_bracket_recessed_print.stl, .stl, .step)
 ├── arch-plug/        english/, portuguese/ (av_arch_plug scripts), exports/ (av_arch_plug.stl, .step)
 ├── docs/
 └── README.md
 ```
+
+## Recessed version (inner mounting panel)
+
+`3-holes-recessed/` keeps the 3-hole case but widens the front holes to 12.0 mm and adds a 3.0 mm panel inside, 9.0 mm behind the RCA face. The jacks are screwed to the panel through 6.57 mm holes, so the plugs sit recessed. The panel spans the full height of the cavity and is joined to the top and bottom walls. Its corner next to the top opening has a 45° bevel of 7.58 mm, so the panel does not block the cable path.
+
+The STL came from a design made outside the Fusion script. It had the panel as a second shell overlapping the walls, so the print STL was merged into a single solid (volume 11333.6 mm³). The STEP and the scripts are rebuilt from the parameters and match it within about 2 mm³. The 12.0 and 6.57 mm sizes are design values, not from a datasheet.
 
 ## Arch closure
 
