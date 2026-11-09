@@ -2,7 +2,7 @@
 
 Same case, with **3 RCA jacks and 1 S-Video jack**, the S-Video at the opening end (the left end facing the RCA face).
 
-<img src="images/preview-front.png" alt="S-Video and 3 RCA bracket, front and back previews" width="48%"> <img src="images/preview-back.png" alt="S-Video and 3 RCA bracket, front and back previews" width="48%">
+<img src="images/preview-front.png" alt="S-Video and 3 RCA bracket, front" width="48%"> <img src="images/preview-back.png" alt="S-Video and 3 RCA bracket, back" width="48%">
 
 Case: 76.2 mm long at the top and 66.2 mm at the base, 20.21 mm high, 24.89 mm deep at the bottom and 19.30 mm at the top (slanted back). Wall 2.0 mm, L hook 6 mm wide, top opening 12.10 × 12.10 mm.
 
@@ -20,7 +20,7 @@ Back to the [main README](../README.md).
 
 Mesma case, com **3 conectores RCA e 1 S-Video**, com o S-Video na ponta da abertura (a ponta esquerda, de frente para a face RCA).
 
-<img src="images/preview-front.png" alt="S-Video and 3 RCA bracket, front and back previews" width="48%"> <img src="images/preview-back.png" alt="S-Video and 3 RCA bracket, front and back previews" width="48%">
+<img src="images/preview-front.png" alt="S-Video and 3 RCA bracket, front" width="48%"> <img src="images/preview-back.png" alt="S-Video and 3 RCA bracket, back" width="48%">
 
 Case: 76,2 mm de comprimento no topo e 66,2 mm na base, 20,21 mm de altura, 24,89 mm de profundidade embaixo e 19,30 mm em cima (traseira inclinada). Parede de 2,0 mm, gancho em L de 6 mm de largura e abertura de cima de 12,10 × 12,10 mm.
 

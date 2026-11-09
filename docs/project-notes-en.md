@@ -8,7 +8,7 @@ The STL files in the `exports/` folders are the main deliverable. The Fusion scr
 
 ## Goal
 
-Reproduce a small 3D-printed bracket that clips under the back of an **Atari 2600** and holds the jacks of an **AV mod**. The original I'm copying holds 1 S-Video and 3 RCA jacks. **My version replaces the S-Video cutout with a 4th RCA hole, so it has 4 identical RCA holes.** The flat ribbon cable from the mod runs into the bracket through an opening in the top face, and an "L" hook next to that opening locks the bracket to the console.
+Reproduce a small 3D-printed bracket that clips under the back of an **Atari 2600** and holds the jacks of an **AV mod**. The original I'm copying holds 1 S-Video and 3 RCA jacks. **My first version replaces the S-Video cutout with a 4th RCA hole, so it has 4 identical RCA holes.** The repository later grew other versions of the same case (3 holes, 3 RCA + 1 S-Video, and a recessed one). The flat ribbon cable from the mod runs into the bracket through an opening in the top face, and an "L" hook next to that opening locks the bracket to the console.
 
 ## How the part is built
 
@@ -17,8 +17,8 @@ The geometry is described by a **Fusion Python script** (not modeled by hand), w
 1. **Body:** a trapezoid sketched on the XY plane (length × height) and extruded along Z (depth). The top is 76.2 mm and the base 66.2 mm, because both ends slant 5 mm. `TRIM_END` (4.8 mm) shortens the part at the opening end without moving anything else.
 2. **Shell:** 2 mm walls. The removed face is the **back** (opposite the holes), so the box is open at the back.
 3. **Slanted back:** a wedge cut on the YZ plane so the depth goes from 24.89 mm at the bottom to 19.30 mm at the top (~15.5°). This matches the slanted rear of the Atari case. The narrow side is at the top, against the Atari.
-4. **Optional square cutout:** the old S-Video opening, now off (`USE_CUTOUT = False`).
-5. **4 RCA holes** (or 3 in the `3-holes` version, with 11.27 mm gaps): cut through the front wall only. `DISTRIBUTE_HOLES` spaces them evenly at hole height, with equal gaps (7.28 mm) between holes and between the holes and the slanted ends.
+4. **Optional square cutout:** a generic square cutout in the front wall, off by default (`USE_CUTOUT = False`). The `3rca-1svideo` version has its own round S-Video hole (`USE_SVIDEO`).
+5. **4 RCA holes** (3 in the `3-holes` version, with 11.27 mm gaps; 3 RCA + 1 S-Video in `3rca-1svideo`, with 6.96 mm gaps; 3 widened 12.0 mm holes in the recessed version): cut through the front wall only. `DISTRIBUTE_HOLES` spaces them evenly at hole height, with equal gaps (7.28 mm) between holes and between the holes and the slanted ends.
 6. **Top opening:** a 12.10 × 12.10 mm square cut through the top wall, for the cable. `USE_OPEN_ARM` can add an arm toward the end, which is off.
 7. **L hook:** it starts at the opening's 12.10 mm edge on the center side and runs toward the center. The post is 2.5 mm long and 3.10 mm tall, the plate 9.15 mm long and 2.5 mm thick, and the hook is 6 mm wide, centered on that edge.
 
@@ -44,13 +44,13 @@ The geometry is described by a **Fusion Python script** (not modeled by hand), w
 | TAB_PLATE_LENGTH / TAB_POST_LENGTH | 9.15 / 2.5 | measured / chosen |
 | TAB_POST_HEIGHT / TAB_PLATE_THICK | 3.10 / 2.5 | measured / chosen |
 | TAB_DEPTH | 6.0, centered on the opening edge (front at 5.75 from the front edge) | measured |
-| D_SERIES_SCREWS | False | the jacks press-fit, no screws |
+| D_SERIES_SCREWS | False | the jacks press-fit (or, in the recessed version, screw onto the inner panel), no extra screws |
 
 Clearances were checked on the generated model: the L hook (z from the front edge 5.75 to 11.75 mm) and the opening (2.70 to 14.80 mm) stay 4.50 mm in front of the slanted back at the top.
 
 ## Important context and lessons learned
 
-- **The RCA jacks only press-fit into the holes.** Hole size is the most critical fit. A small test plate with holes at 8.2 / 8.4 / 8.6 mm is a good idea before reprinting the whole part.
+- **In the press-fit versions the RCA jacks only press-fit into the holes.** Hole size is the most critical fit. A small test plate with holes at 8.2 / 8.4 / 8.6 mm is a good idea before reprinting the whole part.
 - **Early estimates were about 2× too big** (150 mm long) because I worked from screenshots without scale. All dimensions are now real caliper measurements.
 - **Top-view orientation trap:** looking from above with the RCA face at the top, the opening end is on the *right*. Looking at the RCA face, it is on the *left*. Parameters named "right" refer to the top view.
 - **Caliper units:** once the display was accidentally in inches ("in" shown on the display). My caliper's **mm/in/F** button changes units. Always check that "mm" is shown, and zero the caliper with the jaws closed.
@@ -60,7 +60,7 @@ Clearances were checked on the generated model: the L hook (z from the front edg
 ## Printing setup
 
 - Orientation: **RCA-hole face down on the bed**, open back facing up. The holes come out round with no support.
-- **No supports needed.** The L hook has the same cross-section along the print direction, so it prints without them. Check the layer preview for the 12.10 mm bridge over the opening.
+- **No supports needed** for the press-fit versions. The L hook has the same cross-section along the print direction, so it prints without them. The recessed version has an inner panel that is a bridge of about 16 mm, which was printed and validated by Jonatã Mariani (his support and cooling settings are not recorded). Check the layer preview for the 12.10 mm bridge over the opening.
 - PLA starting point: 0.2 mm layers, 200–210 °C nozzle, 60 °C bed, 3 walls, 15–20% infill. A brim helps the first layers.
 
 ## Fusion how-tos we already solved
@@ -93,7 +93,7 @@ atari-2600-av-bracket/
 
 `3-holes-recessed/` keeps the 3-hole case but widens the front holes to 12.0 mm and adds a 3.0 mm panel inside, 9.0 mm behind the RCA face. The jacks are screwed to the panel through 6.57 mm holes, so the plugs sit recessed. The panel spans the full height of the cavity and is joined to the top and bottom walls. Its corner next to the top opening has a 45° bevel of 7.58 mm, so the panel does not block the cable path.
 
-This version was designed by Jonatã Mariani, from the YouTube channel [Veio dos Game](https://www.youtube.com/c/VeimdosGame), based on the original version of this project. The STL came from his design, made outside the Fusion script. It had the panel as a second shell overlapping the walls, so the print STL was merged into a single solid (volume 11333.6 mm³). The STEP and the scripts are rebuilt from the parameters and match it within about 2 mm³. The 12.0 and 6.57 mm sizes are design values, not from a datasheet.
+This version was designed by Jonatã Mariani, from the YouTube channel [Veio dos Game](https://www.youtube.com/c/VeimdosGame), based on the original version of this project. The STL came from his design, made outside the Fusion script. It had the panel as a second shell overlapping the walls, so the print STL was merged into a single solid (volume 11333.6 mm³). The STEP is rebuilt from the parameters and matches it within about 2 mm³. The scripts follow the same parameters but have not been run in Fusion. The 12.0 and 6.57 mm sizes are design values, not from a datasheet.
 
 ## Arch closure
 
@@ -107,4 +107,5 @@ A separate part that fills the arched notch in the console's rear edge. It goes 
 ## Open next steps
 
 1. Fine-tune the hole fit for the press-fit RCA jacks with a test plate (8.2 / 8.4 / 8.6 mm).
-2. Optionally add embossed labels under each jack, like the original's "Y", "C", "Audio".
+2. Test-print the S-Video version and check the 10.3 mm hole against the real jack.
+3. Optionally add embossed labels under each jack, like the original's "Y", "C", "Audio".
