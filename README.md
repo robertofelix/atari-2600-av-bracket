@@ -41,10 +41,6 @@ Renders made from the STL files. The left image of each pair is the front, the r
 
 <img src="3rca-1svideo/images/preview-front.png" alt="3 RCA + 1 S-Video, front" width="48%"> <img src="3rca-1svideo/images/preview-back.png" alt="3 RCA + 1 S-Video, back" width="48%">
 
-**3 RCA embutidos**
-
-<img src="3-holes-recessed/images/preview-front.png" alt="3 RCA embutidos, front" width="48%"> <img src="3-holes-recessed/images/preview-back.png" alt="3 RCA embutidos, back" width="48%">
-
 **3 recessed RCA**
 
 <img src="3-holes-recessed/images/preview-front.png" alt="3 recessed RCA, front" width="48%"> <img src="3-holes-recessed/images/preview-back.png" alt="3 recessed RCA, back" width="48%">
@@ -229,6 +225,10 @@ Imagens renderizadas a partir dos arquivos STL. A da esquerda de cada par mostra
 **3 RCA + 1 S-Video**
 
 <img src="3rca-1svideo/images/preview-front.png" alt="3 RCA + 1 S-Video, front" width="48%"> <img src="3rca-1svideo/images/preview-back.png" alt="3 RCA + 1 S-Video, back" width="48%">
+
+**3 RCA embutidos**
+
+<img src="3-holes-recessed/images/preview-front.png" alt="3 RCA embutidos, front" width="48%"> <img src="3-holes-recessed/images/preview-back.png" alt="3 RCA embutidos, back" width="48%">
 
 **Fecho do arco**
 

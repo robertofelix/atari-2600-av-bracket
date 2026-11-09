@@ -36,7 +36,7 @@ The geometry is described by a **Fusion Python script** (not modeled by hand), w
 | HOLE_DIAMETER / HOLE_CLEARANCE | 8.4 / 0.3 | measured RCA ring 8.38; printed holes shrink |
 | HOLE_COUNT | 4 (3 in the `3-holes` version) | my choice |
 | holes (DISTRIBUTE_HOLES) | 4 holes: centers at x = 18.93 / 34.91 / 50.89 / 66.87. 3 holes: 22.93 / 42.90 / 62.87. 3 RCA + 1 S-Video: 19.41 (S-Video) / 35.87 / 51.53 / 67.19, gaps 6.96 | calculated |
-| recessed version | Front holes 12.0 at x = 22.9 / 42.9 / 62.9 (20.0 pitch), HOLE_CENTER_Y 9.905. Inner panel: PANEL_FROM_FRONT 9.0, PANEL_THICK 3.0, PANEL_X 16.35, PANEL_WIDTH 53.0, PANEL_HOLE_DIAMETER 6.57, PANEL_BEVEL 7.58 | taken from the STL I designed for the `3-holes-recessed` version |
+| recessed version | Front holes 12.0 at x = 22.9 / 42.9 / 62.9 (20.0 pitch), HOLE_CENTER_Y 9.905. Inner panel: PANEL_FROM_FRONT 9.0, PANEL_THICK 3.0, PANEL_X 16.35, PANEL_WIDTH 53.0, PANEL_HOLE_DIAMETER 6.57, PANEL_BEVEL 7.58 | taken from the STL by Jonatã Mariani (see the credits in `3-holes-recessed/README.md`) |
 | SVIDEO_DIAMETER | 10.0 + 0.3 clearance, at the x = 0 end (`3rca-1svideo` version) | from retailer listings, not measured on my jack |
 | HOLE_CENTER_Y | 10.1 | vertically centered |
 | OPEN_FROM_FRONT / OPEN_FROM_RIGHT | 2.70 / 9.30 (4.50 from the trimmed end) | measured |
@@ -93,7 +93,7 @@ atari-2600-av-bracket/
 
 `3-holes-recessed/` keeps the 3-hole case but widens the front holes to 12.0 mm and adds a 3.0 mm panel inside, 9.0 mm behind the RCA face. The jacks are screwed to the panel through 6.57 mm holes, so the plugs sit recessed. The panel spans the full height of the cavity and is joined to the top and bottom walls. Its corner next to the top opening has a 45° bevel of 7.58 mm, so the panel does not block the cable path.
 
-The STL came from a design made outside the Fusion script. It had the panel as a second shell overlapping the walls, so the print STL was merged into a single solid (volume 11333.6 mm³). The STEP and the scripts are rebuilt from the parameters and match it within about 2 mm³. The 12.0 and 6.57 mm sizes are design values, not from a datasheet.
+This version was designed by Jonatã Mariani, from the YouTube channel [Veio dos Game](https://www.youtube.com/c/VeimdosGame), based on the original version of this project. The STL came from his design, made outside the Fusion script. It had the panel as a second shell overlapping the walls, so the print STL was merged into a single solid (volume 11333.6 mm³). The STEP and the scripts are rebuilt from the parameters and match it within about 2 mm³. The 12.0 and 6.57 mm sizes are design values, not from a datasheet.
 
 ## Arch closure
 

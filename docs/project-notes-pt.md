@@ -36,7 +36,7 @@ A geometria é descrita por um **script Python do Fusion** (não é modelada à 
 | FURO_DIAMETRO / FURO_FOLGA | 8,4 / 0,3 | anel RCA medido 8,38; furos impressos encolhem |
 | FURO_QTD | 4 (3 na versão `3-holes`) | escolha minha |
 | furos (DISTRIBUIR_FUROS) | 4 furos: centros em x = 18,93 / 34,91 / 50,89 / 66,87. 3 furos: 22,93 / 42,90 / 62,87. 3 RCA + 1 S-Video: 19,41 (S-Video) / 35,87 / 51,53 / 67,19, folgas de 6,96 | calculado |
-| versão embutida | Furos da frente de 12,0 em x = 22,9 / 42,9 / 62,9 (20,0 entre centros), FURO_ALTURA_CENTRO 9,905. Painel interno: PAINEL_DA_FRENTE 9,0, PAINEL_ESP 3,0, PAINEL_X 16,35, PAINEL_LARGURA 53,0, PAINEL_FURO_DIAMETRO 6,57, PAINEL_CHANFRO 7,58 | tirado do STL que projetei para a versão `3-holes-recessed` |
+| versão embutida | Furos da frente de 12,0 em x = 22,9 / 42,9 / 62,9 (20,0 entre centros), FURO_ALTURA_CENTRO 9,905. Painel interno: PAINEL_DA_FRENTE 9,0, PAINEL_ESP 3,0, PAINEL_X 16,35, PAINEL_LARGURA 53,0, PAINEL_FURO_DIAMETRO 6,57, PAINEL_CHANFRO 7,58 | tirado do STL do Jonatã Mariani (veja os créditos em `3-holes-recessed/README.md`) |
 | SVIDEO_DIAMETRO | 10,0 + 0,3 de folga, na ponta x = 0 (versão `3rca-1svideo`) | de listagens de lojas, não medido no meu conector |
 | FURO_ALTURA_CENTRO | 10,1 | centralizado na vertical |
 | ABERTURA_DA_FRENTE / ABERTURA_DA_DIREITA | 2,70 / 9,30 (4,50 da ponta encurtada) | medido |
@@ -93,7 +93,7 @@ atari-2600-av-bracket/
 
 A `3-holes-recessed/` mantém a case de 3 furos, mas alarga os furos da frente para 12,0 mm e acrescenta um painel de 3,0 mm por dentro, a 9,0 mm da face RCA. Os conectores são parafusados no painel por furos de 6,57 mm, então os plugs ficam embutidos. O painel ocupa a altura toda da cavidade e é unido às paredes de cima e de baixo. O canto junto da abertura de cima tem um chanfro de 45° de 7,58 mm, para o painel não bloquear o caminho do cabo.
 
-O STL veio de um projeto feito fora do script do Fusion. Ele tinha o painel como um segundo corpo sobreposto às paredes, então o STL de impressão foi unido num sólido único (volume 11333,6 mm³). O STEP e os scripts são reconstruídos a partir dos parâmetros e batem com ele em cerca de 2 mm³. Os tamanhos de 12,0 e 6,57 mm são valores de projeto, não de um datasheet.
+Esta versão foi criada por Jonatã Mariani, do canal do YouTube [Veio dos Game](https://www.youtube.com/c/VeimdosGame), com base na versão original deste projeto. O STL veio do projeto dele, feito fora do script do Fusion. Ele tinha o painel como um segundo corpo sobreposto às paredes, então o STL de impressão foi unido num sólido único (volume 11333,6 mm³). O STEP e os scripts são reconstruídos a partir dos parâmetros e batem com ele em cerca de 2 mm³. Os tamanhos de 12,0 e 6,57 mm são valores de projeto, não de um datasheet.
 
 ## Fecho do arco
 
