@@ -97,7 +97,7 @@ The first prints of the 4-hole version had the jack nuts almost touching: the he
 
 `3-holes-recessed/` keeps the 3-hole case but widens the front holes to 12.0 mm and adds a 3.0 mm panel inside, 9.0 mm behind the RCA face. The jacks are screwed to the panel through 6.57 mm holes, so the plugs sit recessed. The panel spans the full height of the cavity and is joined to the top and bottom walls. Its corner next to the top opening has a 45° bevel of 7.58 mm, so the panel does not block the cable path.
 
-This version was designed by Jonatã Mariani, from the YouTube channel [Veio dos Game](https://www.youtube.com/c/VeimdosGame), based on the original version of this project. The STL came from his design, made outside the Fusion script. It had the panel as a second shell overlapping the walls, so the print STL was merged into a single solid (volume 11333.6 mm³). The STEP is rebuilt from the parameters and matches it within about 2 mm³. The scripts follow the same parameters but have not been run in Fusion. The 12.0 and 6.57 mm sizes are design values, not from a datasheet.
+This version was designed by Jonatã Mariani, from the YouTube channel [Veim dos Game](https://www.youtube.com/c/VeimdosGame), based on the original version of this project. The STL came from his design, made outside the Fusion script. It had the panel as a second shell overlapping the walls, so the print STL was merged into a single solid (volume 11333.6 mm³). The STEP is rebuilt from the parameters and matches it within about 2 mm³. The scripts follow the same parameters but have not been run in Fusion. The 12.0 and 6.57 mm sizes are design values, not from a datasheet.
 
 ## Arch closure
 

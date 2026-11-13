@@ -97,7 +97,7 @@ Nas primeiras impressões da versão de 4 furos as porcas dos conectores quase s
 
 A `3-holes-recessed/` mantém a case de 3 furos, mas alarga os furos da frente para 12,0 mm e acrescenta um painel de 3,0 mm por dentro, a 9,0 mm da face RCA. Os conectores são parafusados no painel por furos de 6,57 mm, então os plugs ficam embutidos. O painel ocupa a altura toda da cavidade e é unido às paredes de cima e de baixo. O canto junto da abertura de cima tem um chanfro de 45° de 7,58 mm, para o painel não bloquear o caminho do cabo.
 
-Esta versão foi criada por Jonatã Mariani, do canal do YouTube [Veio dos Game](https://www.youtube.com/c/VeimdosGame), com base na versão original deste projeto. O STL veio do projeto dele, feito fora do script do Fusion. Ele tinha o painel como um segundo corpo sobreposto às paredes, então o STL de impressão foi unido num sólido único (volume 11333,6 mm³). O STEP é reconstruído a partir dos parâmetros e bate com ele em cerca de 2 mm³. Os scripts seguem os mesmos parâmetros, mas não foram rodados no Fusion. Os tamanhos de 12,0 e 6,57 mm são valores de projeto, não de um datasheet.
+Esta versão foi criada por Jonatã Mariani, do canal do YouTube [Veim dos Game](https://www.youtube.com/c/VeimdosGame), com base na versão original deste projeto. O STL veio do projeto dele, feito fora do script do Fusion. Ele tinha o painel como um segundo corpo sobreposto às paredes, então o STL de impressão foi unido num sólido único (volume 11333,6 mm³). O STEP é reconstruído a partir dos parâmetros e bate com ele em cerca de 2 mm³. Os scripts seguem os mesmos parâmetros, mas não foram rodados no Fusion. Os tamanhos de 12,0 e 6,57 mm são valores de projeto, não de um datasheet.
 
 ## Fecho do arco
 

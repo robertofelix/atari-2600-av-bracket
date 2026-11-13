@@ -14,7 +14,7 @@ Case: 76.2 mm long at the top and 66.2 mm at the base, 20.21 mm high, 24.89 mm d
 
 **Check first:** the inner panel is a bridge of about 16 mm between the top and bottom walls when printed RCA face down. It was printed and validated by Jonatã Mariani, but the support and cooling settings he used are not recorded here. Also, the 12.0 mm and 6.57 mm holes come from the design of this version, not from a datasheet. Make sure your jack's body fits in 12.0 mm and its barrel in 6.57 mm.
 
-**Credits:** this version was designed by Jonatã Mariani, from the YouTube channel [Veio dos Game](https://www.youtube.com/c/VeimdosGame), based on the original version of this project.
+**Credits:** this version was designed by Jonatã Mariani, from the YouTube channel [Veim dos Game](https://www.youtube.com/c/VeimdosGame), based on the original version of this project.
 
 Back to the [main README](../README.md).
 
@@ -36,6 +36,6 @@ Case: 76,2 mm de comprimento no topo e 66,2 mm na base, 20,21 mm de altura, 24,8
 
 **Confira antes:** o painel interno é uma ponte de cerca de 16 mm entre as paredes de cima e de baixo quando impresso com a face RCA para baixo. Ele foi impresso e validado pelo Jonatã Mariani, mas as configurações de suporte e de refrigeração que ele usou não estão registradas aqui. Além disso, os furos de 12,0 mm e 6,57 mm vêm do projeto desta versão, não de um datasheet. Confirme que o corpo do seu conector cabe em 12,0 mm e a rosca em 6,57 mm.
 
-**Créditos:** esta versão foi criada por Jonatã Mariani, do canal do YouTube [Veio dos Game](https://www.youtube.com/c/VeimdosGame), com base na versão original deste projeto.
+**Créditos:** esta versão foi criada por Jonatã Mariani, do canal do YouTube [Veim dos Game](https://www.youtube.com/c/VeimdosGame), com base na versão original deste projeto.
 
 Voltar ao [README principal](../README.md).
