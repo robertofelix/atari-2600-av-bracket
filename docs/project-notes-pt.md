@@ -4,11 +4,11 @@ Notas de trabalho de um pequeno suporte impresso em 3D que segura os conectores 
 
 **Setup:** Mac, Creality Ender 5 S1 (bico 0,4 mm, volume de impressão 220×220×280 mm, mesa PEI texturizada), PLA, fatiado no Creality Print.
 
-Os arquivos STL das pastas `exports/` são a entrega principal. Os scripts do Fusion (`av_bracket_4h_pt`, `av_bracket_3h_pt`, `av_bracket_svideo_pt`, `av_bracket_recessed_pt` e `av_arch_plug_pt`, em `4-holes/`, `3-holes/`, `3rca-1svideo/`, `3-holes-recessed/` e `arch-plug/`) ficam só por comodidade e como referência da geometria. Os STL foram gerados depois diretamente, sem o Fusion, e os scripts só passaram por checagem de sintaxe.
+Os arquivos STL das pastas `exports/` são a entrega principal. Os scripts do Fusion (`av_bracket_4h_pt`, `av_bracket_3h_pt`, `av_bracket_svideo_pt`, `av_bracket_recessed_pt`, `av_bracket_din5_pt` e `av_arch_plug_pt`, em `4-holes/`, `3-holes/`, `3rca-1svideo/`, `3-holes-recessed/`, `1din5-1rca/` e `arch-plug/`) ficam só por comodidade e como referência da geometria. Os STL foram gerados depois diretamente, sem o Fusion, e os scripts só passaram por checagem de sintaxe.
 
 ## Objetivo
 
-Reproduzir um pequeno suporte impresso em 3D que encaixa na traseira de um **Atari 2600** e segura os conectores de um **AV mod**. A peça original que estou copiando segura 1 S-Video e 3 RCA. **Minha primeira versão troca o recorte do S-Video por um 4º furo RCA, então tem 4 furos RCA idênticos.** Depois o repositório ganhou outras versões da mesma case (3 furos, 3 RCA + 1 S-Video e uma embutida). O cabo flat do mod entra no suporte por uma abertura na face de cima, e um gancho em "L" ao lado dessa abertura prende o suporte ao console.
+Reproduzir um pequeno suporte impresso em 3D que encaixa na traseira de um **Atari 2600** e segura os conectores de um **AV mod**. A peça original que estou copiando segura 1 S-Video e 3 RCA. **Minha primeira versão troca o recorte do S-Video por um 4º furo RCA, então tem 4 furos RCA idênticos.** Depois o repositório ganhou outras versões da mesma case (3 furos, 3 RCA + 1 S-Video, uma embutida e uma com DIN de 5 pinos + RCA). O cabo flat do mod entra no suporte por uma abertura na face de cima, e um gancho em "L" ao lado dessa abertura prende o suporte ao console.
 
 ## Como a peça é construída
 
@@ -18,7 +18,7 @@ A geometria é descrita por um **script Python do Fusion** (não é modelada à 
 2. **Casca:** paredes de 2 mm. A face removida é a **traseira** (oposta aos furos), então a caixa fica aberta atrás.
 3. **Traseira inclinada:** um corte em cunha no plano YZ, de modo que a profundidade vai de 24,89 mm embaixo até 19,30 mm em cima (~15,5°). Isso acompanha a traseira inclinada da carcaça do Atari. O lado mais estreito fica em cima, junto ao Atari.
 4. **Recorte quadrado opcional:** um recorte quadrado genérico na parede da frente, desligado por padrão (`USAR_ABERTURA = False`). A versão `3rca-1svideo` tem o próprio furo redondo de S-Video (`USAR_SVIDEO`).
-5. **4 furos RCA** (3 na versão `3-holes`, com folgas de 11,27 mm; 3 RCA + 1 S-Video na `3rca-1svideo`, com o furo do S-Video na ponta da abertura; 3 furos alargados de 12,0 mm na versão embutida): cortados só na parede frontal. `DISTRIBUIR_FUROS` espaça os furos por igual na altura deles, com folgas iguais entre os furos e entre os furos e as pontas inclinadas. Ele fica ligado só na versão de 3 furos. Nas versões de 4 furos e de S-Video os centros são definidos à mão (`FURO_PRIMEIRO_X`, `FURO_ESPACAMENTO` e `SVIDEO_ESPACAMENTO`).
+5. **4 furos RCA** (3 na versão `3-holes`, com folgas de 11,27 mm; 3 RCA + 1 S-Video na `3rca-1svideo`, com o furo do S-Video na ponta da abertura; 3 furos alargados de 12,0 mm na versão embutida; 1 furo RCA mais os furos do DIN na `1din5-1rca`): cortados só na parede frontal. `DISTRIBUIR_FUROS` espaça os furos por igual na altura deles, com folgas iguais entre os furos e entre os furos e as pontas inclinadas. Ele fica ligado só na versão de 3 furos. Nas versões de 4 furos e de S-Video os centros são definidos à mão (`FURO_PRIMEIRO_X`, `FURO_ESPACAMENTO` e `SVIDEO_ESPACAMENTO`).
 6. **Abertura de cima:** um quadrado de 12,10 × 12,10 mm cortado na parede de cima, para o cabo. `USAR_BRACO` pode acrescentar um braço até a ponta, e vem desligado.
 7. **Gancho em L:** começa na aresta de 12,10 mm da abertura, do lado do centro, e segue para o centro. O pino tem 2,5 mm de comprimento e 3,10 mm de altura, a placa 9,15 mm de comprimento e 2,5 mm de espessura, e o gancho tem 6 mm de largura, centralizado nessa aresta.
 
@@ -34,9 +34,10 @@ A geometria é descrita por um **script Python do Fusion** (não é modelada à 
 | PROFUNDIDADE_TOPO | 19,30 | medido |
 | PAREDE | 2,0 | escolhido |
 | FURO_DIAMETRO / FURO_FOLGA | 8,4 / 0,3 | anel RCA medido 8,38; furos impressos encolhem |
-| FURO_QTD | 4 (3 na versão `3-holes`) | escolha minha |
+| FURO_QTD | 4 (3 nas versões `3-holes`, `3rca-1svideo` e embutida, 1 RCA na versão com DIN) | escolha minha |
 | furos (DISTRIBUIR_FUROS) | 4 furos: centros em x = 18,93 / 37,91 / 56,89 / 75,87 (espaçamento de 18,98). 3 furos: 22,93 / 42,90 / 62,87. 3 RCA + 1 S-Video: 19,41 (S-Video) / 38,73 / 57,46 / 76,19 | calculado |
 | versão embutida | Furos da frente de 12,0 em x = 22,9 / 42,9 / 62,9 (20,0 entre centros), FURO_ALTURA_CENTRO 9,905. Painel interno: PAINEL_DA_FRENTE 9,0, PAINEL_ESP 3,0, PAINEL_X 16,35, PAINEL_LARGURA 53,0, PAINEL_FURO_DIAMETRO 6,57, PAINEL_CHANFRO 7,58 | tirado do STL do Jonatã Mariani (veja os créditos em `3-holes-recessed/README.md`) |
+| versão DIN | `1din5-1rca/`: furo do DIN de 15,3 (15 + 0,3) em x = 34,1, furos M3 de 3,5 (3,2 + 0,3) em x = 23,4 / 44,8 (21,4 entre eles), RCA de 8,7 em x = 58,0, comprimento 76,2 | de listagens de lojas e de uma foto do produto, não medido |
 | SVIDEO_DIAMETRO | 10,0 + 0,3 de folga, na ponta x = 0 (versão `3rca-1svideo`) | de listagens de lojas, não medido no meu conector |
 | FURO_ALTURA_CENTRO | 10,1 | centralizado na vertical |
 | ABERTURA_DA_FRENTE / ABERTURA_DA_DIREITA | 2,70 / 9,30 (4,50 da ponta encurtada) | medido |
@@ -74,7 +75,7 @@ As folgas foram conferidas no modelo gerado: o gancho em L (z a partir da borda 
 
 **Nome:** `atari-2600-av-bracket`
 
-> 3D-printable bracket for the Atari 2600 AV mod. Mounts 3 or 4 RCA jacks at the rear of the console. Ready-to-print STL files, with optional Autodesk Fusion scripts.
+> 3D-printable bracket for the Atari 2600 AV mod. Mounts RCA, S-Video or 5-pin DIN jacks at the rear of the console. Ready-to-print STL files, with optional Autodesk Fusion scripts.
 
 **Tópicos:** `atari-2600`, `av-mod`, `3d-printing`, `fusion360`, `retro-gaming`, `rca`
 
@@ -84,6 +85,7 @@ atari-2600-av-bracket/
 ├── 3-holes/          english/, portuguese/ (scripts av_bracket_3h), exports/ (av_bracket_3h_print.stl, .stl, .step)
 ├── 3rca-1svideo/     english/, portuguese/ (scripts av_bracket_svideo), exports/ (av_bracket_svideo_print.stl, .stl, .step)
 ├── 3-holes-recessed/ english/, portuguese/ (scripts av_bracket_recessed), exports/ (av_bracket_recessed_print.stl, .stl, .step)
+├── 1din5-1rca/       english/, portuguese/ (scripts av_bracket_din5), exports/ (av_bracket_din5_print.stl, .stl, .step)
 ├── arch-plug/        english/, portuguese/ (scripts av_arch_plug), exports/ (av_arch_plug.stl, .step)
 ├── docs/
 └── README.md
@@ -99,6 +101,10 @@ A `3-holes-recessed/` mantém a case de 3 furos, mas alarga os furos da frente p
 
 Esta versão foi criada por Jonatã Mariani, do canal do YouTube [Veim dos Game](https://www.youtube.com/c/VeimdosGame), com base na versão original deste projeto. O STL veio do projeto dele, feito fora do script do Fusion. Ele tinha o painel como um segundo corpo sobreposto às paredes, então o STL de impressão foi unido num sólido único (volume 11333,6 mm³). O STEP é reconstruído a partir dos parâmetros e bate com ele em cerca de 2 mm³. Os scripts seguem os mesmos parâmetros, mas não foram rodados no Fusion. Os tamanhos de 12,0 e 6,57 mm são valores de projeto, não de um datasheet.
 
+## Versão com DIN de 5 pinos + RCA
+
+A `1din5-1rca/` mantém a case de 3 furos e segura um conector DIN de 5 pinos (180°, o tipo da saída de monitor do Atari 800) mais um RCA. Uma porca rosqueada não cabe nos 16,2 mm de altura interna, então ela usa o tipo com flange: furo de 15 mm no corpo e dois parafusos M3 a 21,4 mm um do outro (valores de uma listagem da Maplin). A flange é estimada em 27 × 18 mm pela foto de um PUREVOLT A-1462-5, o que deixa cerca de 1 mm acima e abaixo na face de 20,21 mm, e cerca de 2,8 mm até a porca do RCA. O par fica centralizado na face. Esta versão não foi impressa e a flange não foi medida, então confira com o conector real antes. Nos scripts, `USAR_DIN` acrescenta os furos do DIN e dos parafusos no mesmo sketch do furo RCA.
+
 ## Fecho do arco
 
 Peça separada que preenche o recorte em arco na borda traseira do console. Entra por dentro, e o braço encosta na base do gancho em L, o que trava o suporte. Arquivos: `arch-plug/exports/av_arch_plug.stl` e o script do Fusion `av_arch_plug_pt`. Ela é comum a todas as versões do suporte.
@@ -112,4 +118,5 @@ Peça separada que preenche o recorte em arco na borda traseira do console. Entr
 
 1. Ajustar o encaixe dos furos para os conectores RCA por pressão com uma plaquinha de teste (8,2 / 8,4 / 8,6 mm).
 2. Imprimir a versão com S-Video e conferir o furo de 10,3 mm com o conector real.
-3. Opcionalmente adicionar textos em relevo embaixo de cada conector, como o original ("Y", "C", "Audio").
+3. Imprimir a versão com DIN e conferir a flange com o conector real.
+4. Opcionalmente adicionar textos em relevo embaixo de cada conector, como o original ("Y", "C", "Audio").

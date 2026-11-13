@@ -1,6 +1,6 @@
 # Atari 2600 AV Bracket
 
-3D-printable bracket for the **Atari 2600 AV mod**. It holds **4 or 3 RCA jacks**, or **3 RCA plus 1 S-Video jack**, or **3 recessed RCA jacks on an inner panel**, at the rear of the console, in four versions of the same case. The ready-to-print **STL files** are the main deliverable. Optional **Autodesk Fusion** Python scripts are included for convenience.
+3D-printable bracket for the **Atari 2600 AV mod**. It holds **4 or 3 RCA jacks**, or **3 RCA plus 1 S-Video jack**, or **3 recessed RCA jacks on an inner panel**, or **one 5-pin DIN jack plus one RCA jack**, at the rear of the console, in five versions of the same case. The ready-to-print **STL files** are the main deliverable. Optional **Autodesk Fusion** Python scripts are included for convenience.
 
 > 🇧🇷 **Nota:** este README também está em português, mais abaixo (a partir de [Português (Brasil)](#-português-brasil)). Os scripts em português ficam nas pastas `portuguese/` de cada versão, e as notas estão em [`docs/project-notes-pt.md`](docs/project-notes-pt.md).
 
@@ -8,13 +8,13 @@
 
 ## What it is
 
-A small hollow bracket that clips under the back of an Atari 2600. In most versions the jacks press-fit into the front wall (in the recessed version they are screwed to an inner panel), the flat ribbon cable from the mod runs into the box through an opening in the top face, and an "L" hook next to that opening locks the bracket to the console.
+A small hollow bracket that clips under the back of an Atari 2600. In most versions the jacks press-fit into the front wall (in the recessed version they are screwed to an inner panel, and in the DIN version the DIN jack is held by two screws), the flat ribbon cable from the mod runs into the box through an opening in the top face, and an "L" hook next to that opening locks the bracket to the console.
 
 The design is based on a commercial part that holds 1 S-Video and 3 RCA jacks. The 4-hole version replaces the S-Video cutout with a fourth RCA hole, and the `3rca-1svideo` version keeps an S-Video hole.
 
 ## Versions
 
-The same case comes in four versions. In the 3-hole version the holes are spread evenly over the width of the case (equal gaps between the holes and between the holes and the ends). The 4-hole and S-Video versions are 9 mm longer, extended on the side opposite the L hook, so the jack nuts (14.82 mm across the corners on the RCA jacks used) do not touch each other. In the recessed version, the front holes are 20.0 mm apart.
+The same case comes in five versions. In the 3-hole version the holes are spread evenly over the width of the case (equal gaps between the holes and between the holes and the ends). The 4-hole and S-Video versions are 9 mm longer, extended on the side opposite the L hook, so the jack nuts (14.82 mm across the corners on the RCA jacks used) do not touch each other. In the recessed version, the front holes are 20.0 mm apart. The DIN version has one 5-pin DIN jack and one RCA jack, centered together on the face.
 
 | Version | Folder | Holes | Spacing | Hole centers (from the opening end) |
 |---|---|---|---|---|
@@ -22,8 +22,9 @@ The same case comes in four versions. In the 3-hole version the holes are spread
 | 3 holes | [`3-holes/`](3-holes/) | 3 | 4 gaps of 11.27 mm | 22.93 / 42.90 / 62.87 |
 | 3 RCA + 1 S-Video | [`3rca-1svideo/`](3rca-1svideo/) | 3 RCA (8.7) + 1 S-Video (10.3) | 18.73 mm RCA to RCA, 19.32 mm S-Video to RCA | S-Video 19.41, RCA 38.73 / 57.46 / 76.19 |
 | 3 recessed RCA | [`3-holes-recessed/`](3-holes-recessed/) | 3 (front holes 12.0, panel holes 6.57) | 20.0 mm center to center | 22.9 / 42.9 / 62.9 |
+| 5-pin DIN + RCA | [`1din5-1rca/`](1din5-1rca/) | 1 DIN (15.3, plus 2 × M3 3.5) + 1 RCA (8.7) | 23.9 mm DIN to RCA | DIN 34.1 (screws 23.4 / 44.8), RCA 58.0 |
 
-Everything else is identical: height, depth, opening, L hook and slanted back, and, except in the recessed version, the RCA hole diameter (8.4 + 0.3). In the S-Video version the S-Video hole is at the opening end (the left end facing the RCA face). Its 10 mm size comes from retailer listings of 4-pin mini-DIN panel sockets (for example [Jaycar PS0376](https://jaycar.com.au/4-pin-mini-din-s-vhs-panel-socket/p/PS0376)), plus the same 0.3 mm print clearance as the RCA holes. Measure your own jack before printing. The S-Video nut was not measured either: the spacing assumes about 16 mm across the corners. The S-Video hole is provisional: it uses the smallest size found until the version is validated with a real jack, and it can be enlarged with a rotary tool if the jack does not fit. In the recessed version, the front holes are widened to 12.0 mm and an inner 3.0 mm panel, 9.0 mm behind the front face, holds each jack by its barrel (6.57 mm holes, fixed with the jack's own nut), so the plugs sit recessed. The recessed version was designed by Jonatã Mariani, from the YouTube channel [Veim dos Game](https://www.youtube.com/c/VeimdosGame), based on the original version of this project. The [`arch-plug/`](arch-plug/) closure is the same part for all versions.
+Everything else is identical: height, depth, opening, L hook and slanted back, and, except in the recessed version, the RCA hole diameter (8.4 + 0.3). In the S-Video version the S-Video hole is at the opening end (the left end facing the RCA face). Its 10 mm size comes from retailer listings of 4-pin mini-DIN panel sockets (for example [Jaycar PS0376](https://jaycar.com.au/4-pin-mini-din-s-vhs-panel-socket/p/PS0376)), plus the same 0.3 mm print clearance as the RCA holes. Measure your own jack before printing. The S-Video nut was not measured either: the spacing assumes about 16 mm across the corners. The S-Video hole is provisional: it uses the smallest size found until the version is validated with a real jack, and it can be enlarged with a rotary tool if the jack does not fit. In the recessed version, the front holes are widened to 12.0 mm and an inner 3.0 mm panel, 9.0 mm behind the front face, holds each jack by its barrel (6.57 mm holes, fixed with the jack's own nut), so the plugs sit recessed. The recessed version was designed by Jonatã Mariani, from the YouTube channel [Veim dos Game](https://www.youtube.com/c/VeimdosGame), based on the original version of this project. The DIN version uses a flange-mount 5-pin DIN jack (the kind used on the Atari 800 monitor port), with a 15.3 mm hole and two M3 holes 21.4 mm apart. It has not been printed, and the flange size (about 27 × 18 mm) is estimated from a product photo, so measure your jack first. The [`arch-plug/`](arch-plug/) closure is the same part for all versions.
 
 ## Previews
 
@@ -45,6 +46,10 @@ Renders made from the STL files. The left image of each pair is the front, the r
 
 <img src="3-holes-recessed/images/preview-front.png" alt="3 recessed RCA, front" width="48%"> <img src="3-holes-recessed/images/preview-back.png" alt="3 recessed RCA, back" width="48%">
 
+**5-pin DIN + RCA**
+
+<img src="1din5-1rca/images/preview-front.png" alt="5-pin DIN + RCA, front" width="48%"> <img src="1din5-1rca/images/preview-back.png" alt="5-pin DIN + RCA, back" width="48%">
+
 **Arch closure**
 
 <img src="arch-plug/images/preview-front.png" alt="Arch closure, front" width="48%"> <img src="arch-plug/images/preview-back.png" alt="Arch closure, back" width="48%">
@@ -59,7 +64,7 @@ Made for these Atari 2600 models:
 
 Other models may have a different rear shape, so check the measurements before printing.
 
-**Status:** working prototype, refined through test prints. The dimensions come from caliper measurements of the console and of the printed parts. Ready-to-print files are in the `exports/` folder of each version. The 4-hole, 3-hole and recessed versions were printed and validated (the recessed one by Jonatã Mariani). The S-Video version has not been printed yet, so its 10.3 mm hole is untested.
+**Status:** working prototype, refined through test prints. The dimensions come from caliper measurements of the console and of the printed parts. Ready-to-print files are in the `exports/` folder of each version. The 4-hole, 3-hole and recessed versions were printed and validated (the recessed one by Jonatã Mariani). The S-Video and DIN versions have not been printed yet, so the 10.3 mm S-Video hole and the DIN flange fit are untested.
 
 ## Repository layout
 
@@ -81,6 +86,10 @@ atari-2600-av-bracket/
 │   ├── english/       Fusion script: av_bracket_recessed_en
 │   ├── portuguese/    Fusion script: av_bracket_recessed_pt
 │   └── exports/       av_bracket_recessed_print.stl, av_bracket_recessed.stl, av_bracket_recessed.step
+├── 1din5-1rca/        Bracket with a 5-pin DIN jack and 1 RCA jack
+│   ├── english/       Fusion script: av_bracket_din5_en
+│   ├── portuguese/    Fusion script: av_bracket_din5_pt
+│   └── exports/       av_bracket_din5_print.stl, av_bracket_din5.stl, av_bracket_din5.step
 ├── arch-plug/         Arch closure, shared by all versions
 │   ├── english/       Fusion script: av_arch_plug_en
 │   ├── portuguese/    Fusion script: av_arch_plug_pt
@@ -89,7 +98,7 @@ atari-2600-av-bracket/
 └── LICENSE
 ```
 
-Each version folder also has an `images/` folder with two preview renders. The English and Portuguese scripts build the same parts. Only the language of the comments and parameter names differs. `av_bracket_4h_*`, `av_bracket_3h_*`, `av_bracket_svideo_*` and `av_bracket_recessed_*` build the bracket with 4 holes, 3 holes, 3 RCA plus 1 S-Video, or 3 recessed RCA jacks, and `av_arch_plug_*` builds the arch closure.
+Each version folder also has an `images/` folder with two preview renders. The English and Portuguese scripts build the same parts. Only the language of the comments and parameter names differs. `av_bracket_4h_*`, `av_bracket_3h_*`, `av_bracket_svideo_*`, `av_bracket_recessed_*` and `av_bracket_din5_*` build the bracket with 4 holes, 3 holes, 3 RCA plus 1 S-Video, 3 recessed RCA jacks, or a 5-pin DIN jack plus 1 RCA, and `av_arch_plug_*` builds the arch closure.
 
 ## Requirements
 
@@ -119,11 +128,11 @@ All dimensions are in millimeters and sit at the top of the script. Edit them an
 | Depth, bottom / top | 24.89 / 19.30 (slanted back, ~15.5°) | measured |
 | Wall thickness | 2.0 | chosen |
 | RCA hole diameter | 8.4 + 0.3 clearance (12.0 for the front holes of the recessed version) | measured ring 8.38 mm |
-| Holes | 4, 3, or 3 RCA + 1 S-Video. The 3-hole version is spread evenly, the recessed one is 20.0 mm apart, the others are set by hand. 4 holes: 18.98 mm center to center, centers at x = 18.93 / 37.91 / 56.89 / 75.87. 3 holes: 11.27 mm gaps, centers at x = 22.93 / 42.90 / 62.87. 3 RCA + 1 S-Video (10.3 mm hole): centers at x = 19.41 (S-Video) / 38.73 / 57.46 / 76.19. 3 recessed RCA (12.0 mm front holes): 20.0 mm pitch, centers at x = 22.9 / 42.9 / 62.9, plus an inner panel with 6.57 mm holes | calculated |
+| Holes | 4, 3, 3 RCA + 1 S-Video, or 5-pin DIN + RCA. The 3-hole version is spread evenly, the recessed one is 20.0 mm apart, the others are set by hand. 4 holes: 18.98 mm center to center, centers at x = 18.93 / 37.91 / 56.89 / 75.87. 3 holes: 11.27 mm gaps, centers at x = 22.93 / 42.90 / 62.87. 3 RCA + 1 S-Video (10.3 mm hole): centers at x = 19.41 (S-Video) / 38.73 / 57.46 / 76.19. 3 recessed RCA (12.0 mm front holes): 20.0 mm pitch, centers at x = 22.9 / 42.9 / 62.9, plus an inner panel with 6.57 mm holes. 5-pin DIN + RCA: DIN hole of 15.3 mm at x = 34.1 with two M3 holes at x = 23.4 / 44.8, RCA at x = 58.0 | calculated |
 | L tab | 9.15 long × 6.0 wide plate, 2.5 thick, 3.10 post height, centered on the 12.10 mm opening edge, so its front is 5.75 from the front edge | measured |
 | Top opening (cable path) | 12.10 × 12.10 square, 2.70 from the front and 4.50 from the right end (the 5.66 mm arm is off by default) | measured |
 
-Optional switches in the script (all off or on as listed): `DISTRIBUTE_HOLES` (on) spaces the RCA holes evenly, `USE_OPEN_ARM` (off) adds an arm to the opening toward the end, `USE_TAB` (on) builds the L hook, `USE_SVIDEO` (on, only in the `3rca-1svideo` script, with `SVIDEO_DIAMETER` and `SVIDEO_AT_START`) adds the S-Video hole, `USE_PANEL` (on, only in the recessed script) adds the inner panel, plus a generic square front cutout and M3 screw holes for D-series jacks, both off. "Right end" means the end seen on the right when you look from above with the RCA face at the top; that is the end with the opening.
+Optional switches in the script (all off or on as listed): `DISTRIBUTE_HOLES` (on) spaces the RCA holes evenly, `USE_OPEN_ARM` (off) adds an arm to the opening toward the end, `USE_TAB` (on) builds the L hook, `USE_SVIDEO` (on, only in the `3rca-1svideo` script, with `SVIDEO_DIAMETER` and `SVIDEO_AT_START`) adds the S-Video hole, `USE_PANEL` (on, only in the recessed script) adds the inner panel, `USE_DIN` (on, only in the DIN script, with `DIN_X`, `DIN_DIAMETER` and `DIN_SCREW_SPACING`) adds the DIN hole and its two flange screw holes, plus a generic square front cutout and M3 screw holes for D-series jacks, both off. "Right end" means the end seen on the right when you look from above with the RCA face at the top; that is the end with the opening.
 
 ## Print settings
 
@@ -133,11 +142,11 @@ Optional switches in the script (all off or on as listed): `DISTRIBUTE_HOLES` (o
 
 ## Ready-to-print files
 
-For each version (`4-holes/exports/` with `4h` in the names, `3-holes/exports/` with `3h`, `3rca-1svideo/exports/` with `svideo`, `3-holes-recessed/exports/` with `recessed`):
+For each version (`4-holes/exports/` with `4h` in the names, `3-holes/exports/` with `3h`, `3rca-1svideo/exports/` with `svideo`, `3-holes-recessed/exports/` with `recessed`, `1din5-1rca/exports/` with `din5`):
 
-- `av_bracket_4h_print.stl` / `av_bracket_3h_print.stl` / `av_bracket_svideo_print.stl` / `av_bracket_recessed_print.stl`: oriented for printing, with the RCA face down.
-- `av_bracket_4h.stl` / `av_bracket_3h.stl` / `av_bracket_svideo.stl` / `av_bracket_recessed.stl`: same part in the Fusion orientation.
-- `av_bracket_4h.step` / `av_bracket_3h.step` / `av_bracket_svideo.step` / `av_bracket_recessed.step`: exact geometry for other CAD tools.
+- `av_bracket_4h_print.stl` / `av_bracket_3h_print.stl` / `av_bracket_svideo_print.stl` / `av_bracket_recessed_print.stl` / `av_bracket_din5_print.stl`: oriented for printing, with the RCA face down.
+- `av_bracket_4h.stl` / `av_bracket_3h.stl` / `av_bracket_svideo.stl` / `av_bracket_recessed.stl` / `av_bracket_din5.stl`: same part in the Fusion orientation.
+- `av_bracket_4h.step` / `av_bracket_3h.step` / `av_bracket_svideo.step` / `av_bracket_recessed.step` / `av_bracket_din5.step`: exact geometry for other CAD tools.
 
 Shared by all versions: [`arch-plug/exports/av_arch_plug.stl`](arch-plug/exports/av_arch_plug.stl) and [`.step`](arch-plug/exports/av_arch_plug.step), the arch closure, see below.
 
@@ -154,12 +163,13 @@ The console's rear edge has an arched notch, and the closure fills it. It is a s
 | Arm | 10.70 from the notch edge (13.545 from the arch center), 2.5 high, 3.22 thick |
 | Whole part | 16.71 × 8.00 × 6.50 |
 
-The notch measures 5.69 × 8.02, so the body has only about 0.01 mm of clearance in width. Sand it lightly if it will not go in. It is built by its own script in `arch-plug/`, `av_arch_plug_en` (or `av_arch_plug_pt`), and exported as STL and STEP. The same closure fits all four brackets.
+The notch measures 5.69 × 8.02, so the body has only about 0.01 mm of clearance in width. Sand it lightly if it will not go in. It is built by its own script in `arch-plug/`, `av_arch_plug_en` (or `av_arch_plug_pt`), and exported as STL and STEP. The same closure fits all five brackets.
 
 ## Tuning the fit
 
 - In the press-fit versions the jacks only press-fit, so hole size matters most. Print a small test plate with 8.2 / 8.4 / 8.6 mm holes before reprinting the whole part. In the recessed version, check the 12.0 mm front holes and the 6.57 mm panel holes against your jack.
 - In the 4-hole and S-Video versions, bend the ground solder lug of each RCA jack 90° toward the open back, so it does not reach the neighbor's nut.
+- In the DIN version, measure the flange of your jack first. It must be lower than the 20.21 mm face (the estimate is 18 mm), and the 15.3 mm hole can be enlarged with a rotary tool.
 - If the bracket doesn't sit flush against the Atari, change the top depth (`TOP_DEPTH`) in 0.5 mm steps. The back slant follows from it.
 - The L hook position follows the opening, so move the opening (`OPEN_FROM_FRONT`, `OPEN_FROM_RIGHT`) and the hook comes with it.
 - Check that your caliper shows **mm**, not inches, and zero it with the jaws closed.
@@ -172,9 +182,11 @@ The notch measures 5.69 × 8.02, so the body has only about 0.01 mm of clearance
 - [x] Second version with 3 holes
 - [x] Version with 3 RCA and 1 S-Video hole
 - [x] Recessed version with an inner mounting panel
+- [x] Version with a 5-pin DIN jack and 1 RCA
 - [x] Arch closure with sliding arm
 - [x] Portuguese README
 - [ ] Test-print the S-Video version and check the 10.3 mm hole against the real jack
+- [ ] Test-print the DIN version and check the flange against the real jack
 - [ ] Fine-tune the hole fit with a test plate (8.2 / 8.4 / 8.6 mm)
 - [ ] Embossed labels under each jack (Y, C, Audio)
 
@@ -188,19 +200,19 @@ Full project notes, with measurements and lessons learned, are in [`docs/project
 
 ## Suporte AV para Atari 2600
 
-Suporte imprimível em 3D para o **AV mod do Atari 2600**. Ele segura **4 ou 3 conectores RCA**, ou **3 RCA mais 1 S-Video**, ou **3 RCA embutidos num painel interno**, na traseira do console, em quatro versões da mesma case. Os **arquivos STL** prontos para imprimir são a entrega principal. Scripts Python opcionais do **Autodesk Fusion** estão incluídos por comodidade.
+Suporte imprimível em 3D para o **AV mod do Atari 2600**. Ele segura **4 ou 3 conectores RCA**, ou **3 RCA mais 1 S-Video**, ou **3 RCA embutidos num painel interno**, ou **um conector DIN de 5 pinos mais um RCA**, na traseira do console, em cinco versões da mesma case. Os **arquivos STL** prontos para imprimir são a entrega principal. Scripts Python opcionais do **Autodesk Fusion** estão incluídos por comodidade.
 
 > **Os scripts do Fusion são opcionais.** As peças foram modeladas primeiro para o [Autodesk Fusion](https://www.autodesk.com/products/fusion-360/overview), e os arquivos STL foram gerados depois diretamente, então você não precisa do Fusion para imprimir. Os scripts ficam por comodidade e como referência da geometria. Eles usam a API do Fusion (`adsk.core`, `adsk.fusion`), não rodam em outros softwares de CAD e só passaram por checagem de sintaxe, sem rodar no Fusion. É um projeto pessoal independente, sem vínculo nem aprovação da Autodesk ou da Atari.
 
 ## O que é
 
-Um pequeno suporte oco que encaixa embaixo da traseira de um Atari 2600. Na maioria das versões os conectores entram por pressão na parede frontal (na versão embutida eles são parafusados num painel interno), o cabo flat do mod passa para dentro da caixa por uma abertura na face de cima, e um gancho em "L" ao lado dessa abertura prende o suporte ao console.
+Um pequeno suporte oco que encaixa embaixo da traseira de um Atari 2600. Na maioria das versões os conectores entram por pressão na parede frontal (na versão embutida eles são parafusados num painel interno, e na versão com DIN o conector DIN é preso por dois parafusos), o cabo flat do mod passa para dentro da caixa por uma abertura na face de cima, e um gancho em "L" ao lado dessa abertura prende o suporte ao console.
 
 O projeto é baseado numa peça comercial que segura 1 S-Video e 3 RCA. A versão de 4 furos troca o recorte do S-Video por um quarto furo RCA, e a `3rca-1svideo` mantém um furo de S-Video.
 
 ## Versões
 
-A mesma case vem em quatro versões. Na versão de 3 furos, os furos são distribuídos por igual na largura da case (vãos iguais entre os furos e entre os furos e as pontas). As versões de 4 furos e de S-Video são 9 mm mais compridas, estendidas do lado oposto ao gancho em L, para as porcas dos conectores (14,82 mm de canto a canto nos conectores RCA usados) não se tocarem. Na versão embutida, os furos da frente ficam a 20,0 mm entre centros.
+A mesma case vem em cinco versões. Na versão de 3 furos, os furos são distribuídos por igual na largura da case (vãos iguais entre os furos e entre os furos e as pontas). As versões de 4 furos e de S-Video são 9 mm mais compridas, estendidas do lado oposto ao gancho em L, para as porcas dos conectores (14,82 mm de canto a canto nos conectores RCA usados) não se tocarem. Na versão embutida, os furos da frente ficam a 20,0 mm entre centros. A versão com DIN tem um conector DIN de 5 pinos e um RCA, centralizados juntos na face.
 
 | Versão | Pasta | Furos | Espaçamento | Centros dos furos (a partir da ponta da abertura) |
 |---|---|---|---|---|
@@ -208,8 +220,9 @@ A mesma case vem em quatro versões. Na versão de 3 furos, os furos são distri
 | 3 furos | [`3-holes/`](3-holes/) | 3 | 4 vãos de 11,27 mm | 22,93 / 42,90 / 62,87 |
 | 3 RCA + 1 S-Video | [`3rca-1svideo/`](3rca-1svideo/) | 3 RCA (8,7) + 1 S-Video (10,3) | 18,73 mm entre RCA, 19,32 mm do S-Video ao RCA | S-Video 19,41, RCA 38,73 / 57,46 / 76,19 |
 | 3 RCA embutidos | [`3-holes-recessed/`](3-holes-recessed/) | 3 (furos da frente 12,0, furos do painel 6,57) | 20,0 mm entre centros | 22,9 / 42,9 / 62,9 |
+| DIN 5 pinos + RCA | [`1din5-1rca/`](1din5-1rca/) | 1 DIN (15,3, mais 2 × M3 3,5) + 1 RCA (8,7) | 23,9 mm do DIN ao RCA | DIN 34,1 (parafusos 23,4 / 44,8), RCA 58,0 |
 
-Todo o resto é idêntico: altura, profundidade, abertura, gancho em L e traseira inclinada e, exceto na versão embutida, o diâmetro dos furos RCA (8,4 + 0,3). Na versão com S-Video, o furo dele fica na ponta da abertura (a ponta esquerda, de frente para a face RCA). O tamanho de 10 mm vem de listagens de lojas para soquetes de painel mini-DIN de 4 pinos (por exemplo, [Jaycar PS0376](https://jaycar.com.au/4-pin-mini-din-s-vhs-panel-socket/p/PS0376)), mais a mesma folga de impressão de 0,3 mm dos furos RCA. Meça o seu conector antes de imprimir. A porca do S-Video também não foi medida: o espaçamento supõe uns 16 mm de canto a canto. O furo do S-Video é provisório: usa o menor tamanho encontrado até a versão ser validada com um conector real, e pode ser aumentado com uma microrretífica se o conector não couber. Na versão embutida, os furos da frente são alargados para 12,0 mm e um painel interno de 3,0 mm, a 9,0 mm da face da frente, prende cada conector pela rosca (furos de 6,57 mm, fixados com a porca do próprio conector), então os plugs ficam embutidos. A versão embutida foi criada por Jonatã Mariani, do canal do YouTube [Veim dos Game](https://www.youtube.com/c/VeimdosGame), com base na versão original deste projeto. O fecho de [`arch-plug/`](arch-plug/) é a mesma peça para todas as versões.
+Todo o resto é idêntico: altura, profundidade, abertura, gancho em L e traseira inclinada e, exceto na versão embutida, o diâmetro dos furos RCA (8,4 + 0,3). Na versão com S-Video, o furo dele fica na ponta da abertura (a ponta esquerda, de frente para a face RCA). O tamanho de 10 mm vem de listagens de lojas para soquetes de painel mini-DIN de 4 pinos (por exemplo, [Jaycar PS0376](https://jaycar.com.au/4-pin-mini-din-s-vhs-panel-socket/p/PS0376)), mais a mesma folga de impressão de 0,3 mm dos furos RCA. Meça o seu conector antes de imprimir. A porca do S-Video também não foi medida: o espaçamento supõe uns 16 mm de canto a canto. O furo do S-Video é provisório: usa o menor tamanho encontrado até a versão ser validada com um conector real, e pode ser aumentado com uma microrretífica se o conector não couber. Na versão embutida, os furos da frente são alargados para 12,0 mm e um painel interno de 3,0 mm, a 9,0 mm da face da frente, prende cada conector pela rosca (furos de 6,57 mm, fixados com a porca do próprio conector), então os plugs ficam embutidos. A versão embutida foi criada por Jonatã Mariani, do canal do YouTube [Veim dos Game](https://www.youtube.com/c/VeimdosGame), com base na versão original deste projeto. A versão com DIN usa um conector DIN de 5 pinos com flange (do tipo usado na saída de monitor do Atari 800), com furo de 15,3 mm e dois furos M3 a 21,4 mm um do outro. Ela não foi impressa, e o tamanho da flange (uns 27 × 18 mm) é estimado por uma foto do produto, então meça o seu conector antes. O fecho de [`arch-plug/`](arch-plug/) é a mesma peça para todas as versões.
 
 ## Pré-visualizações
 
@@ -231,6 +244,10 @@ Imagens renderizadas a partir dos arquivos STL. A da esquerda de cada par mostra
 
 <img src="3-holes-recessed/images/preview-front.png" alt="3 RCA embutidos, front" width="48%"> <img src="3-holes-recessed/images/preview-back.png" alt="3 RCA embutidos, back" width="48%">
 
+**DIN 5 pinos + RCA**
+
+<img src="1din5-1rca/images/preview-front.png" alt="DIN 5 pinos + RCA, front" width="48%"> <img src="1din5-1rca/images/preview-back.png" alt="DIN 5 pinos + RCA, back" width="48%">
+
 **Fecho do arco**
 
 <img src="arch-plug/images/preview-front.png" alt="Fecho do arco, front" width="48%"> <img src="arch-plug/images/preview-back.png" alt="Fecho do arco, back" width="48%">
@@ -245,7 +262,7 @@ Feito para estes modelos de Atari 2600:
 
 Outros modelos podem ter a traseira com formato diferente, então confira as medidas antes de imprimir.
 
-**Status:** protótipo funcional, refinado com impressões de teste. As dimensões vêm de medidas com paquímetro do console e das peças impressas. Os arquivos prontos para imprimir estão na pasta `exports/` de cada versão. As versões de 4 furos, de 3 furos e embutida foram impressas e validadas (a embutida pelo Jonatã Mariani). A versão com S-Video ainda não foi impressa, então o furo de 10,3 mm não foi testado.
+**Status:** protótipo funcional, refinado com impressões de teste. As dimensões vêm de medidas com paquímetro do console e das peças impressas. Os arquivos prontos para imprimir estão na pasta `exports/` de cada versão. As versões de 4 furos, de 3 furos e embutida foram impressas e validadas (a embutida pelo Jonatã Mariani). As versões com S-Video e com DIN ainda não foram impressas, então o furo de 10,3 mm do S-Video e o encaixe da flange do DIN não foram testados.
 
 ## Estrutura do repositório
 
@@ -267,6 +284,10 @@ atari-2600-av-bracket/
 │   ├── english/       Script do Fusion: av_bracket_recessed_en
 │   ├── portuguese/    Script do Fusion: av_bracket_recessed_pt
 │   └── exports/       av_bracket_recessed_print.stl, av_bracket_recessed.stl, av_bracket_recessed.step
+├── 1din5-1rca/        Suporte com um conector DIN de 5 pinos e 1 RCA
+│   ├── english/       Script do Fusion: av_bracket_din5_en
+│   ├── portuguese/    Script do Fusion: av_bracket_din5_pt
+│   └── exports/       av_bracket_din5_print.stl, av_bracket_din5.stl, av_bracket_din5.step
 ├── arch-plug/         Fecho do arco, comum a todas as versões
 │   ├── english/       Script do Fusion: av_arch_plug_en
 │   ├── portuguese/    Script do Fusion: av_arch_plug_pt
@@ -275,7 +296,7 @@ atari-2600-av-bracket/
 └── LICENSE
 ```
 
-Cada pasta de versão também tem uma pasta `images/` com duas imagens de pré-visualização. Os scripts em inglês e em português geram as mesmas peças. Só muda o idioma dos comentários e dos nomes dos parâmetros. O `av_bracket_4h_*`, o `av_bracket_3h_*`, o `av_bracket_svideo_*` e o `av_bracket_recessed_*` criam o suporte com 4 furos, com 3 furos, com 3 RCA mais 1 S-Video, ou com 3 RCA embutidos, e o `av_arch_plug_*` cria o fecho do arco.
+Cada pasta de versão também tem uma pasta `images/` com duas imagens de pré-visualização. Os scripts em inglês e em português geram as mesmas peças. Só muda o idioma dos comentários e dos nomes dos parâmetros. O `av_bracket_4h_*`, o `av_bracket_3h_*`, o `av_bracket_svideo_*`, o `av_bracket_recessed_*` e o `av_bracket_din5_*` criam o suporte com 4 furos, com 3 furos, com 3 RCA mais 1 S-Video, com 3 RCA embutidos, ou com um DIN de 5 pinos mais 1 RCA, e o `av_arch_plug_*` cria o fecho do arco.
 
 ## Requisitos
 
@@ -305,11 +326,11 @@ Todas as medidas estão em milímetros e ficam no topo do script. Edite os valor
 | Profundidade, base / topo | 24,89 / 19,30 (traseira inclinada, ~15,5°) | medido |
 | Espessura da parede | 2,0 | escolhido |
 | Diâmetro do furo RCA | 8,4 + 0,3 de folga (12,0 nos furos da frente da versão embutida) | anel medido 8,38 mm |
-| Furos | 4, 3, ou 3 RCA + 1 S-Video, a de 3 furos é distribuída por igual, a embutida fica a 20,0 mm entre centros e as outras são definidas à mão. 4 furos: 18,98 mm entre centros, centros em x = 18,93 / 37,91 / 56,89 / 75,87. 3 furos: folgas de 11,27 mm, centros em x = 22,93 / 42,90 / 62,87. 3 RCA + 1 S-Video (furo de 10,3 mm): centros em x = 19,41 (S-Video) / 38,73 / 57,46 / 76,19. 3 RCA embutidos (furos de 12,0 mm na frente): 20,0 mm entre centros, centros em x = 22,9 / 42,9 / 62,9, mais um painel interno com furos de 6,57 mm | calculado |
+| Furos | 4, 3, 3 RCA + 1 S-Video, ou DIN 5 pinos + RCA, a de 3 furos é distribuída por igual, a embutida fica a 20,0 mm entre centros e as outras são definidas à mão. 4 furos: 18,98 mm entre centros, centros em x = 18,93 / 37,91 / 56,89 / 75,87. 3 furos: folgas de 11,27 mm, centros em x = 22,93 / 42,90 / 62,87. 3 RCA + 1 S-Video (furo de 10,3 mm): centros em x = 19,41 (S-Video) / 38,73 / 57,46 / 76,19. 3 RCA embutidos (furos de 12,0 mm na frente): 20,0 mm entre centros, centros em x = 22,9 / 42,9 / 62,9, mais um painel interno com furos de 6,57 mm. DIN 5 pinos + RCA: furo do DIN de 15,3 mm em x = 34,1 com dois furos M3 em x = 23,4 / 44,8, RCA em x = 58,0 | calculado |
 | Aba em L | placa de 9,15 de comprimento × 6,0 de largura, espessura 2,5, pino de 3,10 de altura, centralizada na aresta de 12,10 mm da abertura, com a frente a 5,75 da borda da frente | medido |
 | Abertura de cima (caminho do cabo) | quadrado de 12,10 × 12,10, a 2,70 da frente e 4,50 da ponta direita (o braço de 5,66 mm vem desligado) | medido |
 
-Chaves no script: `DISTRIBUIR_FUROS` (ligada) espaça os furos RCA por igual, `USAR_BRACO` (desligada) acrescenta um braço na abertura até a ponta, `USAR_ABA` (ligada) cria o gancho em L, `USAR_SVIDEO` (ligada, só no script `3rca-1svideo`, com `SVIDEO_DIAMETRO` e `SVIDEO_NO_INICIO`) acrescenta o furo de S-Video, `USAR_PAINEL` (ligada, só no script da versão embutida) acrescenta o painel interno, e há também um recorte quadrado genérico na frente e furos M3 para conectores série D, ambos desligados. "Ponta direita" é a ponta que aparece à direita vista de cima com a face RCA no topo; é a ponta da abertura.
+Chaves no script: `DISTRIBUIR_FUROS` (ligada) espaça os furos RCA por igual, `USAR_BRACO` (desligada) acrescenta um braço na abertura até a ponta, `USAR_ABA` (ligada) cria o gancho em L, `USAR_SVIDEO` (ligada, só no script `3rca-1svideo`, com `SVIDEO_DIAMETRO` e `SVIDEO_NO_INICIO`) acrescenta o furo de S-Video, `USAR_PAINEL` (ligada, só no script da versão embutida) acrescenta o painel interno, `USAR_DIN` (ligada, só no script do DIN, com `DIN_X`, `DIN_DIAMETRO` e `DIN_ESPACAMENTO_PARAFUSOS`) acrescenta o furo do DIN e os dois furos dos parafusos da flange, e há também um recorte quadrado genérico na frente e furos M3 para conectores série D, ambos desligados. "Ponta direita" é a ponta que aparece à direita vista de cima com a face RCA no topo; é a ponta da abertura.
 
 ## Configuração de impressão
 
@@ -319,11 +340,11 @@ Chaves no script: `DISTRIBUIR_FUROS` (ligada) espaça os furos RCA por igual, `U
 
 ## Arquivos prontos para imprimir
 
-Para cada versão (`4-holes/exports/` com `4h` nos nomes, `3-holes/exports/` com `3h`, `3rca-1svideo/exports/` com `svideo`, `3-holes-recessed/exports/` com `recessed`):
+Para cada versão (`4-holes/exports/` com `4h` nos nomes, `3-holes/exports/` com `3h`, `3rca-1svideo/exports/` com `svideo`, `3-holes-recessed/exports/` com `recessed`, `1din5-1rca/exports/` com `din5`):
 
-- `av_bracket_4h_print.stl` / `av_bracket_3h_print.stl` / `av_bracket_svideo_print.stl` / `av_bracket_recessed_print.stl`: orientado para imprimir, com a face RCA para baixo.
-- `av_bracket_4h.stl` / `av_bracket_3h.stl` / `av_bracket_svideo.stl` / `av_bracket_recessed.stl`: a mesma peça na orientação do Fusion.
-- `av_bracket_4h.step` / `av_bracket_3h.step` / `av_bracket_svideo.step` / `av_bracket_recessed.step`: geometria exata para outros programas de CAD.
+- `av_bracket_4h_print.stl` / `av_bracket_3h_print.stl` / `av_bracket_svideo_print.stl` / `av_bracket_recessed_print.stl` / `av_bracket_din5_print.stl`: orientado para imprimir, com a face RCA para baixo.
+- `av_bracket_4h.stl` / `av_bracket_3h.stl` / `av_bracket_svideo.stl` / `av_bracket_recessed.stl` / `av_bracket_din5.stl`: a mesma peça na orientação do Fusion.
+- `av_bracket_4h.step` / `av_bracket_3h.step` / `av_bracket_svideo.step` / `av_bracket_recessed.step` / `av_bracket_din5.step`: geometria exata para outros programas de CAD.
 
 Comum a todas as versões: [`arch-plug/exports/av_arch_plug.stl`](arch-plug/exports/av_arch_plug.stl) e [`.step`](arch-plug/exports/av_arch_plug.step), o fecho do arco, veja abaixo.
 
@@ -340,12 +361,13 @@ A borda traseira do console tem um recorte em arco, e o fecho preenche esse reco
 | Braço | 10,70 da borda do recorte (13,545 do centro do arco), 2,5 de altura e 3,22 de espessura |
 | Peça toda | 16,71 × 8,00 × 6,50 |
 
-O recorte mede 5,69 × 8,02, então o corpo tem só uns 0,01 mm de folga na largura. Lixe de leve se não entrar. Ela é criada por um script próprio em `arch-plug/`, o `av_arch_plug_pt` (ou `av_arch_plug_en`), e exportada em STL e STEP. O mesmo fecho serve para os quatro suportes.
+O recorte mede 5,69 × 8,02, então o corpo tem só uns 0,01 mm de folga na largura. Lixe de leve se não entrar. Ela é criada por um script próprio em `arch-plug/`, o `av_arch_plug_pt` (ou `av_arch_plug_en`), e exportada em STL e STEP. O mesmo fecho serve para os cinco suportes.
 
 ## Ajustar o encaixe
 
 - Nas versões por pressão os conectores entram só por pressão, então o tamanho do furo é o mais importante. Imprima uma plaquinha de teste com furos de 8,2 / 8,4 / 8,6 mm antes de reimprimir a peça inteira. Na versão embutida, confira os furos de 12,0 mm da frente e os de 6,57 mm do painel com o seu conector.
 - Nas versões de 4 furos e de S-Video, dobre a lingüeta de solda de terra de cada conector RCA 90° para trás, para o lado aberto, para ela não alcançar a porca do vizinho.
+- Na versão com DIN, meça primeiro a flange do seu conector. Ela precisa ser mais baixa que a face de 20,21 mm (a estimativa é de 18 mm), e o furo de 15,3 mm pode ser aumentado com uma microrretífica.
 - Se o suporte não encostar direito no Atari, mude a profundidade do topo (`PROFUNDIDADE_TOPO`) em passos de 0,5 mm. A inclinação da traseira vem dela.
 - A posição do gancho em L acompanha a abertura. Mexa na abertura (`ABERTURA_DA_FRENTE`, `ABERTURA_DA_DIREITA`) e o gancho vai junto.
 - Confira se o paquímetro mostra **mm** (não polegadas) e zere-o com as garras fechadas.
@@ -358,9 +380,11 @@ O recorte mede 5,69 × 8,02, então o corpo tem só uns 0,01 mm de folga na larg
 - [x] Segunda versão com 3 furos
 - [x] Versão com 3 RCA e 1 furo de S-Video
 - [x] Versão embutida com painel interno de fixação
+- [x] Versão com um conector DIN de 5 pinos e 1 RCA
 - [x] Fecho do arco com braço deslizante
 - [x] README em português
 - [ ] Imprimir a versão com S-Video e conferir o furo de 10,3 mm com o conector real
+- [ ] Imprimir a versão com DIN e conferir a flange com o conector real
 - [ ] Ajustar o encaixe dos furos com uma plaquinha de teste (8,2 / 8,4 / 8,6 mm)
 - [ ] Textos em relevo embaixo de cada conector (Y, C, Audio)
 
