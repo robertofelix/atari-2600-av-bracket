@@ -9,7 +9,7 @@
 import adsk.core, adsk.fusion, traceback
 
 # ================= PARÂMETROS (mm) =================
-COMPRIMENTO_TOPO   = 81.0  # comprimento da face superior, antes de ENCURTAR_PONTA
+COMPRIMENTO_TOPO   = 90.0  # comprimento da face superior, antes de ENCURTAR_PONTA (81,0 + 9,0 mm no lado oposto ao L, para as porcas dos conectores não se tocarem)
 ENCURTAR_PONTA     = 4.8   # encurta a peça na ponta da abertura (x = 0). A inclinação de 5 mm da ponta anda para dentro sem mudar
 ALTURA             = 20.21
 LARGURA            = 24.89  # profundidade embaixo (face dos furos até a traseira)
@@ -20,9 +20,9 @@ INCLINACAO_DIR     = 5.0    # quanto a base recua na ponta direita (0 = reta)
 FURO_DIAMETRO      = 8.4   # furo dos conectores RCA
 FURO_FOLGA         = 0.3    # a impressora fecha um pouco os furos; somado ao diâmetro
 FURO_QTD           = 4
-DISTRIBUIR_FUROS   = True   # True = folgas iguais entre os furos e as pontas inclinadas, na altura dos furos
-FURO_PRIMEIRO_X    = 18.0   # só se DISTRIBUIR_FUROS = False: centro do 1o furo, medido da ponta x = 0
-FURO_ESPACAMENTO   = 15.0   # só se DISTRIBUIR_FUROS = False: entre centros
+DISTRIBUIR_FUROS   = False  # True = folgas iguais entre os furos e as pontas inclinadas, na altura dos furos
+FURO_PRIMEIRO_X    = 18.93  # só se DISTRIBUIR_FUROS = False: centro do 1o furo, medido da ponta x = 0
+FURO_ESPACAMENTO   = 18.98  # só se DISTRIBUIR_FUROS = False: entre centros
 FURO_ALTURA_CENTRO = 10.1   # medido a partir da base
 PARAFUSOS_D        = False  # True = 2 furos M3 por conector (padrão D-series, ex. Neutrik NF2D)
 PARAFUSO_DIAMETRO  = 3.2

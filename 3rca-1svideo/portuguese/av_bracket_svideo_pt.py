@@ -9,7 +9,7 @@
 import adsk.core, adsk.fusion, traceback
 
 # ================= PARÂMETROS (mm) =================
-COMPRIMENTO_TOPO   = 81.0  # comprimento da face superior, antes de ENCURTAR_PONTA
+COMPRIMENTO_TOPO   = 90.0  # comprimento da face superior, antes de ENCURTAR_PONTA (81,0 + 9,0 mm no lado oposto ao L, para as porcas dos conectores não se tocarem)
 ENCURTAR_PONTA     = 4.8   # encurta a peça na ponta da abertura (x = 0). A inclinação de 5 mm da ponta anda para dentro sem mudar
 ALTURA             = 20.21
 LARGURA            = 24.89  # profundidade embaixo (face dos furos até a traseira)
@@ -21,11 +21,12 @@ FURO_DIAMETRO      = 8.4   # furo dos conectores RCA
 FURO_FOLGA         = 0.3    # a impressora fecha um pouco os furos; somado ao diâmetro
 FURO_QTD           = 3      # furos RCA
 USAR_SVIDEO        = True   # um furo a mais para um conector de painel S-Video (mini-DIN)
-SVIDEO_DIAMETRO    = 10.0   # furo de painel do S-Video (lojas indicam 10 mm para soquete mini-DIN de 4 pinos); FURO_FOLGA é somada
+SVIDEO_DIAMETRO    = 10.0   # furo de painel do S-Video (lojas indicam 10 mm, o menor encontrado; provisório, aumente com uma microrretífica se o conector não couber); FURO_FOLGA é somada
 SVIDEO_NO_INICIO   = True   # True = S-Video na ponta x = 0 (a esquerda de frente para a face RCA); False = na outra ponta
-DISTRIBUIR_FUROS   = True   # True = folgas iguais entre todos os furos e as pontas inclinadas, na altura dos furos
-FURO_PRIMEIRO_X    = 18.0   # só se DISTRIBUIR_FUROS = False: centro do 1o furo (o S-Video, se for o primeiro), medido da ponta x = 0
-FURO_ESPACAMENTO   = 15.0   # só se DISTRIBUIR_FUROS = False: entre centros
+DISTRIBUIR_FUROS   = False  # True = folgas iguais entre todos os furos e as pontas inclinadas, na altura dos furos
+FURO_PRIMEIRO_X    = 19.41  # só se DISTRIBUIR_FUROS = False: centro do 1o furo (o S-Video, se for o primeiro), medido da ponta x = 0
+FURO_ESPACAMENTO   = 18.73  # só se DISTRIBUIR_FUROS = False: entre centros (RCA com RCA)
+SVIDEO_ESPACAMENTO = 19.32  # só se DISTRIBUIR_FUROS = False: entre centros do furo do S-Video e o vizinho (a porca do S-Video é suposta com uns 16 mm de canto a canto)
 FURO_ALTURA_CENTRO = 10.1   # medido a partir da base
 PARAFUSOS_D        = False  # True = 2 furos M3 por conector (padrão D-series, ex. Neutrik NF2D)
 PARAFUSO_DIAMETRO  = 3.2
@@ -232,7 +233,10 @@ def run(context):
                 furo_x.append(x + d / 2)
                 x += d
         else:
-            furo_x = [FURO_PRIMEIRO_X + i * FURO_ESPACAMENTO for i in range(n_furos)]
+            furo_x = [FURO_PRIMEIRO_X]
+            for i in range(1, n_furos):
+                junto_sv = indice_sv is not None and (i - 1 == indice_sv or i == indice_sv)
+                furo_x.append(furo_x[-1] + (SVIDEO_ESPACAMENTO if junto_sv else FURO_ESPACAMENTO))
         for i in range(n_furos):
             cx = furo_x[i]
             sk.sketchCurves.sketchCircles.addByCenterRadius(

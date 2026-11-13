@@ -13,7 +13,7 @@
 import adsk.core, adsk.fusion, traceback
 
 # ================= PARAMETERS (mm) =================
-TOP_LENGTH         = 81.0   # length of the top face, before TRIM_END
+TOP_LENGTH         = 90.0   # length of the top face, before TRIM_END (81.0 + 9.0 mm on the side opposite the L, so the jack nuts do not touch)
 TRIM_END           = 4.8    # shortens the part at the opening end (x = 0). The 5 mm end slant moves inward unchanged
 HEIGHT             = 20.21
 DEPTH              = 24.89  # depth at the bottom (hole face to back)
@@ -25,11 +25,12 @@ HOLE_DIAMETER      = 8.4    # RCA jack hole
 HOLE_CLEARANCE     = 0.3    # printers shrink holes slightly; added to the diameter
 HOLE_COUNT         = 3      # RCA holes
 USE_SVIDEO         = True   # one extra hole for an S-Video (mini-DIN) panel jack
-SVIDEO_DIAMETER    = 10.0   # S-Video panel hole (listings for 4-pin mini-DIN panel sockets give 10 mm); HOLE_CLEARANCE is added
+SVIDEO_DIAMETER    = 10.0   # S-Video panel hole (listings for 4-pin mini-DIN panel sockets give 10 mm, the smallest found; provisional, enlarge with a rotary tool if the jack does not fit); HOLE_CLEARANCE is added
 SVIDEO_AT_START    = True   # True = S-Video at the x = 0 end (the left end facing the RCA face); False = at the other end
-DISTRIBUTE_HOLES   = True   # True = equal gaps between all the holes and the slanted ends, at hole height
-FIRST_HOLE_X       = 18.0   # only if DISTRIBUTE_HOLES = False: center of the 1st hole (S-Video if it is first), from the x = 0 end
-HOLE_SPACING       = 15.0   # only if DISTRIBUTE_HOLES = False: center to center
+DISTRIBUTE_HOLES   = False  # True = equal gaps between all the holes and the slanted ends, at hole height
+FIRST_HOLE_X       = 19.41  # only if DISTRIBUTE_HOLES = False: center of the 1st hole (S-Video if it is first), from the x = 0 end
+HOLE_SPACING       = 18.73  # only if DISTRIBUTE_HOLES = False: center to center (RCA to RCA)
+SVIDEO_SPACING     = 19.32  # only if DISTRIBUTE_HOLES = False: center to center between the S-Video hole and its neighbor (the S-Video nut is assumed to be about 16 mm across the corners)
 HOLE_CENTER_Y      = 10.1   # measured from the bottom
 D_SERIES_SCREWS    = False  # True = 2 M3 holes per jack (D-series, e.g. Neutrik NF2D)
 SCREW_DIAMETER     = 3.2
@@ -236,7 +237,10 @@ def run(context):
                 hole_x.append(x + d / 2)
                 x += d
         else:
-            hole_x = [FIRST_HOLE_X + i * HOLE_SPACING for i in range(n_holes)]
+            hole_x = [FIRST_HOLE_X]
+            for i in range(1, n_holes):
+                next_to_sv = sv_index is not None and (i - 1 == sv_index or i == sv_index)
+                hole_x.append(hole_x[-1] + (SVIDEO_SPACING if next_to_sv else HOLE_SPACING))
         for i in range(n_holes):
             cx = hole_x[i]
             sk.sketchCurves.sketchCircles.addByCenterRadius(
