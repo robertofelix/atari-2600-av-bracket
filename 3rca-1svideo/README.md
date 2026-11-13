@@ -1,6 +1,6 @@
 # Bracket with 3 RCA holes and 1 S-Video hole
 
-Same case, with **3 RCA jacks and 1 S-Video jack**, the S-Video at the opening end (the left end facing the RCA face).
+Same case as the 4-hole version, with **3 RCA jacks and 1 S-Video jack**, the S-Video at the opening end (the left end facing the RCA face).
 
 <img src="images/preview-front.png" alt="S-Video and 3 RCA bracket, front" width="48%"> <img src="images/preview-back.png" alt="S-Video and 3 RCA bracket, back" width="48%">
 
@@ -22,7 +22,7 @@ Back to the [main README](../README.md).
 
 # Suporte com 3 furos RCA e 1 furo S-Video
 
-Mesma case, com **3 conectores RCA e 1 S-Video**, com o S-Video na ponta da abertura (a ponta esquerda, de frente para a face RCA).
+Mesma case da versão de 4 furos, com **3 conectores RCA e 1 S-Video**, com o S-Video na ponta da abertura (a ponta esquerda, de frente para a face RCA).
 
 <img src="images/preview-front.png" alt="S-Video and 3 RCA bracket, front" width="48%"> <img src="images/preview-back.png" alt="S-Video and 3 RCA bracket, back" width="48%">
 

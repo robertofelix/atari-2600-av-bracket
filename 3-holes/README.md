@@ -1,6 +1,6 @@
 # Bracket with 3 RCA holes
 
-Same case as the 4-hole version, with **3 RCA jacks** spread over the same width.
+The original case (76.2 mm long, before the 4-hole version was made 9 mm longer), with **3 RCA jacks** spread evenly over it.
 
 <img src="images/preview-front.png" alt="3 holes bracket, front" width="48%"> <img src="images/preview-back.png" alt="3 holes bracket, back" width="48%">
 
@@ -16,7 +16,7 @@ Back to the [main README](../README.md).
 
 # Suporte com 3 furos RCA
 
-Mesma case da versão de 4 furos, com **3 conectores RCA** distribuídos na mesma largura.
+A case original (76,2 mm de comprimento, antes de a versão de 4 furos ficar 9 mm mais comprida), com **3 conectores RCA** distribuídos por igual.
 
 <img src="images/preview-front.png" alt="3 holes bracket, front" width="48%"> <img src="images/preview-back.png" alt="3 holes bracket, back" width="48%">
 

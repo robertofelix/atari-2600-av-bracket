@@ -1,0 +1,11 @@
+{
+	"autodeskProduct": "Fusion360",
+	"type": "script",
+	"author": "Roberto Felix",
+	"description": {
+		"": "3D-printable bracket with a 5-pin DIN jack and an RCA jack for the Atari 2600 AV mod"
+	},
+	"supportedOS": "windows|mac",
+	"editEnabled": true,
+	"iconFilename": "ScriptIcon.svg"
+}
