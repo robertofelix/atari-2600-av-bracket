@@ -14,16 +14,16 @@ The design is based on a commercial part that holds 1 S-Video and 3 RCA jacks. T
 
 ## Versions
 
-The same case comes in four versions. In the first three, the holes are spread evenly over the width of the case (equal gaps between the holes and between the holes and the ends). In the recessed version, the front holes are 20.0 mm apart.
+The same case comes in four versions. In the 3-hole version the holes are spread evenly over the width of the case (equal gaps between the holes and between the holes and the ends). The 4-hole and S-Video versions are 9 mm longer, extended on the side opposite the L hook, so the jack nuts (14.82 mm across the corners on the RCA jacks used) do not touch each other. In the recessed version, the front holes are 20.0 mm apart.
 
 | Version | Folder | Holes | Spacing | Hole centers (from the opening end) |
 |---|---|---|---|---|
-| 4 holes | [`4-holes/`](4-holes/) | 4 | 5 gaps of 7.28 mm | 18.93 / 34.91 / 50.89 / 66.87 |
+| 4 holes | [`4-holes/`](4-holes/) | 4 | 18.98 mm center to center | 18.93 / 37.91 / 56.89 / 75.87 |
 | 3 holes | [`3-holes/`](3-holes/) | 3 | 4 gaps of 11.27 mm | 22.93 / 42.90 / 62.87 |
-| 3 RCA + 1 S-Video | [`3rca-1svideo/`](3rca-1svideo/) | 3 RCA (8.7) + 1 S-Video (10.3) | 5 gaps of 6.96 mm | S-Video 19.41, RCA 35.87 / 51.53 / 67.19 |
+| 3 RCA + 1 S-Video | [`3rca-1svideo/`](3rca-1svideo/) | 3 RCA (8.7) + 1 S-Video (10.3) | 18.73 mm RCA to RCA, 19.32 mm S-Video to RCA | S-Video 19.41, RCA 38.73 / 57.46 / 76.19 |
 | 3 recessed RCA | [`3-holes-recessed/`](3-holes-recessed/) | 3 (front holes 12.0, panel holes 6.57) | 20.0 mm center to center | 22.9 / 42.9 / 62.9 |
 
-Everything else is identical: size, opening, L hook and slanted back, and, except in the recessed version, the RCA hole diameter (8.4 + 0.3). In the S-Video version the S-Video hole is at the opening end (the left end facing the RCA face). Its 10 mm size comes from retailer listings of 4-pin mini-DIN panel sockets (for example [Jaycar PS0376](https://jaycar.com.au/4-pin-mini-din-s-vhs-panel-socket/p/PS0376)), plus the same 0.3 mm print clearance as the RCA holes. Measure your own jack before printing. In the recessed version, the front holes are widened to 12.0 mm and an inner 3.0 mm panel, 9.0 mm behind the front face, holds each jack by its barrel (6.57 mm holes, fixed with the jack's own nut), so the plugs sit recessed. The recessed version was designed by Jonatã Mariani, from the YouTube channel [Veio dos Game](https://www.youtube.com/c/VeimdosGame), based on the original version of this project. The [`arch-plug/`](arch-plug/) closure is the same part for all versions.
+Everything else is identical: height, depth, opening, L hook and slanted back, and, except in the recessed version, the RCA hole diameter (8.4 + 0.3). In the S-Video version the S-Video hole is at the opening end (the left end facing the RCA face). Its 10 mm size comes from retailer listings of 4-pin mini-DIN panel sockets (for example [Jaycar PS0376](https://jaycar.com.au/4-pin-mini-din-s-vhs-panel-socket/p/PS0376)), plus the same 0.3 mm print clearance as the RCA holes. Measure your own jack before printing. The S-Video nut was not measured either: the spacing assumes about 16 mm across the corners. The S-Video hole is provisional: it uses the smallest size found until the version is validated with a real jack, and it can be enlarged with a rotary tool if the jack does not fit. In the recessed version, the front holes are widened to 12.0 mm and an inner 3.0 mm panel, 9.0 mm behind the front face, holds each jack by its barrel (6.57 mm holes, fixed with the jack's own nut), so the plugs sit recessed. The recessed version was designed by Jonatã Mariani, from the YouTube channel [Veio dos Game](https://www.youtube.com/c/VeimdosGame), based on the original version of this project. The [`arch-plug/`](arch-plug/) closure is the same part for all versions.
 
 ## Previews
 
@@ -113,13 +113,13 @@ All dimensions are in millimeters and sit at the top of the script. Edit them an
 
 | Parameter | Value | Source |
 |---|---|---|
-| Top length | 76.2 (81.0 minus 4.8 trimmed at the opening end) | measured |
-| Bottom length | 66.2 (5 mm slant each end) | measured |
+| Top length | 76.2 (81.0 minus 4.8 trimmed at the opening end). 85.2 in the 4-hole and S-Video versions | measured |
+| Bottom length | 66.2 (5 mm slant each end). 75.2 in the 4-hole and S-Video versions | measured |
 | Height | 20.21 | measured |
 | Depth, bottom / top | 24.89 / 19.30 (slanted back, ~15.5°) | measured |
 | Wall thickness | 2.0 | chosen |
 | RCA hole diameter | 8.4 + 0.3 clearance (12.0 for the front holes of the recessed version) | measured ring 8.38 mm |
-| Holes | 4, 3, or 3 RCA + 1 S-Video, spread evenly (except the recessed version, 20.0 mm apart). 4 holes: 7.28 mm gaps, centers at x = 18.93 / 34.91 / 50.89 / 66.87. 3 holes: 11.27 mm gaps, centers at x = 22.93 / 42.90 / 62.87. 3 RCA + 1 S-Video (10.3 mm hole): 6.96 mm gaps, centers at x = 19.41 (S-Video) / 35.87 / 51.53 / 67.19. 3 recessed RCA (12.0 mm front holes): 20.0 mm pitch, centers at x = 22.9 / 42.9 / 62.9, plus an inner panel with 6.57 mm holes | calculated |
+| Holes | 4, 3, or 3 RCA + 1 S-Video. The 3-hole version is spread evenly, the recessed one is 20.0 mm apart, the others are set by hand. 4 holes: 18.98 mm center to center, centers at x = 18.93 / 37.91 / 56.89 / 75.87. 3 holes: 11.27 mm gaps, centers at x = 22.93 / 42.90 / 62.87. 3 RCA + 1 S-Video (10.3 mm hole): centers at x = 19.41 (S-Video) / 38.73 / 57.46 / 76.19. 3 recessed RCA (12.0 mm front holes): 20.0 mm pitch, centers at x = 22.9 / 42.9 / 62.9, plus an inner panel with 6.57 mm holes | calculated |
 | L tab | 9.15 long × 6.0 wide plate, 2.5 thick, 3.10 post height, centered on the 12.10 mm opening edge, so its front is 5.75 from the front edge | measured |
 | Top opening (cable path) | 12.10 × 12.10 square, 2.70 from the front and 4.50 from the right end (the 5.66 mm arm is off by default) | measured |
 
@@ -159,6 +159,7 @@ The notch measures 5.69 × 8.02, so the body has only about 0.01 mm of clearance
 ## Tuning the fit
 
 - In the press-fit versions the jacks only press-fit, so hole size matters most. Print a small test plate with 8.2 / 8.4 / 8.6 mm holes before reprinting the whole part. In the recessed version, check the 12.0 mm front holes and the 6.57 mm panel holes against your jack.
+- In the 4-hole and S-Video versions, bend the ground solder lug of each RCA jack 90° toward the open back, so it does not reach the neighbor's nut.
 - If the bracket doesn't sit flush against the Atari, change the top depth (`TOP_DEPTH`) in 0.5 mm steps. The back slant follows from it.
 - The L hook position follows the opening, so move the opening (`OPEN_FROM_FRONT`, `OPEN_FROM_RIGHT`) and the hook comes with it.
 - Check that your caliper shows **mm**, not inches, and zero it with the jaws closed.
@@ -199,16 +200,16 @@ O projeto é baseado numa peça comercial que segura 1 S-Video e 3 RCA. A versã
 
 ## Versões
 
-A mesma case vem em quatro versões. Nas três primeiras, os furos são distribuídos por igual na largura da case (vãos iguais entre os furos e entre os furos e as pontas). Na versão embutida, os furos da frente ficam a 20,0 mm entre centros.
+A mesma case vem em quatro versões. Na versão de 3 furos, os furos são distribuídos por igual na largura da case (vãos iguais entre os furos e entre os furos e as pontas). As versões de 4 furos e de S-Video são 9 mm mais compridas, estendidas do lado oposto ao gancho em L, para as porcas dos conectores (14,82 mm de canto a canto nos conectores RCA usados) não se tocarem. Na versão embutida, os furos da frente ficam a 20,0 mm entre centros.
 
 | Versão | Pasta | Furos | Espaçamento | Centros dos furos (a partir da ponta da abertura) |
 |---|---|---|---|---|
-| 4 furos | [`4-holes/`](4-holes/) | 4 | 5 vãos de 7,28 mm | 18,93 / 34,91 / 50,89 / 66,87 |
+| 4 furos | [`4-holes/`](4-holes/) | 4 | 18,98 mm entre centros | 18,93 / 37,91 / 56,89 / 75,87 |
 | 3 furos | [`3-holes/`](3-holes/) | 3 | 4 vãos de 11,27 mm | 22,93 / 42,90 / 62,87 |
-| 3 RCA + 1 S-Video | [`3rca-1svideo/`](3rca-1svideo/) | 3 RCA (8,7) + 1 S-Video (10,3) | 5 vãos de 6,96 mm | S-Video 19,41, RCA 35,87 / 51,53 / 67,19 |
+| 3 RCA + 1 S-Video | [`3rca-1svideo/`](3rca-1svideo/) | 3 RCA (8,7) + 1 S-Video (10,3) | 18,73 mm entre RCA, 19,32 mm do S-Video ao RCA | S-Video 19,41, RCA 38,73 / 57,46 / 76,19 |
 | 3 RCA embutidos | [`3-holes-recessed/`](3-holes-recessed/) | 3 (furos da frente 12,0, furos do painel 6,57) | 20,0 mm entre centros | 22,9 / 42,9 / 62,9 |
 
-Todo o resto é idêntico: tamanho, abertura, gancho em L e traseira inclinada e, exceto na versão embutida, o diâmetro dos furos RCA (8,4 + 0,3). Na versão com S-Video, o furo dele fica na ponta da abertura (a ponta esquerda, de frente para a face RCA). O tamanho de 10 mm vem de listagens de lojas para soquetes de painel mini-DIN de 4 pinos (por exemplo, [Jaycar PS0376](https://jaycar.com.au/4-pin-mini-din-s-vhs-panel-socket/p/PS0376)), mais a mesma folga de impressão de 0,3 mm dos furos RCA. Meça o seu conector antes de imprimir. Na versão embutida, os furos da frente são alargados para 12,0 mm e um painel interno de 3,0 mm, a 9,0 mm da face da frente, prende cada conector pela rosca (furos de 6,57 mm, fixados com a porca do próprio conector), então os plugs ficam embutidos. A versão embutida foi criada por Jonatã Mariani, do canal do YouTube [Veio dos Game](https://www.youtube.com/c/VeimdosGame), com base na versão original deste projeto. O fecho de [`arch-plug/`](arch-plug/) é a mesma peça para todas as versões.
+Todo o resto é idêntico: altura, profundidade, abertura, gancho em L e traseira inclinada e, exceto na versão embutida, o diâmetro dos furos RCA (8,4 + 0,3). Na versão com S-Video, o furo dele fica na ponta da abertura (a ponta esquerda, de frente para a face RCA). O tamanho de 10 mm vem de listagens de lojas para soquetes de painel mini-DIN de 4 pinos (por exemplo, [Jaycar PS0376](https://jaycar.com.au/4-pin-mini-din-s-vhs-panel-socket/p/PS0376)), mais a mesma folga de impressão de 0,3 mm dos furos RCA. Meça o seu conector antes de imprimir. A porca do S-Video também não foi medida: o espaçamento supõe uns 16 mm de canto a canto. O furo do S-Video é provisório: usa o menor tamanho encontrado até a versão ser validada com um conector real, e pode ser aumentado com uma microrretífica se o conector não couber. Na versão embutida, os furos da frente são alargados para 12,0 mm e um painel interno de 3,0 mm, a 9,0 mm da face da frente, prende cada conector pela rosca (furos de 6,57 mm, fixados com a porca do próprio conector), então os plugs ficam embutidos. A versão embutida foi criada por Jonatã Mariani, do canal do YouTube [Veio dos Game](https://www.youtube.com/c/VeimdosGame), com base na versão original deste projeto. O fecho de [`arch-plug/`](arch-plug/) é a mesma peça para todas as versões.
 
 ## Pré-visualizações
 
@@ -298,13 +299,13 @@ Todas as medidas estão em milímetros e ficam no topo do script. Edite os valor
 
 | Parâmetro | Valor | Origem |
 |---|---|---|
-| Comprimento do topo | 76,2 (81,0 menos 4,8 cortados na ponta da abertura) | medido |
-| Comprimento da base | 66,2 (inclinação de 5 mm em cada ponta) | medido |
+| Comprimento do topo | 76,2 (81,0 menos 4,8 cortados na ponta da abertura). 85,2 nas versões de 4 furos e de S-Video | medido |
+| Comprimento da base | 66,2 (inclinação de 5 mm em cada ponta). 75,2 nas versões de 4 furos e de S-Video | medido |
 | Altura | 20,21 | medido |
 | Profundidade, base / topo | 24,89 / 19,30 (traseira inclinada, ~15,5°) | medido |
 | Espessura da parede | 2,0 | escolhido |
 | Diâmetro do furo RCA | 8,4 + 0,3 de folga (12,0 nos furos da frente da versão embutida) | anel medido 8,38 mm |
-| Furos | 4, 3, ou 3 RCA + 1 S-Video, distribuídos por igual (exceto a versão embutida, a 20,0 mm entre centros). 4 furos: folgas de 7,28 mm, centros em x = 18,93 / 34,91 / 50,89 / 66,87. 3 furos: folgas de 11,27 mm, centros em x = 22,93 / 42,90 / 62,87. 3 RCA + 1 S-Video (furo de 10,3 mm): folgas de 6,96 mm, centros em x = 19,41 (S-Video) / 35,87 / 51,53 / 67,19. 3 RCA embutidos (furos de 12,0 mm na frente): 20,0 mm entre centros, centros em x = 22,9 / 42,9 / 62,9, mais um painel interno com furos de 6,57 mm | calculado |
+| Furos | 4, 3, ou 3 RCA + 1 S-Video, a de 3 furos é distribuída por igual, a embutida fica a 20,0 mm entre centros e as outras são definidas à mão. 4 furos: 18,98 mm entre centros, centros em x = 18,93 / 37,91 / 56,89 / 75,87. 3 furos: folgas de 11,27 mm, centros em x = 22,93 / 42,90 / 62,87. 3 RCA + 1 S-Video (furo de 10,3 mm): centros em x = 19,41 (S-Video) / 38,73 / 57,46 / 76,19. 3 RCA embutidos (furos de 12,0 mm na frente): 20,0 mm entre centros, centros em x = 22,9 / 42,9 / 62,9, mais um painel interno com furos de 6,57 mm | calculado |
 | Aba em L | placa de 9,15 de comprimento × 6,0 de largura, espessura 2,5, pino de 3,10 de altura, centralizada na aresta de 12,10 mm da abertura, com a frente a 5,75 da borda da frente | medido |
 | Abertura de cima (caminho do cabo) | quadrado de 12,10 × 12,10, a 2,70 da frente e 4,50 da ponta direita (o braço de 5,66 mm vem desligado) | medido |
 
@@ -344,6 +345,7 @@ O recorte mede 5,69 × 8,02, então o corpo tem só uns 0,01 mm de folga na larg
 ## Ajustar o encaixe
 
 - Nas versões por pressão os conectores entram só por pressão, então o tamanho do furo é o mais importante. Imprima uma plaquinha de teste com furos de 8,2 / 8,4 / 8,6 mm antes de reimprimir a peça inteira. Na versão embutida, confira os furos de 12,0 mm da frente e os de 6,57 mm do painel com o seu conector.
+- Nas versões de 4 furos e de S-Video, dobre a lingüeta de solda de terra de cada conector RCA 90° para trás, para o lado aberto, para ela não alcançar a porca do vizinho.
 - Se o suporte não encostar direito no Atari, mude a profundidade do topo (`PROFUNDIDADE_TOPO`) em passos de 0,5 mm. A inclinação da traseira vem dela.
 - A posição do gancho em L acompanha a abertura. Mexa na abertura (`ABERTURA_DA_FRENTE`, `ABERTURA_DA_DIREITA`) e o gancho vai junto.
 - Confira se o paquímetro mostra **mm** (não polegadas) e zere-o com as garras fechadas.

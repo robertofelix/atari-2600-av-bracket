@@ -13,7 +13,7 @@
 import adsk.core, adsk.fusion, traceback
 
 # ================= PARAMETERS (mm) =================
-TOP_LENGTH         = 81.0   # length of the top face, before TRIM_END
+TOP_LENGTH         = 90.0   # length of the top face, before TRIM_END (81.0 + 9.0 mm on the side opposite the L, so the jack nuts do not touch)
 TRIM_END           = 4.8    # shortens the part at the opening end (x = 0). The 5 mm end slant moves inward unchanged
 HEIGHT             = 20.21
 DEPTH              = 24.89  # depth at the bottom (hole face to back)
@@ -24,9 +24,9 @@ RIGHT_SLANT        = 5.0    # how far the bottom is inset at the right end (0 = 
 HOLE_DIAMETER      = 8.4    # RCA jack hole
 HOLE_CLEARANCE     = 0.3    # printers shrink holes slightly; added to the diameter
 HOLE_COUNT         = 4
-DISTRIBUTE_HOLES   = True   # True = equal gaps between the holes and the slanted ends, at hole height
-FIRST_HOLE_X       = 18.0   # only if DISTRIBUTE_HOLES = False: center of the 1st hole, from the x = 0 end
-HOLE_SPACING       = 15.0   # only if DISTRIBUTE_HOLES = False: center to center
+DISTRIBUTE_HOLES   = False  # True = equal gaps between the holes and the slanted ends, at hole height
+FIRST_HOLE_X       = 18.93  # only if DISTRIBUTE_HOLES = False: center of the 1st hole, from the x = 0 end
+HOLE_SPACING       = 18.98  # only if DISTRIBUTE_HOLES = False: center to center
 HOLE_CENTER_Y      = 10.1   # measured from the bottom
 D_SERIES_SCREWS    = False  # True = 2 M3 holes per jack (D-series, e.g. Neutrik NF2D)
 SCREW_DIAMETER     = 3.2

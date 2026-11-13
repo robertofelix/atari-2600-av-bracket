@@ -14,11 +14,11 @@ Reproduzir um pequeno suporte impresso em 3D que encaixa na traseira de um **Ata
 
 A geometria é descrita por um **script Python do Fusion** (não é modelada à mão), mantido como referência. Ele roda em *Utilities > Add-Ins > Scripts and Add-Ins* (Shift+S), abre um novo design e cria features paramétricas na linha do tempo, nesta ordem. As medidas ao longo de x partem da ponta original x = 0, que é a ponta da abertura (a direita vista de cima com a face RCA no topo).
 
-1. **Corpo:** um trapézio desenhado no plano XY (comprimento × altura) e extrudado em Z (profundidade). O topo tem 76,2 mm e a base 66,2 mm, porque as duas pontas são inclinadas 5 mm. `ENCURTAR_PONTA` (4,8 mm) encurta a peça na ponta da abertura sem mover mais nada.
+1. **Corpo:** um trapézio desenhado no plano XY (comprimento × altura) e extrudado em Z (profundidade). O topo tem 76,2 mm e a base 66,2 mm, porque as duas pontas são inclinadas 5 mm (85,2 e 75,2 mm nas versões de 4 furos e de S-Video). `ENCURTAR_PONTA` (4,8 mm) encurta a peça na ponta da abertura sem mover mais nada.
 2. **Casca:** paredes de 2 mm. A face removida é a **traseira** (oposta aos furos), então a caixa fica aberta atrás.
 3. **Traseira inclinada:** um corte em cunha no plano YZ, de modo que a profundidade vai de 24,89 mm embaixo até 19,30 mm em cima (~15,5°). Isso acompanha a traseira inclinada da carcaça do Atari. O lado mais estreito fica em cima, junto ao Atari.
 4. **Recorte quadrado opcional:** um recorte quadrado genérico na parede da frente, desligado por padrão (`USAR_ABERTURA = False`). A versão `3rca-1svideo` tem o próprio furo redondo de S-Video (`USAR_SVIDEO`).
-5. **4 furos RCA** (3 na versão `3-holes`, com folgas de 11,27 mm; 3 RCA + 1 S-Video na `3rca-1svideo`, com folgas de 6,96 mm; 3 furos alargados de 12,0 mm na versão embutida): cortados só na parede frontal. `DISTRIBUIR_FUROS` espaça os furos por igual na altura deles, com folgas iguais (7,28 mm) entre os furos e entre os furos e as pontas inclinadas.
+5. **4 furos RCA** (3 na versão `3-holes`, com folgas de 11,27 mm; 3 RCA + 1 S-Video na `3rca-1svideo`, com o furo do S-Video na ponta da abertura; 3 furos alargados de 12,0 mm na versão embutida): cortados só na parede frontal. `DISTRIBUIR_FUROS` espaça os furos por igual na altura deles, com folgas iguais entre os furos e entre os furos e as pontas inclinadas. Ele fica ligado só na versão de 3 furos. Nas versões de 4 furos e de S-Video os centros são definidos à mão (`FURO_PRIMEIRO_X`, `FURO_ESPACAMENTO` e `SVIDEO_ESPACAMENTO`).
 6. **Abertura de cima:** um quadrado de 12,10 × 12,10 mm cortado na parede de cima, para o cabo. `USAR_BRACO` pode acrescentar um braço até a ponta, e vem desligado.
 7. **Gancho em L:** começa na aresta de 12,10 mm da abertura, do lado do centro, e segue para o centro. O pino tem 2,5 mm de comprimento e 3,10 mm de altura, a placa 9,15 mm de comprimento e 2,5 mm de espessura, e o gancho tem 6 mm de largura, centralizado nessa aresta.
 
@@ -26,7 +26,7 @@ A geometria é descrita por um **script Python do Fusion** (não é modelada à 
 
 | Parâmetro | Valor | Origem |
 |---|---|---|
-| COMPRIMENTO_TOPO / ENCURTAR_PONTA | 81,0 / 4,8 (topo = 76,2) | medido |
+| COMPRIMENTO_TOPO / ENCURTAR_PONTA | 81,0 / 4,8 (topo = 76,2). 90,0 / 4,8 (topo = 85,2) nas versões de 4 furos e de S-Video | medido |
 | comprimento da base | 66,2 | derivado (inclinação de 5 mm em cada ponta) |
 | INCLINACAO_ESQ / INCLINACAO_DIR | 5,0 / 5,0 | derivado da primeira medida, 81 vs 71 |
 | ALTURA | 20,21 | medido |
@@ -35,7 +35,7 @@ A geometria é descrita por um **script Python do Fusion** (não é modelada à 
 | PAREDE | 2,0 | escolhido |
 | FURO_DIAMETRO / FURO_FOLGA | 8,4 / 0,3 | anel RCA medido 8,38; furos impressos encolhem |
 | FURO_QTD | 4 (3 na versão `3-holes`) | escolha minha |
-| furos (DISTRIBUIR_FUROS) | 4 furos: centros em x = 18,93 / 34,91 / 50,89 / 66,87. 3 furos: 22,93 / 42,90 / 62,87. 3 RCA + 1 S-Video: 19,41 (S-Video) / 35,87 / 51,53 / 67,19, folgas de 6,96 | calculado |
+| furos (DISTRIBUIR_FUROS) | 4 furos: centros em x = 18,93 / 37,91 / 56,89 / 75,87 (espaçamento de 18,98). 3 furos: 22,93 / 42,90 / 62,87. 3 RCA + 1 S-Video: 19,41 (S-Video) / 38,73 / 57,46 / 76,19 | calculado |
 | versão embutida | Furos da frente de 12,0 em x = 22,9 / 42,9 / 62,9 (20,0 entre centros), FURO_ALTURA_CENTRO 9,905. Painel interno: PAINEL_DA_FRENTE 9,0, PAINEL_ESP 3,0, PAINEL_X 16,35, PAINEL_LARGURA 53,0, PAINEL_FURO_DIAMETRO 6,57, PAINEL_CHANFRO 7,58 | tirado do STL do Jonatã Mariani (veja os créditos em `3-holes-recessed/README.md`) |
 | SVIDEO_DIAMETRO | 10,0 + 0,3 de folga, na ponta x = 0 (versão `3rca-1svideo`) | de listagens de lojas, não medido no meu conector |
 | FURO_ALTURA_CENTRO | 10,1 | centralizado na vertical |
@@ -88,6 +88,10 @@ atari-2600-av-bracket/
 ├── docs/
 └── README.md
 ```
+
+## Versões de 4 furos e de S-Video mais compridas
+
+Nas primeiras impressões da versão de 4 furos as porcas dos conectores quase se tocavam: as porcas sextavadas medem 14,82 mm de canto a canto e o espaçamento era de 15,98 mm, um vão de 1,2 mm. A lingüeta de solda de terra de cada conector também alcança 17,70 mm a partir do centro, então chegava na porca do vizinho. As duas versões ficaram 9 mm mais compridas (`COMPRIMENTO_TOPO` 90,0), estendidas só do lado oposto ao gancho em L, o que dá um vão de cerca de 4,2 mm entre as porcas na versão de 4 furos (espaçamento de 18,98 mm). Na versão com S-Video a porca do S-Video não foi medida. Supus 16 mm de canto a canto e defini os espaçamentos para dar um vão de cerca de 3,9 mm (19,32 mm do S-Video ao primeiro RCA e 18,73 mm entre os RCA). As lingüetas são dobradas 90° para trás, porque lingüetas retas pediriam um espaçamento de uns 25 mm. O furo do S-Video continua com 10,3 mm, o menor tamanho encontrado (10 mm mais 0,3 mm de folga), e é provisório até ser validado com um conector real: pode ser aumentado com uma microrretífica. As listagens de lojas vão de 10 a 11 mm, e um conector de chassi indica um furo de 9/16 pol (14,3 mm), então é preciso conferir com o conector real.
 
 ## Versão embutida (painel interno de fixação)
 
